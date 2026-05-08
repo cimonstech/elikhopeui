@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Settings - MeatDirect Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "error": "#ba1a1a",
+                  "surface-container": "#f0eded",
+                  "on-tertiary-fixed": "#131f00",
+                  "inverse-on-surface": "#f3f0ef",
+                  "on-secondary-fixed-variant": "#21510d",
+                  "on-secondary-container": "#3f702a",
+                  "tertiary-fixed-dim": "#9ad912",
+                  "tertiary": "#314900",
+                  "primary-container": "#01690a",
+                  "on-tertiary-container": "#a4e524",
+                  "surface-container-low": "#f6f3f2",
+                  "secondary-container": "#b9f29c",
+                  "secondary": "#396a25",
+                  "error-container": "#ffdad6",
+                  "outline-variant": "#bfcab8",
+                  "on-secondary": "#ffffff",
+                  "tertiary-container": "#436300",
+                  "surface-variant": "#e5e2e1",
+                  "on-surface": "#1c1b1b",
+                  "on-primary-fixed-variant": "#005306",
+                  "secondary-fixed-dim": "#9ed583",
+                  "surface": "#fcf9f8",
+                  "inverse-primary": "#80db71",
+                  "surface-container-high": "#eae7e7",
+                  "outline": "#707a6a",
+                  "surface-container-lowest": "#ffffff",
+                  "surface-bright": "#fcf9f8",
+                  "on-surface-variant": "#404a3c",
+                  "background": "#fcf9f8",
+                  "surface-dim": "#dcd9d9",
+                  "on-secondary-fixed": "#062100",
+                  "primary-fixed-dim": "#80db71",
+                  "on-error": "#ffffff",
+                  "on-primary": "#ffffff",
+                  "secondary-fixed": "#b9f29c",
+                  "on-tertiary-fixed-variant": "#354e00",
+                  "primary": "#004e05",
+                  "on-tertiary": "#ffffff",
+                  "primary-fixed": "#9bf98b",
+                  "inverse-surface": "#313030",
+                  "on-background": "#1c1b1b",
+                  "surface-container-highest": "#e5e2e1",
+                  "tertiary-fixed": "#b5f739",
+                  "on-primary-fixed": "#002201",
+                  "surface-tint": "#0b6e10",
+                  "on-error-container": "#93000a",
+                  "on-primary-container": "#8be77b"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "stack-md": "24px",
+                  "stack-lg": "48px",
+                  "margin-desktop": "48px",
+                  "margin-mobile": "16px",
+                  "stack-sm": "12px",
+                  "gutter": "24px",
+                  "container-max": "1280px",
+                  "base": "8px"
+          },
+          "fontFamily": {
+                  "h3": ["Plus Jakarta Sans"],
+                  "body-md": ["Inter"],
+                  "price-lg": ["Plus Jakarta Sans"],
+                  "body-lg": ["Inter"],
+                  "label-caps": ["Inter"],
+                  "h2": ["Plus Jakarta Sans"],
+                  "body-sm": ["Inter"],
+                  "h4": ["Plus Jakarta Sans"],
+                  "h1": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+                  "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                  "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "price-lg": ["28px", {"lineHeight": "1", "fontWeight": "700"}],
+                  "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                  "h2": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                  "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                  "h4": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                  "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body { background-color: #fcf9f8; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #bfcab8; border-radius: 10px; }
+  </style>
+<style id="elikhope-fonts">
+  body, button, input, textarea, select { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  .font-h1,.font-h2,.font-h3,.font-h4,.font-price-lg { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important; }
+  .font-body-sm,.font-body-md,.font-body-lg,.font-label-caps { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important; }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+</head>
+<body class="font-body-md text-on-surface">
+<aside class="hidden md:flex flex-col h-screen fixed left-0 top-0 bg-inverse-surface dark:bg-surface-container-lowest shadow-md docked left-0 h-full w-64 z-50">
+<div class="p-6">
+<a href="/Admin_Dashboard_Pages/admin_dashboard_overview_elikhope_farms/code.html" class="flex items-center gap-3 group">
+<img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 shrink-0 rounded-lg" width="40" height="40"/>
+<div class="leading-tight">
+<h1 class="text-h4 font-h4 text-primary-fixed dark:text-primary tracking-tight">EliKhope Farms</h1>
+<p class="font-body-sm text-body-sm text-surface-variant dark:text-outline opacity-70">Admin terminal</p>
+</div>
+</a>
+</div>
+<nav class="flex-1 px-4 space-y-1 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/admin_dashboard_overview_elikhope_farms/code.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/orders_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-body-md text-body-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/product_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-body-md text-body-md">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/inventory_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">warehouse</span>
+<span class="font-body-md text-body-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/delivery_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-body-md text-body-md">Deliveries</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/customer_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-body-md text-body-md">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/promotions_campaigns_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-body-md text-body-md">Promotions</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/content_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">dvr</span>
+<span class="font-body-md text-body-md">CMS</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/homepage_hero_management_admin_cms/code.html">
+<span class="material-symbols-outlined">view_quilt</span>
+<span class="font-body-md text-body-md">Homepage hero</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/analytics_business_intelligence_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-md text-body-md">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/customer_support_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+</nav>
+<div class="p-4 border-t border-on-surface-variant/10" data-ek-admin-footer="1">
+<a class="w-full bg-primary-container text-on-primary font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2" href="/Admin_Dashboard_Pages/customer_support_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">support_agent</span>
+Contact support
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-primary-fixed-dim font-bold border-l-4 border-primary-fixed-dim bg-on-surface-variant/10 mt-3 block" href="/Admin_Dashboard_Pages/admin_settings_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined align-middle mr-2">settings</span>
+Settings
+</a>
+<a class="flex items-center gap-3 px-4 py-2 mt-1 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright" href="/Authentication_Pages/admin_login_elikhope_farms/code.html">
+<span class="material-symbols-outlined">logout</span>
+Log out
+</a>
+</div>
+</aside>
+<button class="md:hidden fixed top-4 left-4 z-[60] p-3 rounded-xl bg-surface shadow-md border border-outline-variant/40" type="button" aria-label="Open admin menu" data-ek-toggle="ek-admin-drawer">
+  <i class="fa-solid fa-bars text-on-surface-variant"></i>
+</button>
+<div id="ek-admin-drawer" class="md:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="left">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-admin-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute left-0 top-0 h-full w-80 max-w-[85vw] bg-inverse-surface dark:bg-surface-container-lowest shadow-xl border-r border-on-surface-variant/10 flex flex-col translate-x-full transition-transform duration-200 ease-out">
+    <div class="p-6 flex items-start justify-between gap-4">
+      <div class="flex-1">
+        <a href="/Admin_Dashboard_Pages/admin_dashboard_overview_elikhope_farms/code.html" class="flex items-center gap-3 group">
+<img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 shrink-0 rounded-lg" width="40" height="40"/>
+<div class="leading-tight">
+<h1 class="text-h4 font-h4 text-primary-fixed dark:text-primary tracking-tight">EliKhope Farms</h1>
+<p class="font-body-sm text-body-sm text-surface-variant dark:text-outline opacity-70">Admin terminal</p>
+</div>
+</a>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-on-surface-variant/10" type="button" aria-label="Close menu" data-ek-toggle="ek-admin-drawer">
+        <i class="fa-solid fa-xmark text-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 px-4 space-y-1 overflow-auto pb-4">
+      <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/admin_dashboard_overview_elikhope_farms/code.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/orders_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-body-md text-body-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/product_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-body-md text-body-md">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/inventory_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">warehouse</span>
+<span class="font-body-md text-body-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/delivery_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-body-md text-body-md">Deliveries</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/customer_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-body-md text-body-md">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/promotions_campaigns_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-body-md text-body-md">Promotions</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/content_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">dvr</span>
+<span class="font-body-md text-body-md">CMS</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/homepage_hero_management_admin_cms/code.html">
+<span class="material-symbols-outlined">view_quilt</span>
+<span class="font-body-md text-body-md">Homepage hero</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/analytics_business_intelligence_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-md text-body-md">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/customer_support_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+    </nav>
+    <div class="p-4 border-t border-on-surface-variant/10" data-ek-admin-footer="1">
+      <a class="w-full bg-primary-container text-on-primary font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2" href="/Admin_Dashboard_Pages/customer_support_elikhope_farms_admin/code.html">
+        <span class="material-symbols-outlined">support_agent</span>
+        Contact support
+      </a>
+      <a class="flex items-center gap-3 px-4 py-2 rounded-lg text-primary-fixed-dim font-bold border-l-4 border-primary-fixed-dim bg-on-surface-variant/10 mt-3 block" href="/Admin_Dashboard_Pages/admin_settings_elikhope_farms_admin/code.html">
+        <span class="material-symbols-outlined align-middle mr-2">settings</span>
+        Settings
+      </a>
+      <a class="flex items-center gap-3 px-4 py-2 mt-1 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright" href="/Authentication_Pages/admin_login_elikhope_farms/code.html">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        Log out
+      </a>
+    </div>
+  </aside>
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+<!-- TopAppBar -->
+<header class="flex justify-between items-center h-16 px-margin-desktop ml-64 w-[calc(100%-16rem)] z-30 bg-surface dark:bg-surface-dim border-b border-outline-variant fixed top-0">
+<div class="flex items-center gap-6 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg text-body-sm focus:ring-2 focus:ring-primary" placeholder="Search settings, transactions, or APIs..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors scale-95 active:scale-90">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors scale-95 active:scale-90">settings</button>
+<div class="flex items-center gap-3 ml-4 pl-4 border-l border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant text-[32px]">account_circle</span>
+<div class="hidden lg:block text-left">
+<p class="text-body-sm font-bold text-on-surface">Admin Profile</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">Super Admin</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-64 pt-16 min-h-screen">
+<div class="max-w-[1280px] mx-auto p-margin-desktop space-y-stack-lg">
+<!-- Page Header -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h2 class="font-h2 text-h2 text-on-surface">Payment Settings</h2>
+<p class="text-body-lg text-on-surface-variant mt-1">Manage gateways, transactions, and secure API configurations for EliKhope Farms.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 rounded-lg border-[1.5px] border-primary text-primary font-bold hover:bg-primary/5 transition-colors">
+            Audit Logs
+          </button>
+<button class="px-6 py-2.5 rounded-lg bg-primary text-on-primary font-bold shadow-sm hover:opacity-90 transition-opacity">
+            Save All Changes
+          </button>
+</div>
+</section>
+<div class="flex items-center gap-8 border-b border-surface-variant mb-10 overflow-x-auto pb-px">
+<a class="pb-4 text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2 px-1 whitespace-nowrap" href="/Admin_Dashboard_Pages/admin_settings_elikhope_farms_admin/code.html"><span class="material-symbols-outlined">settings</span>General</a>
+<a class="pb-4 text-primary font-bold border-b-2 border-primary flex items-center gap-2 px-1 whitespace-nowrap" href="/Admin_Dashboard_Pages/payment_settings_elikhope_farms_admin/code.html"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span>Payments</a>
+<a class="pb-4 text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2 px-1 whitespace-nowrap" href="/Admin_Dashboard_Pages/delivery_zones_elikhope_farms_admin/code.html"><span class="material-symbols-outlined">map</span>Delivery Zones</a>
+<a class="pb-4 text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2 px-1 whitespace-nowrap" href="/Admin_Dashboard_Pages/staff_permissions_elikhope_farms_admin/code.html"><span class="material-symbols-outlined">admin_panel_settings</span>Staff Permissions</a>
+</div>
+<!-- Overview Grid (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="md:col-span-1 p-6 bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(1,105,10,0.04)] border border-outline-variant/30 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-primary bg-secondary-container/30 p-2 rounded-lg">account_balance_wallet</span>
+<span class="text-label-caps text-on-secondary-container bg-secondary-container px-2 py-1 rounded-full">+12%</span>
+</div>
+<h3 class="font-h4 text-h4 mt-4">GHS 42,850.00</h3>
+<p class="text-body-sm text-on-surface-variant">Total Volume (30d)</p>
+</div>
+</div>
+<div class="md:col-span-1 p-6 bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(1,105,10,0.04)] border border-outline-variant/30 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-tertiary bg-tertiary-fixed/20 p-2 rounded-lg">receipt_long</span>
+<span class="text-label-caps text-on-tertiary-fixed-variant bg-tertiary-fixed/40 px-2 py-1 rounded-full">842 Trans</span>
+</div>
+<h3 class="font-h4 text-h4 mt-4">98.4%</h3>
+<p class="text-body-sm text-on-surface-variant">Success Rate</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Gateway Management & Analytics -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Gateways -->
+<div class="lg:col-span-2 space-y-gutter">
+<h3 class="font-h3 text-h3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">hub</span>
+            Gateway Management
+          </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Mobile Money -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/50 hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-primary">smartphone</span>
+</div>
+<div>
+<p class="font-bold text-body-md">Mobile Money</p>
+<p class="text-body-sm text-on-surface-variant">MTN, Telecel, AirtelTigo</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<button class="w-full text-center py-2 text-body-sm font-bold text-primary border border-primary/20 rounded-lg hover:bg-primary/5 transition-colors">Configure API</button>
+</div>
+<!-- Card Payments -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/50 hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-primary">credit_card</span>
+</div>
+<div>
+<p class="font-bold text-body-md">Card Payments</p>
+<p class="text-body-sm text-on-surface-variant">Visa, Mastercard, Amex</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<button class="w-full text-center py-2 text-body-sm font-bold text-primary border border-primary/20 rounded-lg hover:bg-primary/5 transition-colors">Configure Stripe</button>
+</div>
+<!-- Bank Transfer -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/50 hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-primary">account_balance</span>
+</div>
+<div>
+<p class="font-bold text-body-md">Bank Transfer</p>
+<p class="text-body-sm text-on-surface-variant">Manual Approval Required</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<button class="w-full text-center py-2 text-body-sm font-bold text-primary border border-primary/20 rounded-lg hover:bg-primary/5 transition-colors">Setup Details</button>
+</div>
+<!-- Cash on Delivery -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/50 hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-primary">payments</span>
+</div>
+<div>
+<p class="font-bold text-body-md">Cash on Delivery</p>
+<p class="text-body-sm text-on-surface-variant">Local Deliveries Only</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<button class="w-full text-center py-2 text-body-sm font-bold text-primary border border-primary/20 rounded-lg hover:bg-primary/5 transition-colors">Manage Limits</button>
+</div>
+</div>
+</div>
+<!-- Analytics Widget -->
+<div class="lg:col-span-1 space-y-gutter">
+<h3 class="font-h3 text-h3">Revenue Trend</h3>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/50 h-[320px] flex flex-col justify-between">
+<div class="flex-1 flex items-end gap-2 px-2">
+<div class="flex-1 bg-primary-container/20 rounded-t-sm h-[40%]"></div>
+<div class="flex-1 bg-primary-container/40 rounded-t-sm h-[60%]"></div>
+<div class="flex-1 bg-primary-container/30 rounded-t-sm h-[45%]"></div>
+<div class="flex-1 bg-primary-container/50 rounded-t-sm h-[75%]"></div>
+<div class="flex-1 bg-primary-container/70 rounded-t-sm h-[90%]"></div>
+<div class="flex-1 bg-primary rounded-t-sm h-[100%]"></div>
+<div class="flex-1 bg-primary-container/60 rounded-t-sm h-[70%]"></div>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant flex justify-between text-label-caps text-on-surface-variant">
+<span>Mon</span>
+<span>Tue</span>
+<span>Wed</span>
+<span>Thu</span>
+<span>Fri</span>
+<span>Sat</span>
+<span>Sun</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Config Panels -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<!-- Transaction Settings -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/30 shadow-sm">
+<h3 class="font-h3 text-h3 mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">tune</span>
+            Transaction Settings
+          </h3>
+<div class="space-y-6">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-label-caps text-on-surface-variant">System Currency</label>
+<select class="w-full p-3 bg-surface-container-low border border-outline-variant rounded-lg font-body-md focus:ring-2 focus:ring-primary">
+<option>GHS ($)</option>
+<option>KES (KSh)</option>
+<option>EUR (€)</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-label-caps text-on-surface-variant">Tax Rate (%)</label>
+<input class="w-full p-3 bg-surface-container-low border border-outline-variant rounded-lg font-body-md focus:ring-2 focus:ring-primary" type="number" value="16"/>
+</div>
+</div>
+<div class="flex items-center justify-between py-3 border-b border-outline-variant/30">
+<div>
+<p class="font-bold text-body-md">Auto-Invoice Generation</p>
+<p class="text-body-sm text-on-surface-variant">Send PDF to customer after payment</p>
+</div>
+<input checked="" class="w-5 h-5 text-primary rounded border-outline-variant focus:ring-primary" type="checkbox"/>
+</div>
+<div class="flex items-center justify-between py-3">
+<div>
+<p class="font-bold text-body-md">Instant Settlements</p>
+<p class="text-body-sm text-on-surface-variant">Transfer funds to bank within 2 hours</p>
+</div>
+<input class="w-5 h-5 text-primary rounded border-outline-variant focus:ring-primary" type="checkbox"/>
+</div>
+</div>
+</div>
+<!-- API Configuration -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/30 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 bg-tertiary-fixed text-on-tertiary-fixed text-label-caps font-bold rounded-bl-xl">
+            PRO PROTECTION
+          </div>
+<h3 class="font-h3 text-h3 mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">api</span>
+            API Configuration
+          </h3>
+<div class="space-y-4">
+<div class="space-y-2">
+<label class="text-label-caps text-on-surface-variant">API Key (Production)</label>
+<div class="relative">
+<input class="w-full p-3 pr-12 bg-surface-container-low border border-outline-variant rounded-lg font-mono text-body-sm focus:ring-0" readonly="" type="password" value="sk_live_293847293847293847"/>
+<button class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-primary">visibility</button>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-label-caps text-on-surface-variant">Webhook Endpoint</label>
+<div class="relative">
+<input class="w-full p-3 pr-12 bg-surface-container-low border border-outline-variant rounded-lg font-body-sm" readonly="" type="text" value="https://api.elikhopefarms.com/webhooks/payments"/>
+<button class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-primary">content_copy</button>
+</div>
+</div>
+<p class="text-body-sm text-on-surface-variant mt-4 p-3 bg-secondary-container/10 border-l-4 border-secondary rounded flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">info</span>
+              Keep your secret keys secure. Never expose them in client-side code or public repositories.
+            </p>
+</div>
+</div>
+</section>
+<!-- Activity Table -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="font-h3 text-h3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">list_alt</span>
+            Recent Payment Activity
+          </h3>
+<button class="text-body-sm font-bold text-primary flex items-center gap-1 hover:underline">
+            View All Transactions
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/30 overflow-hidden shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low">
+<tr>
+<th class="px-6 py-4 text-label-caps text-on-surface-variant">ID / Reference</th>
+<th class="px-6 py-4 text-label-caps text-on-surface-variant">Customer</th>
+<th class="px-6 py-4 text-label-caps text-on-surface-variant text-right">Amount</th>
+<th class="px-6 py-4 text-label-caps text-on-surface-variant">Method</th>
+<th class="px-6 py-4 text-label-caps text-on-surface-variant">Status</th>
+<th class="px-6 py-4 text-label-caps text-on-surface-variant">Date</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/30">
+<tr class="hover:bg-surface transition-colors group">
+<td class="px-6 py-4 font-mono text-body-sm">#TXN-84291</td>
+<td class="px-6 py-4 font-medium">David Kamau</td>
+<td class="px-6 py-4 text-right font-bold">GHS 124.50</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-body-md text-primary">smartphone</span>
+<span class="text-body-sm">Telecel</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 bg-secondary-container text-on-secondary-container text-[11px] font-bold rounded-full uppercase tracking-tight">Completed</span>
+</td>
+<td class="px-6 py-4 text-on-surface-variant text-body-sm">2 mins ago</td>
+</tr>
+<tr class="hover:bg-surface transition-colors group">
+<td class="px-6 py-4 font-mono text-body-sm">#TXN-84290</td>
+<td class="px-6 py-4 font-medium">Sarah Jenkins</td>
+<td class="px-6 py-4 text-right font-bold">GHS 210.00</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-body-md text-primary">credit_card</span>
+<span class="text-body-sm">Visa</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 bg-secondary-container text-on-secondary-container text-[11px] font-bold rounded-full uppercase tracking-tight">Completed</span>
+</td>
+<td class="px-6 py-4 text-on-surface-variant text-body-sm">14 mins ago</td>
+</tr>
+<tr class="hover:bg-surface transition-colors group">
+<td class="px-6 py-4 font-mono text-body-sm">#TXN-84289</td>
+<td class="px-6 py-4 font-medium">Michael Omondi</td>
+<td class="px-6 py-4 text-right font-bold">GHS 85.20</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-body-md text-primary">smartphone</span>
+<span class="text-body-sm">Airtel</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 bg-surface-container-highest text-on-surface-variant text-[11px] font-bold rounded-full uppercase tracking-tight">Pending</span>
+</td>
+<td class="px-6 py-4 text-on-surface-variant text-body-sm">1 hour ago</td>
+</tr>
+<tr class="hover:bg-surface transition-colors group">
+<td class="px-6 py-4 font-mono text-body-sm">#TXN-84288</td>
+<td class="px-6 py-4 font-medium">Grace Wangari</td>
+<td class="px-6 py-4 text-right font-bold">GHS 340.00</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-body-md text-primary">account_balance</span>
+<span class="text-body-sm">Bank</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 bg-error-container text-on-error-container text-[11px] font-bold rounded-full uppercase tracking-tight">Failed</span>
+</td>
+<td class="px-6 py-4 text-on-surface-variant text-body-sm">3 hours ago</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Trust Indicator -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter pt-4">
+<div class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
+<span class="material-symbols-outlined text-[32px] text-primary" data-weight="fill">verified_user</span>
+<div>
+<p class="font-bold text-body-md">PCI DSS Compliant</p>
+<p class="text-body-sm text-on-surface-variant">Level 1 secure processing</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
+<span class="material-symbols-outlined text-[32px] text-primary" data-weight="fill">lock</span>
+<div>
+<p class="font-bold text-body-md">AES-256 Encryption</p>
+<p class="text-body-sm text-on-surface-variant">All sensitive data encrypted</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low border border-outline-variant/20">
+<span class="material-symbols-outlined text-[32px] text-primary" data-weight="fill">monitoring</span>
+<div>
+<p class="font-bold text-body-md">Fraud Protection</p>
+<p class="text-body-sm text-on-surface-variant">AI-driven risk scoring active</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Global Save FAB (Floating Action Button) -->
+<button class="fixed bottom-8 right-8 w-16 h-16 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-105 active:scale-95 transition-transform z-50">
+<span class="material-symbols-outlined text-[32px]">save</span>
+</button>
+<script id="ek-toggle-init">
+(() => {
+  const openDrawer = (root) => {
+    root.classList.remove('hidden');
+    const panel = root.querySelector('[data-ek-drawer-panel]');
+    if (panel) requestAnimationFrame(() => panel.classList.remove('translate-x-full'));
+  };
+  const closeDrawer = (root) => {
+    const panel = root.querySelector('[data-ek-drawer-panel]');
+    if (panel) panel.classList.add('translate-x-full');
+    window.setTimeout(() => root.classList.add('hidden'), 220);
+  };
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-ek-toggle]');
+    if (!btn) return;
+    const id = btn.getAttribute('data-ek-toggle');
+    const root = document.getElementById(id);
+    if (!root) return;
+
+    const isDrawer = root.hasAttribute('data-ek-drawer');
+    if (!isDrawer) {
+      root.classList.toggle('hidden');
+      return;
+    }
+
+    const isOpen = !root.classList.contains('hidden');
+    if (isOpen) closeDrawer(root);
+    else openDrawer(root);
+  });
+})();
+</script>
+</body></html>

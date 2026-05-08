@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "surface-container": "#f0eded",
+                    "on-tertiary-fixed": "#131f00",
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-secondary-fixed-variant": "#21510d",
+                    "on-secondary-container": "#3f702a",
+                    "tertiary-fixed-dim": "#9ad912",
+                    "tertiary": "#314900",
+                    "primary-container": "#01690a",
+                    "on-tertiary-container": "#a4e524",
+                    "surface-container-low": "#f6f3f2",
+                    "secondary-container": "#b9f29c",
+                    "secondary": "#396a25",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#bfcab8",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#436300",
+                    "surface-variant": "#e5e2e1",
+                    "on-surface": "#1c1b1b",
+                    "on-primary-fixed-variant": "#005306",
+                    "secondary-fixed-dim": "#9ed583",
+                    "surface": "#fcf9f8",
+                    "inverse-primary": "#80db71",
+                    "surface-container-high": "#eae7e7",
+                    "outline": "#707a6a",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#fcf9f8",
+                    "on-surface-variant": "#404a3c",
+                    "background": "#fcf9f8",
+                    "surface-dim": "#dcd9d9",
+                    "on-secondary-fixed": "#062100",
+                    "primary-fixed-dim": "#80db71",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#b9f29c",
+                    "on-tertiary-fixed-variant": "#354e00",
+                    "primary": "#004e05",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#9bf98b",
+                    "inverse-surface": "#313030",
+                    "on-background": "#1c1b1b",
+                    "surface-container-highest": "#e5e2e1",
+                    "tertiary-fixed": "#b5f739",
+                    "on-primary-fixed": "#002201",
+                    "surface-tint": "#0b6e10",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#8be77b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "24px",
+                    "stack-lg": "48px",
+                    "margin-desktop": "48px",
+                    "margin-mobile": "16px",
+                    "stack-sm": "12px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "h3": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "price-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "h2": ["Plus Jakarta Sans"],
+                    "body-sm": ["Inter"],
+                    "h4": ["Plus Jakarta Sans"],
+                    "h1": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "price-lg": ["28px", {"lineHeight": "1", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "h2": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h4": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #fcf9f8; }
+        h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+<style id="elikhope-fonts">
+  body, button, input, textarea, select { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  .font-h1,.font-h2,.font-h3,.font-h4,.font-price-lg { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important; }
+  .font-body-sm,.font-body-md,.font-body-lg,.font-label-caps { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important; }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+</head>
+<body class="bg-background text-on-surface">
+<aside class="hidden md:flex flex-col h-screen fixed left-0 top-0 bg-inverse-surface dark:bg-surface-container-lowest shadow-md docked left-0 h-full w-64 z-50">
+<div class="p-6">
+<a href="/Admin_Dashboard_Pages/admin_dashboard_overview_elikhope_farms/code.html" class="flex items-center gap-3 group">
+<img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 shrink-0 rounded-lg" width="40" height="40"/>
+<div class="leading-tight">
+<h1 class="text-h4 font-h4 text-primary-fixed dark:text-primary tracking-tight">EliKhope Farms</h1>
+<p class="font-body-sm text-body-sm text-surface-variant dark:text-outline opacity-70">Admin terminal</p>
+</div>
+</a>
+</div>
+<nav class="flex-1 px-4 space-y-1 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/admin_dashboard_overview_elikhope_farms/code.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/orders_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-body-md text-body-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/product_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-body-md text-body-md">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/inventory_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">warehouse</span>
+<span class="font-body-md text-body-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/delivery_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-body-md text-body-md">Deliveries</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/customer_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-body-md text-body-md">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/promotions_campaigns_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-body-md text-body-md">Promotions</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/content_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">dvr</span>
+<span class="font-body-md text-body-md">CMS</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/homepage_hero_management_admin_cms/code.html">
+<span class="material-symbols-outlined">view_quilt</span>
+<span class="font-body-md text-body-md">Homepage hero</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/analytics_business_intelligence_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-md text-body-md">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/customer_support_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+</nav>
+<div class="p-4 border-t border-on-surface-variant/10" data-ek-admin-footer="1">
+<a class="w-full bg-primary-container text-on-primary font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2" href="/Admin_Dashboard_Pages/customer_support_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">support_agent</span>
+Contact support
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-primary-fixed-dim font-bold border-l-4 border-primary-fixed-dim bg-on-surface-variant/10 mt-3 block" href="/Admin_Dashboard_Pages/admin_settings_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined align-middle mr-2">settings</span>
+Settings
+</a>
+<a class="flex items-center gap-3 px-4 py-2 mt-1 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright" href="/Authentication_Pages/admin_login_elikhope_farms/code.html">
+<span class="material-symbols-outlined">logout</span>
+Log out
+</a>
+</div>
+</aside>
+<button class="md:hidden fixed top-4 left-4 z-[60] p-3 rounded-xl bg-surface shadow-md border border-outline-variant/40" type="button" aria-label="Open admin menu" data-ek-toggle="ek-admin-drawer">
+  <i class="fa-solid fa-bars text-on-surface-variant"></i>
+</button>
+<div id="ek-admin-drawer" class="md:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="left">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-admin-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute left-0 top-0 h-full w-80 max-w-[85vw] bg-inverse-surface dark:bg-surface-container-lowest shadow-xl border-r border-on-surface-variant/10 flex flex-col translate-x-full transition-transform duration-200 ease-out">
+    <div class="p-6 flex items-start justify-between gap-4">
+      <div class="flex-1">
+        <a href="/Admin_Dashboard_Pages/admin_dashboard_overview_elikhope_farms/code.html" class="flex items-center gap-3 group">
+<img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 shrink-0 rounded-lg" width="40" height="40"/>
+<div class="leading-tight">
+<h1 class="text-h4 font-h4 text-primary-fixed dark:text-primary tracking-tight">EliKhope Farms</h1>
+<p class="font-body-sm text-body-sm text-surface-variant dark:text-outline opacity-70">Admin terminal</p>
+</div>
+</a>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-on-surface-variant/10" type="button" aria-label="Close menu" data-ek-toggle="ek-admin-drawer">
+        <i class="fa-solid fa-xmark text-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 px-4 space-y-1 overflow-auto pb-4">
+      <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/admin_dashboard_overview_elikhope_farms/code.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/orders_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-body-md text-body-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/product_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-body-md text-body-md">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/inventory_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">warehouse</span>
+<span class="font-body-md text-body-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/delivery_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-body-md text-body-md">Deliveries</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/customer_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-body-md text-body-md">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/promotions_campaigns_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-body-md text-body-md">Promotions</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/content_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">dvr</span>
+<span class="font-body-md text-body-md">CMS</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/homepage_hero_management_admin_cms/code.html">
+<span class="material-symbols-outlined">view_quilt</span>
+<span class="font-body-md text-body-md">Homepage hero</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/analytics_business_intelligence_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-md text-body-md">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/customer_support_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+    </nav>
+    <div class="p-4 border-t border-on-surface-variant/10" data-ek-admin-footer="1">
+      <a class="w-full bg-primary-container text-on-primary font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2" href="/Admin_Dashboard_Pages/customer_support_elikhope_farms_admin/code.html">
+        <span class="material-symbols-outlined">support_agent</span>
+        Contact support
+      </a>
+      <a class="flex items-center gap-3 px-4 py-2 rounded-lg text-primary-fixed-dim font-bold border-l-4 border-primary-fixed-dim bg-on-surface-variant/10 mt-3 block" href="/Admin_Dashboard_Pages/admin_settings_elikhope_farms_admin/code.html">
+        <span class="material-symbols-outlined align-middle mr-2">settings</span>
+        Settings
+      </a>
+      <a class="flex items-center gap-3 px-4 py-2 mt-1 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright" href="/Authentication_Pages/admin_login_elikhope_farms/code.html">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        Log out
+      </a>
+    </div>
+  </aside>
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+<!-- TopAppBar Shell -->
+<header class="flex justify-between items-center h-16 px-margin-desktop ml-64 w-[calc(100%-16rem)] z-30 bg-surface dark:bg-surface-dim border-b border-outline-variant fixed top-0">
+<div class="flex items-center space-x-4">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary w-80 text-sm" placeholder="Search delivery zones..." type="text"/>
+</div>
+</div>
+<div class="flex items-center space-x-6">
+<button class="relative text-on-surface-variant hover:text-primary transition-colors transition-transform scale-95 active:scale-90">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors transition-transform scale-95 active:scale-90">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="flex items-center space-x-3 border-l pl-6 border-outline-variant">
+<div class="text-right">
+<p class="text-sm font-bold">Admin User</p>
+<p class="text-xs text-on-surface-variant">Logistics Head</p>
+</div>
+<span class="material-symbols-outlined text-4xl text-primary">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 min-h-screen">
+<div class="max-w-container-max mx-auto p-margin-desktop space-y-stack-lg">
+<!-- Page Header -->
+<div class="flex justify-between items-end">
+<div>
+<h1 class="font-h2 text-h2 text-on-surface">Delivery Zones Management</h1>
+<p class="text-body-lg text-on-surface-variant mt-2">Optimize EliKhope Farms last-mile logistics and coverage regions.</p>
+</div>
+<div class="flex space-x-4">
+<button class="px-6 py-3 border-1.5 border-primary text-primary font-bold rounded-lg hover:bg-primary/5 transition-colors">
+                        Download Manifest
+                    </button>
+<button class="px-6 py-3 bg-primary text-on-primary font-bold rounded-lg shadow-sm hover:opacity-90 transition-opacity flex items-center">
+<span class="material-symbols-outlined mr-2">add</span> Create New Zone
+                    </button>
+</div>
+</div>
+<div class="flex items-center gap-8 border-b border-surface-variant mb-10 overflow-x-auto pb-px">
+<a class="pb-4 text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2 px-1 whitespace-nowrap" href="/Admin_Dashboard_Pages/admin_settings_elikhope_farms_admin/code.html"><span class="material-symbols-outlined">settings</span>General</a>
+<a class="pb-4 text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2 px-1 whitespace-nowrap" href="/Admin_Dashboard_Pages/payment_settings_elikhope_farms_admin/code.html"><span class="material-symbols-outlined">payments</span>Payments</a>
+<a class="pb-4 text-primary font-bold border-b-2 border-primary flex items-center gap-2 px-1 whitespace-nowrap" href="/Admin_Dashboard_Pages/delivery_zones_elikhope_farms_admin/code.html"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">map</span>Delivery Zones</a>
+<a class="pb-4 text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2 px-1 whitespace-nowrap" href="/Admin_Dashboard_Pages/staff_permissions_elikhope_farms_admin/code.html"><span class="material-symbols-outlined">admin_panel_settings</span>Staff Permissions</a>
+</div>
+<!-- Overview Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/30 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-caps text-on-surface-variant">ACTIVE ZONES</span>
+<span class="material-symbols-outlined text-primary">distance</span>
+</div>
+<div>
+<span class="text-h2 font-bold">14</span>
+<div class="flex items-center mt-2 text-primary font-medium text-sm">
+<span class="material-symbols-outlined text-sm mr-1">trending_up</span>
+<span>+2 this month</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/30 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-caps text-on-surface-variant">AVG. DELIVERY TIME</span>
+<span class="material-symbols-outlined text-primary">schedule</span>
+</div>
+<div>
+<span class="text-h2 font-bold">42m</span>
+<div class="flex items-center mt-2 text-primary font-medium text-sm">
+<span class="material-symbols-outlined text-sm mr-1">trending_down</span>
+<span>-5m efficiency gain</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/30 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-caps text-on-surface-variant">FLEET UTILIZATION</span>
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+</div>
+<div>
+<span class="text-h2 font-bold">88%</span>
+<div class="flex items-center mt-2 text-secondary font-medium text-sm">
+<span class="material-symbols-outlined text-sm mr-1">check_circle</span>
+<span>Optimal range</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/30 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-caps text-on-surface-variant">REVENUE PER ZONE</span>
+<span class="material-symbols-outlined text-primary">payments</span>
+</div>
+<div>
+<span class="text-h2 font-bold">GHS 12.4k</span>
+<div class="flex items-center mt-2 text-primary font-medium text-sm">
+<span class="material-symbols-outlined text-sm mr-1">trending_up</span>
+<span>12% YoY growth</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Map Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter h-[600px]">
+<div class="lg:col-span-2 relative bg-surface-container rounded-xl shadow-sm overflow-hidden border border-outline-variant/50">
+<img class="w-full h-full object-cover grayscale opacity-60" data-alt="A clean, minimalist digital map visualization of a metropolitan area, featuring highlighted delivery zones in soft green overlays. The map uses a neutral light-mode aesthetic with refined typography for street names. Soft glow effects distinguish high-activity regions, creating a professional logistics dashboard atmosphere. The overall mood is high-tech, organized, and focused on operational efficiency in a modern corporate setting." data-location="Accra" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAWkpWkTVggIywmTrD5B5iWyD1IR5j8oK8n_On9qh3hnkj1YgxC77LL8sX4tTzQek6qLdRupCSCR3fSOHkbES5kVaxb50CgT0WX1j9kC-IMmoxg_Hu7i_o9qltkVtUt3jdhFn1O5fOqByLGYr3vlLDdNkR7Ps2D1Lb7_H-4fItLFc5c7na98SxQu6oArMyJGNhwepPKMjsG1Y4X3RvrjIniFkVyieQSnulOu3fGjfzEBmH2_DK8L3id8Q1283uEXc2zBVXoJCdxIg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/20 to-transparent"></div>
+<!-- Floating Map UI -->
+<div class="absolute top-6 left-6 space-y-3">
+<div class="bg-surface-container-lowest p-3 rounded-lg shadow-lg flex items-center space-x-3 border border-outline-variant">
+<span class="w-3 h-3 bg-primary rounded-full"></span>
+<span class="text-sm font-bold">Premium Zone (Active)</span>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg shadow-lg flex items-center space-x-3 border border-outline-variant">
+<span class="w-3 h-3 bg-secondary rounded-full"></span>
+<span class="text-sm font-bold">Standard Zone (Active)</span>
+</div>
+</div>
+<div class="absolute bottom-6 right-6 flex flex-col space-y-2">
+<button class="p-3 bg-surface-container-lowest rounded-lg shadow-lg border border-outline-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="p-3 bg-surface-container-lowest rounded-lg shadow-lg border border-outline-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<button class="p-3 bg-surface-container-lowest rounded-lg shadow-lg border border-outline-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+</div>
+</div>
+<!-- Logistics Feed & Mini Config -->
+<div class="flex flex-col space-y-gutter">
+<div class="flex-1 bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/30 overflow-hidden flex flex-col">
+<h3 class="font-h4 text-h4 mb-6 flex items-center">
+<span class="material-symbols-outlined mr-2 text-primary">hub</span>
+                            Logistics Activity
+                        </h3>
+<div class="flex-1 overflow-y-auto space-y-6 pr-2">
+<div class="flex space-x-4">
+<div class="mt-1 w-2 h-2 bg-primary rounded-full ring-4 ring-primary-container/20 shrink-0"></div>
+<div>
+<p class="text-sm font-bold">Zone expansion complete</p>
+<p class="text-xs text-on-surface-variant mt-1">Gauteng North region now active with 4 new couriers assigned.</p>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant/60 mt-2 block">12 Minutes ago</span>
+</div>
+</div>
+<div class="flex space-x-4">
+<div class="mt-1 w-2 h-2 bg-secondary rounded-full shrink-0"></div>
+<div>
+<p class="text-sm font-bold">Efficiency Warning</p>
+<p class="text-xs text-on-surface-variant mt-1">Standard Zone B is experiencing 15% delay due to weather.</p>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant/60 mt-2 block">1 Hour ago</span>
+</div>
+</div>
+<div class="flex space-x-4">
+<div class="mt-1 w-2 h-2 bg-error rounded-full shrink-0"></div>
+<div>
+<p class="text-sm font-bold">System Override</p>
+<p class="text-xs text-on-surface-variant mt-1">Manual pricing adjustment applied to 'West Estate' zone.</p>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant/60 mt-2 block">3 Hours ago</span>
+</div>
+</div>
+<div class="flex space-x-4">
+<div class="mt-1 w-2 h-2 bg-primary-container rounded-full shrink-0"></div>
+<div>
+<p class="text-sm font-bold">Staff Reassigned</p>
+<p class="text-xs text-on-surface-variant mt-1">Driver Batista Cimons moved to 'Coastal Express' for shift cover.</p>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant/60 mt-2 block">Yesterday</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Delivery Zones Table -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 overflow-hidden">
+<div class="px-6 py-6 border-b border-outline-variant/30 flex justify-between items-center">
+<h3 class="font-h3 text-h3">Coverage Regions</h3>
+<div class="flex space-x-2">
+<button class="p-2 hover:bg-surface-variant/10 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined">filter_list</span></button>
+<button class="p-2 hover:bg-surface-variant/10 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined">more_vert</span></button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low text-label-caps text-on-surface-variant uppercase">
+<tr>
+<th class="px-6 py-4 font-bold">Zone Name</th>
+<th class="px-6 py-4 font-bold">Delivery Fee</th>
+<th class="px-6 py-4 font-bold">Est. Time</th>
+<th class="px-6 py-4 font-bold">Assigned Staff</th>
+<th class="px-6 py-4 font-bold">Status</th>
+<th class="px-6 py-4 font-bold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/30">
+<tr class="hover:bg-surface-variant/5 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary font-bold">ZN</div>
+<div>
+<p class="font-bold text-body-md">Gauteng North</p>
+<p class="text-xs text-on-surface-variant">Core Metro Region</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-medium text-primary">GHS 4.99</td>
+<td class="px-6 py-4 text-on-surface-variant">30-45 mins</td>
+<td class="px-6 py-4">
+<div class="flex -space-x-2 overflow-hidden">
+<div class="w-8 h-8 rounded-full border-2 border-white bg-primary text-[10px] text-white flex items-center justify-center font-bold">JD</div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-secondary text-[10px] text-white flex items-center justify-center font-bold">AK</div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-surface-container text-[10px] text-on-surface-variant flex items-center justify-center font-bold">+2</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase">Optimized</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">edit</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-variant/5 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-lg bg-secondary-container/20 flex items-center justify-center text-secondary font-bold">CE</div>
+<div>
+<p class="font-bold text-body-md">Coastal Express</p>
+<p class="text-xs text-on-surface-variant">Extended Reach</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-medium text-primary">GHS 12.50</td>
+<td class="px-6 py-4 text-on-surface-variant">60-90 mins</td>
+<td class="px-6 py-4">
+<div class="flex -space-x-2 overflow-hidden">
+<div class="w-8 h-8 rounded-full border-2 border-white bg-tertiary text-[10px] text-white flex items-center justify-center font-bold">ML</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-bold uppercase">Active</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">edit</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-variant/5 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant font-bold">WE</div>
+<div>
+<p class="font-bold text-body-md">West Estate</p>
+<p class="text-xs text-on-surface-variant">Residential Hub</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-medium text-primary">GHS 6.00</td>
+<td class="px-6 py-4 text-on-surface-variant">45-60 mins</td>
+<td class="px-6 py-4">
+<span class="text-xs italic text-on-surface-variant/60">Unassigned</span>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-surface-variant text-on-surface-variant rounded-full text-xs font-bold uppercase">Inactive</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">edit</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Configuration & Staff Panels -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-gutter pb-stack-lg">
+<!-- Pricing & Schedule Settings -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/30 space-y-8">
+<div>
+<h3 class="font-h4 text-h4 flex items-center mb-6">
+<span class="material-symbols-outlined mr-2 text-primary">payments</span>
+                            Global Pricing Logic
+                        </h3>
+<div class="grid grid-cols-2 gap-4">
+<label class="relative flex flex-col p-4 border-2 border-primary rounded-xl cursor-pointer bg-primary/5">
+<input checked="" class="absolute top-4 right-4 text-primary focus:ring-primary h-4 w-4" name="pricing" type="radio"/>
+<span class="font-bold text-on-surface">Flat Rate</span>
+<span class="text-xs text-on-surface-variant mt-1">Simple fee per delivery zone regardless of weight.</span>
+</label>
+<label class="relative flex flex-col p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:bg-surface-variant/5">
+<input class="absolute top-4 right-4 text-primary focus:ring-primary h-4 w-4" name="pricing" type="radio"/>
+<span class="font-bold text-on-surface">Distance-Based</span>
+<span class="text-xs text-on-surface-variant mt-1">Dynamic pricing calculated per KM from facility.</span>
+</label>
+</div>
+</div>
+<div>
+<h3 class="font-h4 text-h4 flex items-center mb-6">
+<span class="material-symbols-outlined mr-2 text-primary">calendar_today</span>
+                            Operating Schedule
+                        </h3>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg">
+<div>
+<p class="font-bold">Standard Operating Hours</p>
+<p class="text-xs text-on-surface-variant">Mon - Sat, 08:00 - 20:00</p>
+</div>
+<button class="text-primary text-sm font-bold underline">Modify</button>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg">
+<div>
+<p class="font-bold">Same-Day Delivery Cutoff</p>
+<p class="text-xs text-on-surface-variant">Last order accepted at 14:00 daily</p>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-6 bg-primary rounded-full relative">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Staff Assignment Panel -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/30">
+<h3 class="font-h4 text-h4 flex items-center mb-6">
+<span class="material-symbols-outlined mr-2 text-primary">badge</span>
+                        Staff Resource Allocation
+                    </h3>
+<div class="space-y-6">
+<div class="flex items-center p-4 border border-outline-variant/30 rounded-xl hover:border-primary/50 transition-colors">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary font-bold overflow-hidden">
+<img data-alt="Professional headshot of a logistics specialist with a friendly, competent expression, against a neutral office background. Soft corporate lighting enhances the trustworthy and efficient vibe of a premium farm-to-table delivery team member." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzOWwxMRk2NiA4YMqecAHj907--TPGE4fnZlnpOlD7H4txmRF39aQwTfzhGtWSH5TRliOpjqj-SDiLdKaBNAmXfbTJdKaGx4TcaOOQjpSGrs1JdwzwYiLTAB4XsHDcxPG5eqyTVvmSA8Ccjkn0Fi0NMrLY-mxBo_KFKr99mm7LaytDvaKUuUai3vBvhYvTowGGwrfMoSvTSphp_mfrU5fD3wHAuhO6OlubxDgnCHSfJz1Ps43SDBNA7pcas6Mt0zwiaxhyg_pUDXU"/>
+</div>
+<div class="ml-4 flex-1">
+<p class="font-bold">Kwame Mensah</p>
+<p class="text-xs text-on-surface-variant uppercase font-bold">Lead Dispatcher</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold text-primary">6 Active Deliveries</p>
+<button class="text-xs font-bold px-3 py-1 bg-surface-variant/20 rounded mt-1 hover:bg-primary hover:text-white transition-colors">Reassign</button>
+</div>
+</div>
+<div class="flex items-center p-4 border border-outline-variant/30 rounded-xl hover:border-primary/50 transition-colors">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-secondary font-bold overflow-hidden">
+<img data-alt="Close-up portrait of a diverse logistics manager wearing a professional headset and a slight smile, illuminated by cool morning window light in a clean, modern workspace. The style is professional and highly focused, emphasizing human reliability in a digital commerce environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG6xkHupiMVYw41J0-Qgs_aGGNzJ_Pc1HLJ0u0MSwp08xWq78ED4cd-Y81GFVGOCPnDKCR6T6kZJVYCMZReOnkDZz_Da6idT-cfk1k-6vus8eZL1DC9eap3vgZo7dJ3_1D5smaiPHZYo1UFvFRCUKjzOcYNnUNlODwDnk_ppwzztO8yRSsQHXnwEIFD4HEaunwcvuRzALuTkD-7VTmkNhsxBo3ykwKCuqEU9HXocZ5RzRyFDk8-dhRq28Vjknrkj5rodlBzMMbG_Q"/>
+</div>
+<div class="ml-4 flex-1">
+<p class="font-bold">Elena Rodriguez</p>
+<p class="text-xs text-on-surface-variant uppercase font-bold">Route Optimizer</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold text-secondary">Optimal Performance</p>
+<button class="text-xs font-bold px-3 py-1 bg-surface-variant/20 rounded mt-1 hover:bg-primary hover:text-white transition-colors">Reassign</button>
+</div>
+</div>
+<div class="flex items-center p-4 border border-outline-variant/30 rounded-xl hover:border-primary/50 transition-colors">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant/40">
+<span class="material-symbols-outlined">add</span>
+</div>
+<div class="ml-4 flex-1">
+<p class="font-bold text-on-surface-variant">Add Logistics Personnel</p>
+<p class="text-xs text-on-surface-variant">Onboard new drivers or dispatchers</p>
+</div>
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-bold text-sm">Add New</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB for Contextual Action -->
+<button class="fixed bottom-10 right-10 w-16 h-16 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform z-50">
+<span class="material-symbols-outlined text-3xl">map</span>
+</button>
+<script id="ek-toggle-init">
+(() => {
+  const openDrawer = (root) => {
+    root.classList.remove('hidden');
+    const panel = root.querySelector('[data-ek-drawer-panel]');
+    if (panel) requestAnimationFrame(() => panel.classList.remove('translate-x-full'));
+  };
+  const closeDrawer = (root) => {
+    const panel = root.querySelector('[data-ek-drawer-panel]');
+    if (panel) panel.classList.add('translate-x-full');
+    window.setTimeout(() => root.classList.add('hidden'), 220);
+  };
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-ek-toggle]');
+    if (!btn) return;
+    const id = btn.getAttribute('data-ek-toggle');
+    const root = document.getElementById(id);
+    if (!root) return;
+
+    const isDrawer = root.hasAttribute('data-ek-drawer');
+    if (!isDrawer) {
+      root.classList.toggle('hidden');
+      return;
+    }
+
+    const isOpen = !root.classList.contains('hidden');
+    if (isOpen) closeDrawer(root);
+    else openDrawer(root);
+  });
+})();
+</script>
+</body></html>

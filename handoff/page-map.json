@@ -1,0 +1,395 @@
+{
+  "previewNote": "Serve the repo root with a static HTTP server (e.g. python -m http.server) so root-relative URLs like /Authentication_Pages/... resolve. Folder E-Commerce_Shop_UI Pages uses encoded paths as /E-Commerce_Shop_UI%20Pages/... in links.",
+  "pages": [
+    {
+      "id": "marketing_home",
+      "flowSection": "01_public_website",
+      "displayName": "Home Page",
+      "sourcePath": "elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html",
+      "urlPath": "/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html",
+      "flatFile": "marketing__home_page.html"
+    },
+    {
+      "id": "marketing_about",
+      "flowSection": "01_public_website",
+      "displayName": "About Us",
+      "sourcePath": "elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html",
+      "urlPath": "/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html",
+      "flatFile": "marketing__about_us.html"
+    },
+    {
+      "id": "marketing_categories",
+      "flowSection": "01_public_website",
+      "displayName": "Products / Categories",
+      "sourcePath": "elikhope_farms_marketing_pages/elikhope_farms_shop_all_meat/code.html",
+      "urlPath": "/elikhope_farms_marketing_pages/elikhope_farms_shop_all_meat/code.html",
+      "flatFile": "marketing__shop_all_meat.html"
+    },
+    {
+      "id": "marketing_quality",
+      "flowSection": "01_public_website",
+      "displayName": "Quality Standards",
+      "sourcePath": "elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html",
+      "urlPath": "/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html",
+      "flatFile": "marketing__quality_standards.html"
+    },
+    {
+      "id": "marketing_gallery",
+      "flowSection": "01_public_website",
+      "displayName": "Gallery",
+      "sourcePath": "elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html",
+      "urlPath": "/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html",
+      "flatFile": "marketing__gallery.html"
+    },
+    {
+      "id": "marketing_blog",
+      "flowSection": "01_public_website",
+      "displayName": "Blog",
+      "sourcePath": "elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html",
+      "urlPath": "/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html",
+      "flatFile": "marketing__blog.html"
+    },
+    {
+      "id": "marketing_help",
+      "flowSection": "01_public_website",
+      "displayName": "FAQs / Help",
+      "sourcePath": "elikhope_farms_marketing_pages/elikhope_farms_help_center/code.html",
+      "urlPath": "/elikhope_farms_marketing_pages/elikhope_farms_help_center/code.html",
+      "flatFile": "marketing__help_center.html"
+    },
+    {
+      "id": "marketing_contact",
+      "flowSection": "01_public_website",
+      "displayName": "Contact Us",
+      "sourcePath": "elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html",
+      "urlPath": "/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html",
+      "flatFile": "marketing__contact.html"
+    },
+    {
+      "id": "auth_login",
+      "flowSection": "02_authentication",
+      "displayName": "Customer login",
+      "sourcePath": "Authentication_Pages/login_elikhope_farms/code.html",
+      "urlPath": "/Authentication_Pages/login_elikhope_farms/code.html",
+      "flatFile": "auth__login.html"
+    },
+    {
+      "id": "auth_register",
+      "flowSection": "02_authentication",
+      "displayName": "Create account",
+      "sourcePath": "Authentication_Pages/create_account_elikhope_farms/code.html",
+      "urlPath": "/Authentication_Pages/create_account_elikhope_farms/code.html",
+      "flatFile": "auth__create_account.html"
+    },
+    {
+      "id": "auth_forgot",
+      "flowSection": "02_authentication",
+      "displayName": "Forgot password",
+      "sourcePath": "Authentication_Pages/forgot_password_elikhope_farms/code.html",
+      "urlPath": "/Authentication_Pages/forgot_password_elikhope_farms/code.html",
+      "flatFile": "auth__forgot_password.html"
+    },
+    {
+      "id": "auth_otp",
+      "flowSection": "02_authentication",
+      "displayName": "Email verification (OTP)",
+      "sourcePath": "Authentication_Pages/email_verification_elikhope_farms/code.html",
+      "urlPath": "/Authentication_Pages/email_verification_elikhope_farms/code.html",
+      "flatFile": "auth__email_verification.html"
+    },
+    {
+      "id": "auth_verified",
+      "flowSection": "02_authentication",
+      "displayName": "Email verification success",
+      "sourcePath": "Authentication_Pages/success_elikhope_farms/code.html",
+      "urlPath": "/Authentication_Pages/success_elikhope_farms/code.html",
+      "flatFile": "auth__verification_success.html"
+    },
+    {
+      "id": "auth_admin_login",
+      "flowSection": "02_authentication",
+      "displayName": "Admin login",
+      "sourcePath": "Authentication_Pages/admin_login_elikhope_farms/code.html",
+      "urlPath": "/Authentication_Pages/admin_login_elikhope_farms/code.html",
+      "flatFile": "auth__admin_login.html",
+      "notes": "Staff entry; links to admin dashboard."
+    },
+    {
+      "id": "shop_home",
+      "flowSection": "03_ecommerce",
+      "displayName": "Shop homepage (browse)",
+      "sourcePath": "E-Commerce_Shop_UI Pages/elikhope_farms_browse_products/code.html",
+      "urlPath": "/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html",
+      "flatFile": "shop__browse_products.html",
+      "notes": "Canonical shop landing for prototype."
+    },
+    {
+      "id": "shop_plp",
+      "flowSection": "03_ecommerce",
+      "displayName": "Product listing",
+      "sourcePath": "E-Commerce_Shop_UI Pages/elikhope_farms_browse_products/code.html",
+      "urlPath": "/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html",
+      "flatFile": "shop__product_listing.html",
+      "notes": "Same file as shop_home."
+    },
+    {
+      "id": "shop_search",
+      "flowSection": "03_ecommerce",
+      "displayName": "Search results",
+      "sourcePath": "E-Commerce_Shop_UI Pages/elikhope_farms_search_results/code.html",
+      "urlPath": "/E-Commerce_Shop_UI%20Pages/elikhope_farms_search_results/code.html",
+      "flatFile": "shop__search_results.html"
+    },
+    {
+      "id": "shop_pdp",
+      "flowSection": "03_ecommerce",
+      "displayName": "Product detail",
+      "sourcePath": "E-Commerce_Shop_UI Pages/elikhope_farms_product_detail/code.html",
+      "urlPath": "/E-Commerce_Shop_UI%20Pages/elikhope_farms_product_detail/code.html",
+      "flatFile": "shop__product_detail.html"
+    },
+    {
+      "id": "shop_cart",
+      "flowSection": "03_ecommerce",
+      "displayName": "Shopping cart",
+      "sourcePath": "E-Commerce_Shop_UI Pages/elikhope_farms_shopping_cart/code.html",
+      "urlPath": "/E-Commerce_Shop_UI%20Pages/elikhope_farms_shopping_cart/code.html",
+      "flatFile": "shop__cart.html"
+    },
+    {
+      "id": "shop_checkout_delivery",
+      "flowSection": "03_ecommerce",
+      "displayName": "Checkout: delivery",
+      "sourcePath": "E-Commerce_Shop_UI Pages/checkout_delivery_information_elikhope_farms/code.html",
+      "urlPath": "/E-Commerce_Shop_UI%20Pages/checkout_delivery_information_elikhope_farms/code.html",
+      "flatFile": "shop__checkout_delivery.html"
+    },
+    {
+      "id": "shop_checkout_payment",
+      "flowSection": "03_ecommerce",
+      "displayName": "Checkout: payment",
+      "sourcePath": "E-Commerce_Shop_UI Pages/checkout_payment_elikhope_farms/code.html",
+      "urlPath": "/E-Commerce_Shop_UI%20Pages/checkout_payment_elikhope_farms/code.html",
+      "flatFile": "shop__checkout_payment.html"
+    },
+    {
+      "id": "shop_checkout_review",
+      "flowSection": "03_ecommerce",
+      "displayName": "Checkout: order review",
+      "sourcePath": "E-Commerce_Shop_UI Pages/checkout_order_review_elikhope_farms/code.html",
+      "urlPath": "/E-Commerce_Shop_UI%20Pages/checkout_order_review_elikhope_farms/code.html",
+      "flatFile": "shop__checkout_review.html"
+    },
+    {
+      "id": "shop_checkout_shell",
+      "flowSection": "03_ecommerce",
+      "displayName": "Checkout (combined stepper)",
+      "sourcePath": "E-Commerce_Shop_UI Pages/elikhope_farms_checkout/code.html",
+      "urlPath": "/E-Commerce_Shop_UI%20Pages/elikhope_farms_checkout/code.html",
+      "flatFile": "shop__checkout_combined.html",
+      "notes": "Optional combined checkout UI; flow uses separate step pages."
+    },
+    {
+      "id": "shop_order_success",
+      "flowSection": "03_ecommerce",
+      "displayName": "Order success",
+      "sourcePath": "E-Commerce_Shop_UI Pages/elikhope_farms_order_success/code.html",
+      "urlPath": "/E-Commerce_Shop_UI%20Pages/elikhope_farms_order_success/code.html",
+      "flatFile": "shop__order_success.html"
+    },
+    {
+      "id": "shop_track_guest",
+      "flowSection": "03_ecommerce",
+      "displayName": "Track delivery (guest / post-checkout)",
+      "sourcePath": "E-Commerce_Shop_UI Pages/elikhope_farms_track_order/code.html",
+      "urlPath": "/E-Commerce_Shop_UI%20Pages/elikhope_farms_track_order/code.html",
+      "flatFile": "shop__track_order_guest.html",
+      "notes": "Context: public/track from order confirmation; not logged-in dashboard."
+    },
+    {
+      "id": "cust_overview",
+      "flowSection": "04_customer_dashboard",
+      "displayName": "Dashboard overview",
+      "sourcePath": "Customer_Dashboard_Pages/dashboard_overview_elikhope_farms/code.html",
+      "urlPath": "/Customer_Dashboard_Pages/dashboard_overview_elikhope_farms/code.html",
+      "flatFile": "customer__dashboard_overview.html"
+    },
+    {
+      "id": "cust_orders",
+      "flowSection": "04_customer_dashboard",
+      "displayName": "My orders",
+      "sourcePath": "Customer_Dashboard_Pages/my_orders_elikhope_farms/code.html",
+      "urlPath": "/Customer_Dashboard_Pages/my_orders_elikhope_farms/code.html",
+      "flatFile": "customer__my_orders.html"
+    },
+    {
+      "id": "cust_track",
+      "flowSection": "04_customer_dashboard",
+      "displayName": "Track delivery (logged-in)",
+      "sourcePath": "Customer_Dashboard_Pages/track_your_delivery_elikhope_farms/code.html",
+      "urlPath": "/Customer_Dashboard_Pages/track_your_delivery_elikhope_farms/code.html",
+      "flatFile": "customer__track_delivery_dashboard.html",
+      "notes": "Logged-in customer; distinct from shop_track_guest."
+    },
+    {
+      "id": "cust_wishlist",
+      "flowSection": "04_customer_dashboard",
+      "displayName": "Wishlist",
+      "sourcePath": "Customer_Dashboard_Pages/my_wishlist_elikhope_farms/code.html",
+      "urlPath": "/Customer_Dashboard_Pages/my_wishlist_elikhope_farms/code.html",
+      "flatFile": "customer__wishlist.html"
+    },
+    {
+      "id": "cust_addresses",
+      "flowSection": "04_customer_dashboard",
+      "displayName": "Manage addresses",
+      "sourcePath": "Customer_Dashboard_Pages/manage_addresses_elikhope_farms/code.html",
+      "urlPath": "/Customer_Dashboard_Pages/manage_addresses_elikhope_farms/code.html",
+      "flatFile": "customer__addresses.html"
+    },
+    {
+      "id": "cust_notifications",
+      "flowSection": "04_customer_dashboard",
+      "displayName": "Notifications",
+      "sourcePath": "Customer_Dashboard_Pages/notifications_elikhope_farms/code.html",
+      "urlPath": "/Customer_Dashboard_Pages/notifications_elikhope_farms/code.html",
+      "flatFile": "customer__notifications.html"
+    },
+    {
+      "id": "cust_recent",
+      "flowSection": "04_customer_dashboard",
+      "displayName": "Recent purchases",
+      "sourcePath": "Customer_Dashboard_Pages/recent_purchases_elikhope_farms/code.html",
+      "urlPath": "/Customer_Dashboard_Pages/recent_purchases_elikhope_farms/code.html",
+      "flatFile": "customer__recent_purchases.html"
+    },
+    {
+      "id": "cust_settings",
+      "flowSection": "04_customer_dashboard",
+      "displayName": "Account settings",
+      "sourcePath": "Customer_Dashboard_Pages/account_settings_elikhope_farms/code.html",
+      "urlPath": "/Customer_Dashboard_Pages/account_settings_elikhope_farms/code.html",
+      "flatFile": "customer__account_settings.html"
+    },
+    {
+      "id": "adm_overview",
+      "flowSection": "05_admin",
+      "displayName": "Admin dashboard overview",
+      "sourcePath": "Admin_Dashboard_Pages/admin_dashboard_overview_elikhope_farms/code.html",
+      "urlPath": "/Admin_Dashboard_Pages/admin_dashboard_overview_elikhope_farms/code.html",
+      "flatFile": "admin__overview.html"
+    },
+    {
+      "id": "adm_orders",
+      "flowSection": "05_admin",
+      "displayName": "Orders management",
+      "sourcePath": "Admin_Dashboard_Pages/orders_management_elikhope_farms_admin/code.html",
+      "urlPath": "/Admin_Dashboard_Pages/orders_management_elikhope_farms_admin/code.html",
+      "flatFile": "admin__orders.html"
+    },
+    {
+      "id": "adm_products",
+      "flowSection": "05_admin",
+      "displayName": "Product management",
+      "sourcePath": "Admin_Dashboard_Pages/product_management_elikhope_farms_admin/code.html",
+      "urlPath": "/Admin_Dashboard_Pages/product_management_elikhope_farms_admin/code.html",
+      "flatFile": "admin__products.html"
+    },
+    {
+      "id": "adm_inventory",
+      "flowSection": "05_admin",
+      "displayName": "Inventory management",
+      "sourcePath": "Admin_Dashboard_Pages/inventory_management_elikhope_farms_admin/code.html",
+      "urlPath": "/Admin_Dashboard_Pages/inventory_management_elikhope_farms_admin/code.html",
+      "flatFile": "admin__inventory.html"
+    },
+    {
+      "id": "adm_delivery",
+      "flowSection": "05_admin",
+      "displayName": "Delivery management",
+      "sourcePath": "Admin_Dashboard_Pages/delivery_management_elikhope_farms_admin/code.html",
+      "urlPath": "/Admin_Dashboard_Pages/delivery_management_elikhope_farms_admin/code.html",
+      "flatFile": "admin__delivery.html"
+    },
+    {
+      "id": "adm_customers",
+      "flowSection": "05_admin",
+      "displayName": "Customer management",
+      "sourcePath": "Admin_Dashboard_Pages/customer_management_elikhope_farms_admin/code.html",
+      "urlPath": "/Admin_Dashboard_Pages/customer_management_elikhope_farms_admin/code.html",
+      "flatFile": "admin__customers.html"
+    },
+    {
+      "id": "adm_promotions",
+      "flowSection": "05_admin",
+      "displayName": "Promotions & campaigns",
+      "sourcePath": "Admin_Dashboard_Pages/promotions_campaigns_elikhope_farms_admin/code.html",
+      "urlPath": "/Admin_Dashboard_Pages/promotions_campaigns_elikhope_farms_admin/code.html",
+      "flatFile": "admin__promotions.html"
+    },
+    {
+      "id": "adm_cms",
+      "flowSection": "05_admin",
+      "displayName": "Content management",
+      "sourcePath": "Admin_Dashboard_Pages/content_management_elikhope_farms_admin/code.html",
+      "urlPath": "/Admin_Dashboard_Pages/content_management_elikhope_farms_admin/code.html",
+      "flatFile": "admin__cms.html"
+    },
+    {
+      "id": "adm_hero",
+      "flowSection": "05_admin",
+      "displayName": "Homepage hero CMS",
+      "sourcePath": "Admin_Dashboard_Pages/homepage_hero_management_admin_cms/code.html",
+      "urlPath": "/Admin_Dashboard_Pages/homepage_hero_management_admin_cms/code.html",
+      "flatFile": "admin__homepage_hero.html"
+    },
+    {
+      "id": "adm_analytics",
+      "flowSection": "05_admin",
+      "displayName": "Analytics & reporting",
+      "sourcePath": "Admin_Dashboard_Pages/analytics_business_intelligence_elikhope_farms_admin/code.html",
+      "urlPath": "/Admin_Dashboard_Pages/analytics_business_intelligence_elikhope_farms_admin/code.html",
+      "flatFile": "admin__analytics.html"
+    },
+    {
+      "id": "adm_support",
+      "flowSection": "05_admin",
+      "displayName": "Customer support",
+      "sourcePath": "Admin_Dashboard_Pages/customer_support_elikhope_farms_admin/code.html",
+      "urlPath": "/Admin_Dashboard_Pages/customer_support_elikhope_farms_admin/code.html",
+      "flatFile": "admin__support.html"
+    },
+    {
+      "id": "adm_settings",
+      "flowSection": "05_admin",
+      "displayName": "Admin settings (shell)",
+      "sourcePath": "Admin_Dashboard_Pages/admin_settings_elikhope_farms_admin/code.html",
+      "urlPath": "/Admin_Dashboard_Pages/admin_settings_elikhope_farms_admin/code.html",
+      "flatFile": "admin__settings.html"
+    },
+    {
+      "id": "adm_payment_settings",
+      "flowSection": "05_admin",
+      "displayName": "Settings: payment",
+      "sourcePath": "Admin_Dashboard_Pages/payment_settings_elikhope_farms_admin/code.html",
+      "urlPath": "/Admin_Dashboard_Pages/payment_settings_elikhope_farms_admin/code.html",
+      "flatFile": "admin__settings_payment.html"
+    },
+    {
+      "id": "adm_delivery_zones",
+      "flowSection": "05_admin",
+      "displayName": "Settings: delivery zones",
+      "sourcePath": "Admin_Dashboard_Pages/delivery_zones_elikhope_farms_admin/code.html",
+      "urlPath": "/Admin_Dashboard_Pages/delivery_zones_elikhope_farms_admin/code.html",
+      "flatFile": "admin__settings_delivery_zones.html"
+    },
+    {
+      "id": "adm_staff",
+      "flowSection": "05_admin",
+      "displayName": "Settings: staff & permissions",
+      "sourcePath": "Admin_Dashboard_Pages/staff_permissions_elikhope_farms_admin/code.html",
+      "urlPath": "/Admin_Dashboard_Pages/staff_permissions_elikhope_farms_admin/code.html",
+      "flatFile": "admin__settings_staff.html"
+    }
+  ]
+}

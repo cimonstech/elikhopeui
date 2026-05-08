@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#062100",
+                    "surface-bright": "#fcf9f8",
+                    "surface": "#fcf9f8",
+                    "on-secondary-fixed-variant": "#21510d",
+                    "on-tertiary-container": "#a4e524",
+                    "on-secondary-container": "#3f702a",
+                    "secondary": "#396a25",
+                    "on-primary-container": "#8be77b",
+                    "surface-container-highest": "#e5e2e1",
+                    "primary-container": "#01690a",
+                    "on-surface-variant": "#404a3c",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#b5f739",
+                    "on-primary": "#ffffff",
+                    "primary": "#004e05",
+                    "surface-variant": "#e5e2e1",
+                    "on-error": "#ffffff",
+                    "tertiary": "#314900",
+                    "surface-tint": "#0b6e10",
+                    "surface-dim": "#dcd9d9",
+                    "secondary-fixed": "#b9f29c",
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-surface": "#1c1b1b",
+                    "inverse-surface": "#313030",
+                    "error": "#ba1a1a",
+                    "outline-variant": "#bfcab8",
+                    "secondary-fixed-dim": "#9ed583",
+                    "tertiary-fixed-dim": "#9ad912",
+                    "primary-fixed-dim": "#80db71",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#fcf9f8",
+                    "tertiary-container": "#436300",
+                    "surface-container-high": "#eae7e7",
+                    "secondary-container": "#b9f29c",
+                    "primary-fixed": "#9bf98b",
+                    "on-background": "#1c1b1b",
+                    "on-tertiary-fixed": "#131f00",
+                    "surface-container-low": "#f6f3f2",
+                    "outline": "#707a6a",
+                    "on-secondary": "#ffffff",
+                    "surface-container": "#f0eded",
+                    "on-primary-fixed": "#002201",
+                    "inverse-primary": "#80db71",
+                    "on-primary-fixed-variant": "#005306",
+                    "on-tertiary-fixed-variant": "#354e00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "12px",
+                    "margin-desktop": "48px",
+                    "container-max": "1280px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "stack-lg": "48px",
+                    "base": "8px",
+                    "stack-md": "24px"
+            },
+            "fontFamily": {
+                    "price-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"],
+                    "h3": ["Plus Jakarta Sans"],
+                    "body-sm": ["Inter"],
+                    "h2": ["Plus Jakarta Sans"],
+                    "h4": ["Plus Jakarta Sans"],
+                    "h1": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "label-caps": ["Inter"]
+            },
+            "fontSize": {
+                    "price-lg": ["28px", {"lineHeight": "1", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h2": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "h4": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fcf9f8;
+            color: #1c1b1b;
+        }
+    </style>
+<style id="elikhope-fonts">
+  body, button, input, textarea, select { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  .font-h1,.font-h2,.font-h3,.font-h4,.font-price-lg { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important; }
+  .font-body-sm,.font-body-md,.font-body-lg,.font-label-caps { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important; }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+</head>
+<body class="min-h-screen">
+<main class="flex min-h-screen w-full">
+<!-- Left Side: Branded Illustration & Benefits -->
+<section class="hidden lg:flex lg:w-1/2 relative bg-primary-container overflow-hidden p-margin-desktop flex-col justify-between">
+<!-- Decorative Background Element -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="A lush, expansive green pasture with a soft morning fog rolling over rolling hills. The scene is illuminated by golden sunrise light, casting long shadows across the grass. The overall atmosphere is serene, high-quality, and deeply rooted in nature, reflecting a premium farm-to-table brand identity with a clean and professional photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOU6eO6oLp7D1eBQoynFNVHpa7oobvXBGsIcayd1aS9jJtEfZhd3q2NHqkA6YHVJxgJ593d9c0fvtLa6nBLpm3XoaYfW8SzUt3i6XotWutu0ISaeQPKKJ1h0hLLhMSuHv9NOWo02x7nND0hwZoROeiT7OmV_cSPbKa3gC0KINT8CtqE3NqjN7e3VGR__axaeeuB9e88Rc0jBHkoMKIkZMaiDjSKWWQItX13VCnTOSllf3bBNmgHgIresVXTKh-NLBL-QgDj-v2fsw"/>
+</div>
+<div class="relative z-10">
+<h1 class="font-h1 text-h1 text-on-primary-container mb-stack-sm">EliKhope Farms</h1>
+<p class="font-body-lg text-body-lg text-on-primary-container opacity-90 max-w-md">
+                    Bringing the freshness of the field directly to your doorstep with uncompromising hygiene and traceability.
+                </p>
+</div>
+<!-- Benefit Bento Grid -->
+<div class="relative z-10 grid grid-cols-1 gap-gutter mb-stack-lg">
+<div class="bg-white/10 backdrop-blur-md rounded-xl p-stack-md border border-white/20">
+<div class="flex items-center gap-stack-sm mb-2">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+<h4 class="font-h4 text-h4 text-on-primary-container">Priority Delivery</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary-container opacity-80">Our members get first-access shipping slots and expedited cold-chain handling for maximum freshness.</p>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="bg-white/10 backdrop-blur-md rounded-xl p-stack-md border border-white/20">
+<span class="material-symbols-outlined text-on-primary-container mb-2" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<h4 class="font-h4 text-h4 text-on-primary-container">Order Tracking</h4>
+<p class="font-body-sm text-body-sm text-on-primary-container opacity-80">Real-time farm-to-door traceability.</p>
+</div>
+<div class="bg-white/10 backdrop-blur-md rounded-xl p-stack-md border border-white/20">
+<span class="material-symbols-outlined text-on-primary-container mb-2" style="font-variation-settings: 'FILL' 1;">loyalty</span>
+<h4 class="font-h4 text-h4 text-on-primary-container">Exclusive Offers</h4>
+<p class="font-body-sm text-body-sm text-on-primary-container opacity-80">Special cuts and seasonal member pricing.</p>
+</div>
+</div>
+</div>
+<div class="relative z-10">
+<p class="font-label-caps text-label-caps text-on-primary-container/60 uppercase tracking-widest">Premium Quality Since 1994</p>
+</div>
+</section>
+<!-- Right Side: Registration Form -->
+<section class="w-full lg:w-1/2 flex items-center justify-center p-margin-mobile md:p-margin-desktop bg-surface">
+<div class="w-full max-w-md">
+<div class="mb-stack-lg">
+<h2 class="font-h2 text-h2 text-primary mb-2">Create Account</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Join our community of artisanal meat enthusiasts.</p>
+</div>
+<!-- Registration Form Steps (Visualized as one for this UI) -->
+<form action="#" class="space-y-stack-md">
+<!-- Full Name -->
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-outline block" for="full_name">Full Name</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">person</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all font-body-md text-body-md" id="full_name" name="full_name" placeholder="Batista Cimons" type="text"/>
+</div>
+</div>
+<!-- Email Address -->
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-outline block" for="email">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">mail</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all font-body-md text-body-md" id="email" name="email" placeholder="batista@elikhopefarms.com" type="email"/>
+</div>
+</div>
+<!-- Phone Number -->
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-outline block" for="phone">Phone Number</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">call</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all font-body-md text-body-md" id="phone" name="phone" placeholder="+233 (0) 24 000 0000" type="tel"/>
+</div>
+</div>
+<!-- Password -->
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-outline block" for="password">Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">lock</span>
+<input class="w-full pl-10 pr-10 py-3 bg-surface-container-low border border-outline-variant rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all font-body-md text-body-md" id="password" name="password" placeholder="••••••••" type="password"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline cursor-pointer">visibility</span>
+</div>
+<!-- Password Strength Indicator -->
+<div class="pt-2 space-y-1">
+<div class="flex gap-1 h-1 w-full">
+<div class="h-full w-1/4 rounded-full bg-primary"></div>
+<div class="h-full w-1/4 rounded-full bg-primary"></div>
+<div class="h-full w-1/4 rounded-full bg-primary"></div>
+<div class="h-full w-1/4 rounded-full bg-surface-container-highest"></div>
+</div>
+<p class="font-body-sm text-[11px] text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Strong Password
+                            </p>
+</div>
+</div>
+<!-- Terms & Conditions -->
+<div class="flex items-start gap-3 pt-2">
+<div class="flex items-center h-5">
+<input class="w-4 h-4 text-primary border-outline-variant rounded focus:ring-primary bg-surface-container-low" id="terms" name="terms" type="checkbox"/>
+</div>
+<div class="text-sm">
+<label class="font-body-sm text-on-surface-variant leading-relaxed" for="terms">
+                                I agree to the <a class="text-primary font-semibold hover:underline" href="#">Terms of Service</a> and <a class="text-primary font-semibold hover:underline" href="#">Privacy Policy</a>.
+                            </label>
+</div>
+</div>
+<!-- Submit Button -->
+<a href="/Authentication_Pages/email_verification_elikhope_farms/code.html" class="w-full py-4 bg-primary text-white font-h4 text-h4 rounded-lg shadow-lg hover:bg-primary-container active:scale-[0.98] transition-all duration-200 mt-stack-md flex items-center justify-center gap-2">
+                        Create Account
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<!-- Login Link -->
+<p class="text-center font-body-md text-body-md text-on-surface-variant pt-stack-sm">
+                        Already have an account? 
+                        <a class="text-primary font-bold hover:underline" href="/Authentication_Pages/login_elikhope_farms/code.html">Log in here</a>
+</p>
+</form>
+<!-- Social Sign Up Divider -->
+<div class="relative my-stack-lg">
+<div class="absolute inset-0 flex items-center"><span class="w-full border-t border-outline-variant"></span></div>
+<div class="relative flex justify-center text-label-caps uppercase"><span class="bg-surface px-4 text-outline">Or register with</span></div>
+</div>
+<!-- Social Sign Up Buttons -->
+<div class="grid grid-cols-2 gap-gutter">
+<button class="flex items-center justify-center gap-2 py-3 border border-outline-variant rounded-lg hover:bg-surface-container-low transition-colors font-body-md">
+<i class="fa-brands fa-google text-[18px] text-on-surface"></i> Google
+                    </button>
+<button class="flex items-center justify-center gap-2 py-3 border border-outline-variant rounded-lg hover:bg-surface-container-low transition-colors font-body-md">
+<i class="fa-brands fa-apple text-[18px] text-on-surface"></i> Apple
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer-like indicator for transactional screen (minimal) -->
+<div class="fixed bottom-6 right-6 lg:right-margin-desktop z-50">
+<div class="bg-white shadow-xl border border-outline-variant px-stack-md py-stack-sm rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Secure 256-bit Encrypted Connection</span>
+</div>
+</div>
+<footer class="w-full py-8 px-margin-desktop border-t border-outline-variant bg-surface-container-low">
+<div class="max-w-container-max mx-auto flex flex-col sm:flex-row gap-4 justify-between items-center text-sm text-on-surface-variant">
+<a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-2 font-semibold text-primary"><img src="/assets/elikhope-logo.svg" alt="" class="h-8 w-8 rounded-lg" width="32" height="32"/>EliKhope Farms</a>
+<div class="flex gap-4 flex-wrap justify-center">
+<a href="/elikhope_farms_marketing_pages/elikhope_farms_help_center/code.html" class="hover:text-primary underline">Help</a>
+<a href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html" class="hover:text-primary underline">Contact</a>
+<a href="/Authentication_Pages/admin_login_elikhope_farms/code.html" class="hover:text-primary underline">Staff login</a>
+</div>
+</div>
+</footer>
+</body></html>

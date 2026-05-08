@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Support | EliKhope Farms Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#707a6a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#1c1b1b",
+                    "tertiary-container": "#436300",
+                    "on-tertiary-fixed-variant": "#354e00",
+                    "surface-tint": "#0b6e10",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#004e05",
+                    "tertiary": "#314900",
+                    "surface-container-low": "#f6f3f2",
+                    "on-background": "#1c1b1b",
+                    "secondary": "#396a25",
+                    "background": "#fcf9f8",
+                    "surface-bright": "#fcf9f8",
+                    "tertiary-fixed-dim": "#9ad912",
+                    "on-tertiary-container": "#a4e524",
+                    "surface-variant": "#e5e2e1",
+                    "on-secondary-fixed-variant": "#21510d",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#80db71",
+                    "secondary-fixed-dim": "#9ed583",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#b5f739",
+                    "inverse-surface": "#313030",
+                    "on-secondary-fixed": "#062100",
+                    "on-secondary-container": "#3f702a",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#eae7e7",
+                    "on-tertiary-fixed": "#131f00",
+                    "on-primary-fixed-variant": "#005306",
+                    "primary-fixed": "#9bf98b",
+                    "outline-variant": "#bfcab8",
+                    "on-surface-variant": "#404a3c",
+                    "surface-container": "#f0eded",
+                    "primary-fixed-dim": "#80db71",
+                    "primary-container": "#01690a",
+                    "surface": "#fcf9f8",
+                    "secondary-fixed": "#b9f29c",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#b9f29c",
+                    "on-primary-fixed": "#002201",
+                    "surface-dim": "#dcd9d9",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-primary-container": "#8be77b",
+                    "inverse-on-surface": "#f3f0ef",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "12px",
+                    "container-max": "1280px",
+                    "stack-lg": "48px",
+                    "margin-desktop": "48px",
+                    "gutter": "24px",
+                    "base": "8px",
+                    "stack-md": "24px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "body-sm": ["Inter"],
+                    "h1": ["Plus Jakarta Sans"],
+                    "label-caps": ["Inter"],
+                    "h3": ["Plus Jakarta Sans"],
+                    "h2": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "h4": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"],
+                    "price-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "h2": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h4": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "price-lg": ["28px", {"lineHeight": "1", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #fcf9f8; }
+        h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+<style id="elikhope-fonts">
+  body, button, input, textarea, select { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  .font-h1,.font-h2,.font-h3,.font-h4,.font-price-lg { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important; }
+  .font-body-sm,.font-body-md,.font-body-lg,.font-label-caps { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important; }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+</head>
+<body class="bg-background text-on-surface">
+<aside class="hidden md:flex flex-col h-screen fixed left-0 top-0 bg-inverse-surface dark:bg-surface-container-lowest shadow-md docked left-0 h-full w-64 z-50">
+<div class="p-6">
+<a href="/Admin_Dashboard_Pages/admin_dashboard_overview_elikhope_farms/code.html" class="flex items-center gap-3 group">
+<img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 shrink-0 rounded-lg" width="40" height="40"/>
+<div class="leading-tight">
+<h1 class="text-h4 font-h4 text-primary-fixed dark:text-primary tracking-tight">EliKhope Farms</h1>
+<p class="font-body-sm text-body-sm text-surface-variant dark:text-outline opacity-70">Admin terminal</p>
+</div>
+</a>
+</div>
+<nav class="flex-1 px-4 space-y-1 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/admin_dashboard_overview_elikhope_farms/code.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/orders_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-body-md text-body-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/product_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-body-md text-body-md">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/inventory_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">warehouse</span>
+<span class="font-body-md text-body-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/delivery_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-body-md text-body-md">Deliveries</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/customer_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-body-md text-body-md">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/promotions_campaigns_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-body-md text-body-md">Promotions</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/content_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">dvr</span>
+<span class="font-body-md text-body-md">CMS</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/homepage_hero_management_admin_cms/code.html">
+<span class="material-symbols-outlined">view_quilt</span>
+<span class="font-body-md text-body-md">Homepage hero</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/analytics_business_intelligence_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-md text-body-md">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary-fixed-dim font-bold border-l-4 border-primary-fixed-dim bg-on-surface-variant/10 transition-opacity" href="/Admin_Dashboard_Pages/customer_support_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+</nav>
+<div class="p-4 border-t border-on-surface-variant/10" data-ek-admin-footer="1">
+<a class="w-full bg-primary-container text-on-primary font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2" href="/Admin_Dashboard_Pages/customer_support_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">support_agent</span>
+Contact support
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors mt-3 block" href="/Admin_Dashboard_Pages/admin_settings_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined align-middle mr-2">settings</span>
+Settings
+</a>
+<a class="flex items-center gap-3 px-4 py-2 mt-1 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright" href="/Authentication_Pages/admin_login_elikhope_farms/code.html">
+<span class="material-symbols-outlined">logout</span>
+Log out
+</a>
+</div>
+</aside>
+<button class="md:hidden fixed top-4 left-4 z-[60] p-3 rounded-xl bg-surface shadow-md border border-outline-variant/40" type="button" aria-label="Open admin menu" data-ek-toggle="ek-admin-drawer">
+  <i class="fa-solid fa-bars text-on-surface-variant"></i>
+</button>
+<div id="ek-admin-drawer" class="md:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="left">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-admin-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute left-0 top-0 h-full w-80 max-w-[85vw] bg-inverse-surface dark:bg-surface-container-lowest shadow-xl border-r border-on-surface-variant/10 flex flex-col translate-x-full transition-transform duration-200 ease-out">
+    <div class="p-6 flex items-start justify-between gap-4">
+      <div class="flex-1">
+        <a href="/Admin_Dashboard_Pages/admin_dashboard_overview_elikhope_farms/code.html" class="flex items-center gap-3 group">
+<img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 shrink-0 rounded-lg" width="40" height="40"/>
+<div class="leading-tight">
+<h1 class="text-h4 font-h4 text-primary-fixed dark:text-primary tracking-tight">EliKhope Farms</h1>
+<p class="font-body-sm text-body-sm text-surface-variant dark:text-outline opacity-70">Admin terminal</p>
+</div>
+</a>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-on-surface-variant/10" type="button" aria-label="Close menu" data-ek-toggle="ek-admin-drawer">
+        <i class="fa-solid fa-xmark text-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 px-4 space-y-1 overflow-auto pb-4">
+      <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/admin_dashboard_overview_elikhope_farms/code.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/orders_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-body-md text-body-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/product_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-body-md text-body-md">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/inventory_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">warehouse</span>
+<span class="font-body-md text-body-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/delivery_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-body-md text-body-md">Deliveries</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/customer_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-body-md text-body-md">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/promotions_campaigns_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-body-md text-body-md">Promotions</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/content_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">dvr</span>
+<span class="font-body-md text-body-md">CMS</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/homepage_hero_management_admin_cms/code.html">
+<span class="material-symbols-outlined">view_quilt</span>
+<span class="font-body-md text-body-md">Homepage hero</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/analytics_business_intelligence_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-md text-body-md">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary-fixed-dim font-bold border-l-4 border-primary-fixed-dim bg-on-surface-variant/10 transition-opacity" href="/Admin_Dashboard_Pages/customer_support_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+    </nav>
+    <div class="p-4 border-t border-on-surface-variant/10" data-ek-admin-footer="1">
+      <a class="w-full bg-primary-container text-on-primary font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2" href="/Admin_Dashboard_Pages/customer_support_elikhope_farms_admin/code.html">
+        <span class="material-symbols-outlined">support_agent</span>
+        Contact support
+      </a>
+      <a class="flex items-center gap-3 px-4 py-2 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors mt-3 block" href="/Admin_Dashboard_Pages/admin_settings_elikhope_farms_admin/code.html">
+        <span class="material-symbols-outlined align-middle mr-2">settings</span>
+        Settings
+      </a>
+      <a class="flex items-center gap-3 px-4 py-2 mt-1 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright" href="/Authentication_Pages/admin_login_elikhope_farms/code.html">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        Log out
+      </a>
+    </div>
+  </aside>
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+<!-- TopNavBar Shell -->
+<header class="flex justify-between items-center px-gutter w-[calc(100%-16rem)] ml-64 bg-surface dark:bg-surface-dim border-b border-surface-variant h-16 fixed top-0 z-40">
+<div class="flex items-center flex-1 max-w-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-lg py-2 pl-10 pr-4 text-body-md focus:ring-2 focus:ring-primary" placeholder="Search tickets, orders, or customers..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-full p-2 transition-all relative">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+</button>
+<button class="hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-full p-2 transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">help_outline</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant mx-2"></div>
+<div class="flex items-center gap-3">
+<span class="text-body-sm font-semibold hidden lg:block">System Status: <span class="text-primary">Healthy</span></span>
+<img alt="Admin User Profile" class="w-8 h-8 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbmiI7u4luG0lsGRHVCaegWGpPjK739e9mRBUuHGH9E5oasQMGCvWZYBjJxyq0fEZmcPahJDb8GBSfqq3E_WfGFidlNQ31YQMETeLBdtrUwB24WwJYkHHlt_88-MQ_G4vtr4BSfUpUKOVwGrse-kTV92zClomf2UX4vVwkQHeOYRlNYToUQQRge2AxFw1J-VHSTu6tUHOtH1aYE65XQ-80dvuo0kER5-j9UWL_WITuPf_y8DLOiWE-nMIQmp9Gt5TRI6gF5W7G7mQ"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 min-h-screen">
+<div class="max-w-container-max mx-auto p-gutter">
+<!-- Statistics Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-stack-lg">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_4px_20px_rgba(1,105,10,0.04)] border border-outline-variant/20">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined p-2 bg-primary-container/10 text-primary rounded-lg">confirmation_number</span>
+<span class="text-label-caps text-on-surface-variant">Open Tickets</span>
+</div>
+<p class="text-h2 font-h2 text-on-surface">24</p>
+<p class="text-body-sm text-primary flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-[16px]">trending_down</span>
+                        12% from yesterday
+                    </p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_4px_20px_rgba(1,105,10,0.04)] border border-outline-variant/20">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined p-2 bg-secondary-container text-on-secondary-container rounded-lg">timer</span>
+<span class="text-label-caps text-on-surface-variant">Avg. Response</span>
+</div>
+<p class="text-h2 font-h2 text-on-surface">14m</p>
+<p class="text-body-sm text-secondary flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                        Within target (20m)
+                    </p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_4px_20px_rgba(1,105,10,0.04)] border border-outline-variant/20">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined p-2 bg-tertiary-container/10 text-tertiary rounded-lg">sentiment_very_satisfied</span>
+<span class="text-label-caps text-on-surface-variant">CSAT Score</span>
+</div>
+<p class="text-h2 font-h2 text-on-surface">4.9<span class="text-body-lg text-on-surface-variant">/5</span></p>
+<p class="text-body-sm text-tertiary flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-[16px]">star</span>
+                        Top performing week
+                    </p>
+</div>
+<div class="bg-primary p-6 rounded-xl shadow-[0px_4px_20px_rgba(1,105,10,0.1)] text-white">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined p-2 bg-white/20 text-white rounded-lg">speed</span>
+<span class="text-label-caps text-white/70">Efficiency</span>
+</div>
+<p class="text-h2 font-h2">98.2%</p>
+<div class="mt-4 w-full bg-white/20 h-2 rounded-full overflow-hidden">
+<div class="bg-secondary-fixed h-full" style="width: 98%"></div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Support Inbox Table -->
+<div class="col-span-12 lg:col-span-8 space-y-gutter">
+<div class="bg-white rounded-xl shadow-sm overflow-hidden border border-outline-variant/30">
+<div class="p-6 border-b border-outline-variant/20 flex items-center justify-between">
+<h3 class="text-h3 font-h3">Support Inbox</h3>
+<div class="flex gap-2">
+<button class="px-4 py-2 border border-outline-variant rounded-lg text-body-sm font-semibold hover:bg-surface-container-low transition-colors">Filters</button>
+<button class="px-4 py-2 bg-primary text-white rounded-lg text-body-sm font-semibold hover:shadow-lg transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                                    New Ticket
+                                </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low">
+<tr>
+<th class="px-6 py-4 text-label-caps text-on-surface-variant">ID</th>
+<th class="px-6 py-4 text-label-caps text-on-surface-variant">Customer</th>
+<th class="px-6 py-4 text-label-caps text-on-surface-variant">Priority</th>
+<th class="px-6 py-4 text-label-caps text-on-surface-variant">Status</th>
+<th class="px-6 py-4 text-label-caps text-on-surface-variant">Agent</th>
+<th class="px-6 py-4 text-label-caps text-on-surface-variant"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="hover:bg-primary-container/5 transition-colors cursor-pointer group">
+<td class="px-6 py-4 text-body-sm font-bold text-primary">#TK-8821</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="Customer Profile" class="w-8 h-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrpXLVgrKsIzWFqUyHa31Fx6nZI-4DJoF6_Zkgec_e2aCBhIX1JxbPetm3t93vuNv2lJHuz6PU9xRQYKfJDGMlKDm_xJb94FAu_CF39xjFuznYlF7l3mny_zKUkUMhYc1V33Cmc9dwS9wkhBXUcFm1IpMDMz30p-z0XgFBpiGNOztaz2zJm84xW3C9SKHVf59iX1HXMNUjrbgKnG4ljItPYCBKC3G9Gf_W_QCPPN14yuCImDgECA1WjAV5vH-YdmjUaDj4ga94c-Q"/>
+<div>
+<p class="text-body-sm font-semibold">Sarah Jenkins</p>
+<p class="text-[10px] text-on-surface-variant">Prime Member</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-error-container text-on-error-container text-[11px] font-bold rounded-full uppercase tracking-tighter">High</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-body-sm">Active</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex -space-x-2">
+<img alt="Agent Avatar" class="w-6 h-6 rounded-full border-2 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwtHsj0eaxg_GZ6H1jWEr16cHcrmJ0OUbpKJBPq_lNaar-T_Xr0vttUmBmrFWwYDGjjcWHGxpsTy-58KSABUCxMgJgvy9bN8d9ZjhhpoGRRiaF7e3ajmDlSdiEzVlNst2Eqx_busiIgUUKkCfz5-zXMDxuwmqsELMG5cu1VbAXXOvrPUtKvTZrjQpjs1bnavua5eX83lSTI-7WyHs_egUVHG-ADqd_9hfa_QNIT4pz0pDxSKf6WP_0JNioNt5hGgynPjrvkRMSQRI"/>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</td>
+</tr>
+<tr class="hover:bg-primary-container/5 transition-colors cursor-pointer group bg-surface-container-lowest">
+<td class="px-6 py-4 text-body-sm font-bold text-primary">#TK-8820</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="Customer Profile" class="w-8 h-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYhyO3lXj7ADsaP7DDG7Pt0vNQLCRpPh_HDdvIkpOOr8If-dCWLeQKdDErPCjIzDbNr24zT964pk3XEBZrCmW3aYOop6zcvX6skOCd387cNIE1kJX-Js0cRimnjQ-WLhpgnURUCHgIiM-yhIrHJXDJygdipsId7Li-UGQbcD1OmZAos_ZB-uvVEd75GL-7nZAIuFNNjEZvIGd4PGLcr0OUYYaLD5XGrn3QUoqRvwWU4VWi_V3eBA_x-vJgEmnxiEpZ4yM-ZEnVTg4"/>
+<div>
+<p class="text-body-sm font-semibold">Mark Thompson</p>
+<p class="text-[10px] text-on-surface-variant">Regular</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[11px] font-bold rounded-full uppercase tracking-tighter">Medium</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+<span class="text-body-sm">Pending</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex -space-x-2">
+<img alt="Agent Avatar" class="w-6 h-6 rounded-full border-2 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmhdsS5vaRZ-WIJ14Lv3X2Lq8XP-tDMuNLMRXr4t_-6YtBsmlAKa-UK2EesVEBm7_pDhCjoq_eoD5jYrS9ixvgvtHxqcc1iV13Zx5uhLFXkVSY6CmuIT389HBlU1PLdDJ6HRxds5haHeTiWmyX0pehbGtcA4yaSHQeXQJlu-MSmF4HZvaFVRArk40ODoWYmZTE7xHc0R-ESSQhpf6HUtIwn8tsn4_JZgk6Xltc3hg3Xae_Ku9BVCEiyvhIPvnIWhXMvhsPjWMt1eI"/>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</td>
+</tr>
+<tr class="hover:bg-primary-container/5 transition-colors cursor-pointer group">
+<td class="px-6 py-4 text-body-sm font-bold text-primary">#TK-8819</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="Customer Profile" class="w-8 h-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARSeZsVRbUJ2AaWWtBkMIWwjEyIpbPK1HMpQlHIscD1NeyNQLdhZ5oQp8empBS6n1kyzWA_W32BltVK0DimyyJYZOyQe5PcC3OuBXy2CWXm2vR3Hq0FNoBaiwe2AMIhS0sl3AMLYLVzWm1RmHJIjHkEW-P01zIIGTa7Vemb7_aEuk3w51lqUPz_qtndsockq-DNEqmgSL6lYX5z2clhJi1XhTzJHP4qOTpg5Dip2qL5PDVb-i5h9_qX9NF4_ye4ppck4MIpt5NvUA"/>
+<div>
+<p class="text-body-sm font-semibold">Elena Rossi</p>
+<p class="text-[10px] text-on-surface-variant">Wholesale</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-[11px] font-bold rounded-full uppercase tracking-tighter">Low</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-body-sm">Resolved</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex -space-x-2">
+<img alt="Agent Avatar" class="w-6 h-6 rounded-full border-2 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOIBgYjg-5Yv8ZGETw7zkFAEa-TbwVKaQghaEJaVIYpn8-kLdimdczQxhcpxXC8EA9_D7RNvW2mmd61iNTKpFn-_EHrGvnIU3kKrYBFSatYErZJu2HGmGdCtH64vNvRYXPnlKqz2bK0FdR7YbdujjSYBVw5VnZJkytCN6CkS_7KkhEiJB_SSEBb3X-Zbg8EPuSBnv2uXczSOi0qDyPCC1COCPV99nelftV5RCNci6TvTh3OcoCE952aSVaoQfW8ajCZ7nIH2NzmOA"/>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Split View: Active Conversation -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<!-- Chat Window -->
+<div class="bg-white rounded-xl shadow-sm border border-outline-variant/30 flex flex-col h-[500px]">
+<div class="p-4 border-b border-outline-variant/20 flex justify-between items-center bg-surface-container-lowest">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 bg-primary rounded-full"></div>
+<h4 class="font-bold text-body-md">Sarah Jenkins</h4>
+</div>
+<span class="text-label-caps text-on-surface-variant">Order #99212</span>
+</div>
+<div class="flex-1 p-4 space-y-4 overflow-y-auto">
+<div class="flex flex-col items-start max-w-[85%]">
+<div class="bg-surface-container-low p-3 rounded-2xl rounded-tl-none">
+<p class="text-body-sm">Hello, I received my Wagyu ribeye order today, but one of the vacuum seals appears to have failed during transit. Is it still safe to consume?</p>
+</div>
+<span class="text-[10px] mt-1 text-on-surface-variant px-2">10:24 AM</span>
+</div>
+<div class="flex flex-col items-end max-w-[85%] ml-auto">
+<div class="bg-primary text-white p-3 rounded-2xl rounded-tr-none">
+<p class="text-body-sm">Hi Sarah, I'm sorry to hear that. For your safety, we recommend not consuming meat from a compromised seal. Could you please send a photo of the package?</p>
+</div>
+<span class="text-[10px] mt-1 text-on-surface-variant px-2">10:28 AM</span>
+</div>
+<div class="flex flex-col items-start max-w-[85%]">
+<div class="bg-surface-container-low p-3 rounded-2xl rounded-tl-none">
+<img alt="Customer uploaded image" class="rounded-lg mb-2" data-alt="A detailed, macro close-up shot of a vacuum-sealed raw Wagyu ribeye steak on a natural wooden butcher block. The plastic seal is noticeably loose and wrinkled, showing signs of air leakage. The meat itself has beautiful, rich marbling of fat throughout the deep red muscle. The lighting is bright and clean, emphasizing a professional, artisanal kitchen environment with high-end culinary appeal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlfRVgcTZx0ezW3UYo66No0HR5zusn5n3q9XRh2ULEPhde_mToaWMIS69N8V6lmPIo_-7DqW-lqO4mFJB0S0Tz6Q_40jnRDdQLlGsymHtj7RLOSL6hrrDQacq_crl8dxkIlcsaySWCZ0VXdCXyYTbESfdUb70lmfDldGJ8bVk3FCnoZogAfgBhCxMrDUQWckhWY1g-D6rvifFGmU4crFfrrHI-CdlwZI282myWPcBKOYhTxl9ig3OuyaUatZn8d2FeayRckfCqeIs"/>
+<p class="text-body-sm">Here is the photo. The seal is definitely loose compared to the others.</p>
+</div>
+<span class="text-[10px] mt-1 text-on-surface-variant px-2">10:32 AM</span>
+</div>
+</div>
+<div class="p-4 border-t border-outline-variant/20">
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-full py-3 pl-4 pr-12 text-body-sm focus:ring-2 focus:ring-primary" placeholder="Type your reply..." type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Internal Notes -->
+<div class="bg-surface-container-high rounded-xl border border-outline-variant/30 flex flex-col h-[500px]">
+<div class="p-4 border-b border-outline-variant/20 flex justify-between items-center">
+<h4 class="font-bold text-body-md text-on-surface">Internal Team Notes</h4>
+<span class="material-symbols-outlined text-on-surface-variant">lock</span>
+</div>
+<div class="flex-1 p-4 space-y-4 overflow-y-auto">
+<div class="bg-white/60 p-4 rounded-lg border border-outline-variant/10">
+<div class="flex justify-between items-center mb-2">
+<span class="text-body-sm font-bold">System Log</span>
+<span class="text-[10px] text-on-surface-variant">10:24 AM</span>
+</div>
+<p class="text-body-sm italic text-on-surface-variant">Ticket created via Web Portal. Assigned to Priority Queue: Freshness/Quality.</p>
+</div>
+<div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+<div class="flex justify-between items-center mb-2">
+<span class="text-body-sm font-bold text-yellow-800">Agent: Marcus</span>
+<span class="text-[10px] text-yellow-600">10:30 AM</span>
+</div>
+<p class="text-body-sm text-yellow-800 font-medium">Checking inventory for immediate replacement. Shipping hub confirms they had a vacuum sealer calibration issue this morning.</p>
+</div>
+<div class="bg-white/60 p-4 rounded-lg border border-outline-variant/10">
+<div class="flex justify-between items-center mb-2">
+<span class="text-body-sm font-bold">Manager: Sofia</span>
+<span class="text-[10px] text-on-surface-variant">10:45 AM</span>
+</div>
+<p class="text-body-sm text-on-surface-variant">Approved for full replacement + 10% credit for the inconvenience. Let's make sure it's shipped with priority overnight.</p>
+</div>
+</div>
+<div class="p-4 bg-white/40 border-t border-outline-variant/20">
+<textarea class="w-full bg-white border-outline-variant/30 rounded-lg p-3 text-body-sm focus:ring-1 focus:ring-primary resize-none h-20" placeholder="Add private note for team..."></textarea>
+<button class="mt-2 w-full py-2 bg-on-surface text-white rounded-lg text-body-sm font-bold hover:bg-on-surface-variant transition-colors">Post Internal Note</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar: FAQ & Agent Stats -->
+<aside class="col-span-12 lg:col-span-4 space-y-gutter">
+<!-- Quick Reply FAQ Panel -->
+<div class="bg-white rounded-xl shadow-sm border border-outline-variant/30 overflow-hidden">
+<div class="p-4 bg-primary text-white flex justify-between items-center">
+<h4 class="font-bold text-body-md">Quick-Reply Library</h4>
+<span class="material-symbols-outlined text-[20px]">auto_fix</span>
+</div>
+<div class="p-2 space-y-1">
+<button class="w-full text-left p-3 hover:bg-primary-container/10 rounded-lg group transition-all">
+<p class="text-body-sm font-semibold group-hover:text-primary">Seal Compromise Policy</p>
+<p class="text-[12px] text-on-surface-variant line-clamp-1">Safety first: do not consume. Replace immediately...</p>
+</button>
+<button class="w-full text-left p-3 hover:bg-primary-container/10 rounded-lg group transition-all">
+<p class="text-body-sm font-semibold group-hover:text-primary">Dry-Aging Explained</p>
+<p class="text-[12px] text-on-surface-variant line-clamp-1">Our beef is dry-aged for 28 days for optimal flavor...</p>
+</button>
+<button class="w-full text-left p-3 hover:bg-primary-container/10 rounded-lg group transition-all">
+<p class="text-body-sm font-semibold group-hover:text-primary">Shipping Delay Refund</p>
+<p class="text-[12px] text-on-surface-variant line-clamp-1">We apologize for the logistics delay. We are issuing...</p>
+</button>
+<button class="w-full text-left p-3 hover:bg-primary-container/10 rounded-lg group transition-all">
+<p class="text-body-sm font-semibold group-hover:text-primary">Cold Chain Verification</p>
+<p class="text-[12px] text-on-surface-variant line-clamp-1">Our packages use eco-friendly insulation and dry ice...</p>
+</button>
+</div>
+<div class="p-4 border-t border-outline-variant/10">
+<button class="w-full py-2 border border-primary text-primary rounded-lg text-body-sm font-bold hover:bg-primary hover:text-white transition-all">Manage Snippets</button>
+</div>
+</div>
+<!-- Workflow Actions -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-6">
+<h4 class="font-bold text-body-md mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+                            Workflow UI
+                        </h4>
+<div class="space-y-3">
+<div class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-low border border-outline-variant/20">
+<span class="material-symbols-outlined text-on-surface-variant">assignment_return</span>
+<div class="flex-1">
+<p class="text-body-sm font-bold">Escalate to Quality Control</p>
+<p class="text-[10px] text-on-surface-variant">Notify operations manager</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">chevron_right</span>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-low border border-outline-variant/20">
+<span class="material-symbols-outlined text-on-surface-variant">payments</span>
+<div class="flex-1">
+<p class="text-body-sm font-bold">Issue Partial Refund</p>
+<p class="text-[10px] text-on-surface-variant">Pre-approved up to GHS 50</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">chevron_right</span>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-low border border-outline-variant/20">
+<span class="material-symbols-outlined text-on-surface-variant">sync_problem</span>
+<div class="flex-1">
+<p class="text-body-sm font-bold">Transfer Ticket</p>
+<p class="text-[10px] text-on-surface-variant">Send to Logistics Dept</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Agent Leaderboard -->
+<div class="bg-white rounded-xl shadow-sm border border-outline-variant/30 p-6">
+<h4 class="font-bold text-body-md mb-4">Agent Performance</h4>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img alt="Agent" class="w-8 h-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMTqzXpao-AflMo_IrgRVrWIG3qXkCx3IUJTp8-CnTLNlgqwQOWfL_q_E3IH3e4StqzB2MStjzFLGn6S6n1z08VXbOGu8KUUHESvDB9tiFJxkEOUlcFucNEHgOsB-2OCXQcyCmjw9SL9pcsTPUwPZqWQ9mDjDmy-O3epA7Rog2gh0xdDVdID134hlsqtiojOVwfYLHQ2Jdryc5lQ3tqoFdNPzSpxMbPFMmxpaeIDjzUypk6ZWmX85IUFxsOjB8GFICcUxQMbPiWvI"/>
+<span class="text-body-sm font-semibold">Marcus L.</span>
+</div>
+<div class="text-right">
+<p class="text-body-sm font-bold">98%</p>
+<p class="text-[10px] text-primary">12 Resolved</p>
+</div>
+</div>
+<div class="flex items-center justify-between opacity-70">
+<div class="flex items-center gap-3">
+<img alt="Agent" class="w-8 h-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAid-IfFzR2brUYcmk2XVnettGe5i5Bt17ynWIJv5uaCRaGXuXXcq_8cHLDXtlePUSmAWg_GqKPSWnqzgF5QeN3dX4Oaw6eKy-MLvYpX_Aue_rxkRNup5PzVPT0KimD73uZgfGp5dyaQ3MhFEm19yHFyc-86aaUhjc8Or2o8JApk-fb6io0RfvfLi7WDXrf4-WgnLqwYfwxISkBL__oF8K-XHYiQxpp9gI0hiSPsS4Nvgzj6Aj9j_mzcPQ8jnNtN0KONuXDwoE8KLE"/>
+<span class="text-body-sm font-semibold">Elena S.</span>
+</div>
+<div class="text-right">
+<p class="text-body-sm font-bold">94%</p>
+<p class="text-[10px] text-primary">10 Resolved</p>
+</div>
+</div>
+<div class="flex items-center justify-between opacity-70">
+<div class="flex items-center gap-3">
+<img alt="Agent" class="w-8 h-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAML-VIVRJL3TQ8M3uUof2rplZfYmkFUyZWYb5fuUmI4EwWl-zVwktDe5mjJbnAOW0CJKoYNf_yeFsxdNYSdFi9pR7UsG8GjpWvWlIuYgzX2lJDEe_cWBZLjb9jkKBH27Vy9T_AKQT9xvfV2UTl3mYCrryjQWNMiX3zzEIGRxtH0l5bmYobF1VHJD1kdG8SuMEGsq1HyrzG_zIGrUAs00VCG1Tu4oZULSSdNwWBgImwh93sM-FdZwQ3Q4KBai_j_WGJ3aCWO4I9nZg"/>
+<span class="text-body-sm font-semibold">David K.</span>
+</div>
+<div class="text-right">
+<p class="text-body-sm font-bold">91%</p>
+<p class="text-[10px] text-primary">8 Resolved</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<!-- Floating Action Button - Only on relevant screens -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined text-[28px]">chat_bubble</span>
+</button>
+<script id="ek-toggle-init">
+(() => {
+  const openDrawer = (root) => {
+    root.classList.remove('hidden');
+    const panel = root.querySelector('[data-ek-drawer-panel]');
+    if (panel) requestAnimationFrame(() => panel.classList.remove('translate-x-full'));
+  };
+  const closeDrawer = (root) => {
+    const panel = root.querySelector('[data-ek-drawer-panel]');
+    if (panel) panel.classList.add('translate-x-full');
+    window.setTimeout(() => root.classList.add('hidden'), 220);
+  };
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-ek-toggle]');
+    if (!btn) return;
+    const id = btn.getAttribute('data-ek-toggle');
+    const root = document.getElementById(id);
+    if (!root) return;
+
+    const isDrawer = root.hasAttribute('data-ek-drawer');
+    if (!isDrawer) {
+      root.classList.toggle('hidden');
+      return;
+    }
+
+    const isOpen = !root.classList.contains('hidden');
+    if (isOpen) closeDrawer(root);
+    else openDrawer(root);
+  });
+})();
+</script>
+</body></html>

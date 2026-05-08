@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcf9f8;
+        }
+        .premium-shadow {
+            box-shadow: 0 10px 30px -10px rgba(1, 105, 10, 0.04);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error": "#ba1a1a",
+                      "secondary-container": "#b9f29c",
+                      "on-primary": "#ffffff",
+                      "primary-container": "#01690a",
+                      "on-tertiary-fixed": "#131f00",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-surface": "#313030",
+                      "surface-dim": "#dcd9d9",
+                      "secondary-fixed": "#b9f29c",
+                      "tertiary-fixed-dim": "#9ad912",
+                      "on-background": "#1c1b1b",
+                      "surface-variant": "#e5e2e1",
+                      "secondary-fixed-dim": "#9ed583",
+                      "on-secondary-fixed": "#062100",
+                      "on-secondary-container": "#3f702a",
+                      "on-error-container": "#93000a",
+                      "primary-fixed": "#9bf98b",
+                      "on-tertiary-container": "#a4e524",
+                      "on-tertiary": "#ffffff",
+                      "tertiary": "#314900",
+                      "outline": "#707a6a",
+                      "on-surface": "#1c1b1b",
+                      "surface": "#fcf9f8",
+                      "surface-container": "#f0eded",
+                      "on-secondary-fixed-variant": "#21510d",
+                      "tertiary-container": "#436300",
+                      "on-tertiary-fixed-variant": "#354e00",
+                      "on-primary-fixed": "#002201",
+                      "surface-container-high": "#eae7e7",
+                      "surface-bright": "#fcf9f8",
+                      "secondary": "#396a25",
+                      "outline-variant": "#bfcab8",
+                      "background": "#fcf9f8",
+                      "on-primary-container": "#8be77b",
+                      "on-surface-variant": "#404a3c",
+                      "inverse-on-surface": "#f3f0ef",
+                      "tertiary-fixed": "#b5f739",
+                      "primary-fixed-dim": "#80db71",
+                      "surface-container-low": "#f6f3f2",
+                      "primary": "#004e05",
+                      "surface-container-highest": "#e5e2e1",
+                      "on-secondary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "surface-tint": "#0b6e10",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed-variant": "#005306",
+                      "inverse-primary": "#80db71"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "48px",
+                      "gutter": "24px",
+                      "container-max": "1280px",
+                      "stack-md": "24px",
+                      "margin-mobile": "16px",
+                      "stack-sm": "12px",
+                      "stack-lg": "48px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "label-caps": ["Inter"],
+                      "h4": ["Plus Jakarta Sans"],
+                      "body-sm": ["Inter"],
+                      "price-lg": ["Plus Jakarta Sans"],
+                      "h1": ["Plus Jakarta Sans"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "h3": ["Plus Jakarta Sans"],
+                      "h2": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "h4": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "price-lg": ["28px", {"lineHeight": "1", "fontWeight": "700"}],
+                      "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "h2": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style id="elikhope-fonts">
+  body, button, input, textarea, select { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  .font-h1,.font-h2,.font-h3,.font-h4,.font-price-lg { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important; }
+  .font-body-sm,.font-body-md,.font-body-lg,.font-label-caps { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important; }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- SideNavBar Shell -->
+<aside class="hidden md:flex h-screen w-64 fixed left-0 top-0 flex-col h-full border-r border-outline-variant dark:border-outline bg-surface dark:bg-surface-container-lowest shadow-sm z-50">
+<div class="p-6">
+<a href="/Customer_Dashboard_Pages/dashboard_overview_elikhope_farms/code.html" class="flex items-center gap-3 group">
+<img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 shrink-0 rounded-lg" width="40" height="40"/>
+<div class="leading-tight">
+<h1 class="font-h3 text-h3 font-bold text-primary dark:text-primary-fixed-dim">EliKhope Farms</h1>
+<p class="text-on-surface-variant font-body-sm">Your account</p>
+</div>
+</a>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-150" href="/Customer_Dashboard_Pages/dashboard_overview_elikhope_farms/code.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-150" href="/Customer_Dashboard_Pages/my_orders_elikhope_farms/code.html">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span>Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-150" href="/Customer_Dashboard_Pages/track_your_delivery_elikhope_farms/code.html">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span>Tracking</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary-container text-on-secondary-container dark:bg-primary-container dark:text-on-primary-container font-semibold transition-transform duration-150" href="/Customer_Dashboard_Pages/my_wishlist_elikhope_farms/code.html">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span>Wishlist</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-150" href="/Customer_Dashboard_Pages/manage_addresses_elikhope_farms/code.html">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<span>Addresses</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-150" href="/Customer_Dashboard_Pages/notifications_elikhope_farms/code.html">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span>Notifications</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-150" href="/Customer_Dashboard_Pages/recent_purchases_elikhope_farms/code.html">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span>Recent purchases</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-150" href="/Customer_Dashboard_Pages/account_settings_elikhope_farms/code.html">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="p-4 mt-auto border-t border-outline-variant/40">
+<a class="block text-center text-sm text-primary font-semibold hover:underline" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Continue shopping</a>
+<a class="block text-center text-xs text-on-surface-variant mt-2 hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Back to website</a>
+<a class="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-outline-variant/60 px-4 py-2 text-sm font-semibold text-on-surface-variant hover:bg-surface-container-high transition-colors" href="/Authentication_Pages/login_elikhope_farms/code.html">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+Log out
+</a>
+</div>
+</aside>
+<div id="ek-cust-drawer" class="md:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="left">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-cust-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute left-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-r border-outline-variant flex flex-col translate-x-full transition-transform duration-200 ease-out">
+    <div class="p-6 flex items-start justify-between gap-4">
+      <div class="flex-1">
+        <a href="/Customer_Dashboard_Pages/dashboard_overview_elikhope_farms/code.html" class="flex items-center gap-3 group">
+<img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 shrink-0 rounded-lg" width="40" height="40"/>
+<div class="leading-tight">
+<h1 class="font-h3 text-h3 font-bold text-primary dark:text-primary-fixed-dim">EliKhope Farms</h1>
+<p class="text-on-surface-variant font-body-sm">Your account</p>
+</div>
+</a>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-cust-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 px-4 space-y-2 overflow-auto pb-4">
+      <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-150" href="/Customer_Dashboard_Pages/dashboard_overview_elikhope_farms/code.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-150" href="/Customer_Dashboard_Pages/my_orders_elikhope_farms/code.html">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span>Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-150" href="/Customer_Dashboard_Pages/track_your_delivery_elikhope_farms/code.html">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span>Tracking</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary-container text-on-secondary-container dark:bg-primary-container dark:text-on-primary-container font-semibold transition-transform duration-150" href="/Customer_Dashboard_Pages/my_wishlist_elikhope_farms/code.html">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span>Wishlist</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-150" href="/Customer_Dashboard_Pages/manage_addresses_elikhope_farms/code.html">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<span>Addresses</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-150" href="/Customer_Dashboard_Pages/notifications_elikhope_farms/code.html">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span>Notifications</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-150" href="/Customer_Dashboard_Pages/recent_purchases_elikhope_farms/code.html">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span>Recent purchases</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-150" href="/Customer_Dashboard_Pages/account_settings_elikhope_farms/code.html">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+    </nav>
+    <div class="p-4 mt-auto border-t border-outline-variant/40">
+      <a class="block text-center text-sm text-primary font-semibold hover:underline" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Continue shopping</a>
+      <a class="block text-center text-xs text-on-surface-variant mt-2 hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Back to website</a>
+      <a class="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-outline-variant/60 px-4 py-2 text-sm font-semibold text-on-surface-variant hover:bg-surface-container-high transition-colors" href="/Authentication_Pages/login_elikhope_farms/code.html">
+        <i class="fa-solid fa-arrow-right-from-bracket text-[16px]"></i>
+        Log out
+      </a>
+    </div>
+  </aside>
+</div>
+
+  
+</div>
+
+  
+</div>
+
+  
+</div>
+
+  
+</div>
+
+  
+</div>
+
+  
+</div>
+
+  
+</div>
+
+  
+</div>
+
+  
+</div>
+
+  
+</div>
+
+  
+</div>
+
+  
+</div>
+
+  
+</div>
+
+  
+</div>
+
+  
+</div>
+
+  
+</div>
+
+  
+</div>
+
+  
+</div>
+
+  
+</div>
+
+  
+</div>
+
+
+  
+</div>
+
+
+  
+</div>
+
+
+  
+</div>
+
+
+  
+</div>
+<!-- Main Content Area -->
+<main class="md:md:md:md:md:md:md:md:md:md:md:md:md:md:md:md:md:md:md:md:md:md:md:ml-64 ml-0 ml-0 ml-0 ml-0 ml-0 ml-0 ml-0 ml-0 ml-0 ml-0 ml-0 ml-0 ml-0 ml-0 ml-0 ml-0 ml-0 ml-0 ml-0 ml-0 ml-0 ml-0 ml-0 pt-16 min-h-screen bg-surface min-w-0">
+<!-- Top Navigation Bar -->
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 right-0 md:w-[calc(100%-16rem)] w-full h-16 bg-surface/80 dark:bg-surface-container/80 backdrop-blur-md shadow-sm flex justify-between items-center px-margin-desktop z-40">
+<div class="flex items-center gap-3 flex-1 min-w-0">
+<button class="md:hidden inline-flex items-center justify-center p-2 rounded-lg hover:bg-surface-container transition-colors" type="button" aria-label="Open menu" data-ek-toggle="ek-cust-drawer">
+  <i class="fa-solid fa-bars text-on-surface-variant"></i>
+</button>
+<div class="relative max-w-md w-full group min-w-0">
+<a href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_search_results/code.html" class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant"><span class="material-symbols-outlined">search</span></a>
+<input class="w-full bg-surface-container-low border-none rounded-lg py-2 pl-10 pr-4 text-body-sm focus:ring-2 focus:ring-primary/20 focus:bg-surface transition-all" placeholder="Search products..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1 font-body-sm" href="/elikhope_farms_marketing_pages/elikhope_farms_help_center/code.html"><span class="material-symbols-outlined" data-icon="help">help</span>Support</a>
+<div class="flex items-center gap-4">
+<a class="relative inline-flex text-on-surface-variant hover:text-primary p-2" href="/Customer_Dashboard_Pages/notifications_elikhope_farms/code.html"><span class="material-symbols-outlined" data-icon="notifications">notifications</span><span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span></a>
+<a class="inline-flex p-2 text-on-surface-variant hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_shopping_cart/code.html"><span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span></a>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant"></div>
+<a href="/Customer_Dashboard_Pages/account_settings_elikhope_farms/code.html" class="flex items-center gap-3">
+<img alt="" class="w-8 h-8 rounded-full object-cover border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjNjqeidHh9QfPQmvz4Hz2qHZxzNsgstnVknWK4dixp5768ZYZ9YaJnj1N_hQPLAJtBR6VQcKBPcEhd0ozBYwugZATVCI0BglE22H0z3GK4dw1l8_-5gK5eVRcMPuMORgUhmYmVI2o_lboqGA70_WCVIkiZIw4V0IiN5npzwgYxKPyFbNsSSRZO1kiwXieeuaM31x1CfXyFzi46mzKbxFQiR6FxhbCHnUQsbA3Ft0Ux4wZNWn7Eo_vX86MAUffJ_T_Ya96rU3tWLs"/>
+</a>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="max-w-[1280px] mx-auto p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-desktop space-y-stack-lg">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-stack-lg">
+<div>
+<h2 class="font-h1 text-h1 text-primary">Your Wishlist</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Manage your premium cuts and artisanal selections.</p>
+</div>
+<div class="flex gap-3">
+<a class="flex items-center gap-2 px-6 py-3 bg-primary text-on-primary font-bold rounded-lg transition-transform active:scale-95" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_shopping_cart/code.html">
+<span class="material-symbols-outlined" data-icon="shopping_cart_checkout">shopping_cart_checkout</span>
+                        Add All to Cart
+                    </a>
+</div>
+</div>
+<!-- Wishlist Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter mb-32">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest rounded-[16px] overflow-hidden premium-shadow group border border-transparent hover:border-outline-variant transition-all">
+<div class="relative aspect-square overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A premium macro shot of a raw Wagyu ribeye steak with exquisite marbling, presented on a dark slate board. The lighting is dramatic yet clean, highlighting the fat distribution and fresh red color of the meat. Minimalist aesthetic with focus on the high-quality texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBitCx0GCuyTRm5XX8ZFi0yO7HaGz4B2M5VS1Ij46ntjt_5LjH_H_zf3o-bNwXuPagwC4ozzfrij8eZrifFGHMr5JzlqD8K2OQAe7iJD1aR8hBI8h2k3YkVMwt2vh0RIg3Y4YVIkpbG_ehUN703doHKZDu7ZC4Sde9y710oNqdSMiHCsmVWFEIQGVlOFsyB88efwB1NmmXMsVpR-bC1nh5p_cz4J5yTOo2f6j2od9wpS-ET2XhG-2Zjqtrpi8PQIojwkEarqXY6PM"/>
+<button class="absolute top-3 right-3 p-2 bg-surface/80 backdrop-blur-md rounded-full text-error hover:bg-error hover:text-on-error transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+<div class="absolute bottom-3 left-3">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container font-label-caps text-[10px] rounded-full uppercase">Grass-fed</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<h3 class="font-h4 text-h4 text-on-surface">Ribeye Roast Wagyu</h3>
+<div class="flex items-baseline gap-2">
+<span class="font-price-lg text-price-lg text-primary">GHS 124.00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant line-through opacity-50">GHS 150.00</span>
+</div>
+<div class="flex items-center gap-2 text-on-secondary-fixed-variant mb-2">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-caps text-label-caps uppercase">In Stock</span>
+</div>
+<button class="w-full py-3 border-[1.5px] border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container-lowest rounded-[16px] overflow-hidden premium-shadow group border border-transparent hover:border-outline-variant transition-all">
+<div class="relative aspect-square overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A thick-cut bone-in Tomahawk steak resting on a wooden butcher block. Sprigs of fresh rosemary and cloves of garlic are scattered around. The lighting is high-key and natural, creating a clean, professional, and hygienic market aesthetic. Premium organic meat photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGK2N0ZYCqo8sn3Rd2RCh8ZQeGbh18l2JQEDJWe-xkxEp26TIKXTlWTWS6EXwjuEFuNoECiLbetUqL2je4Bf3NGlm6vDit9dtfq1eebQjK6btpPgJMY2eE7cHYzcPpy8-7fO1a_E4ash9gvHU23OIlIy0sIi8jTEESe3oB7c2U4Y0YeR7wnTOkK_pGP0vFVQneTUuA-SwIfWJYVtjy7ylpog2rSIbwC9y06yc882qfi89GjkJfg7O5jZywEEjcvt2GOxV-N5W-Oyc"/>
+<button class="absolute top-3 right-3 p-2 bg-surface/80 backdrop-blur-md rounded-full text-error hover:bg-error hover:text-on-error transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+<div class="absolute bottom-3 left-3">
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-[10px] rounded-full uppercase">Chef's choice cut</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<h3 class="font-h4 text-h4 text-on-surface">Tomahawk Prime</h3>
+<div class="flex items-baseline gap-2">
+<span class="font-price-lg text-price-lg text-primary">GHS 89.50</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant mb-2">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+<span class="font-label-caps text-label-caps uppercase">Back in 2 days</span>
+</div>
+<button class="w-full py-3 bg-surface-variant text-on-surface-variant font-bold rounded-lg cursor-not-allowed opacity-60">
+                            Out of Stock
+                        </button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-container-lowest rounded-[16px] overflow-hidden premium-shadow group border border-transparent hover:border-outline-variant transition-all">
+<div class="relative aspect-square overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Glistening fresh lamb chops arranged neatly on a bed of herbs. The meat is bright pink and perfectly trimmed. The background is a clean, neutral ceramic surface, emphasizing hygiene and quality. Soft morning light creates a fresh, farmhouse-to-table atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiEbwwohbvk30Ywi9foXq7JtFo-nhoc0FotBNZPCQP1W_9okwlEK37YwaQQ4R_b_aATsjcShclCUGVCav1UAlAFuZfhbymWYsFkK77hNDXCZTVm1hwM4H1bl_9u_vFv5VaYtIohJFslICGAGXFs61IdqyN9JRL_WdKz91G6l_iwGQhz11d2eLoDKDZ6xW283BiSJejiGnpm_c5MRx4dpmWdo0AP_sXGnWKssd3r6loCsHFetIXG_5o1ujvwOdN4qU7AdoGhgnlWRE"/>
+<button class="absolute top-3 right-3 p-2 bg-surface/80 backdrop-blur-md rounded-full text-error hover:bg-error hover:text-on-error transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+<div class="absolute bottom-3 left-3">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container font-label-caps text-[10px] rounded-full uppercase">Farm-to-Table</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<h3 class="font-h4 text-h4 text-on-surface">Heritage Lamb Chops</h3>
+<div class="flex items-baseline gap-2">
+<span class="font-price-lg text-price-lg text-primary">GHS 42.00</span>
+</div>
+<div class="flex items-center gap-2 text-on-secondary-fixed-variant mb-2">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-caps text-label-caps uppercase">In Stock</span>
+</div>
+<button class="w-full py-3 border-[1.5px] border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface-container-lowest rounded-[16px] overflow-hidden premium-shadow group border border-transparent hover:border-outline-variant transition-all">
+<div class="relative aspect-square overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A collection of artisan sausages with natural casings, hung in a traditional smokehouse setting. The lighting is moody and warm, highlighting the handcrafted texture of the sausages. The image communicates tradition, aging processes, and expert butchery skills." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWWqtf4TUxYwzs4Tchh-mh5555NFrP_79g6Ji1RpKjMeqta-oIPEn6zv3JCkm56aBpeEeLxWjsLfkomBESvv2yrEjOzTfz5gGY7oRtCZ9jYyg-2b_C-nkiDTrCC8AcQho-AUkWDqwMCLlydSXss9VcLoHd5T1x6zYk1SkNh-mIJ32KaCNtcutLJBoIufelQYILntnHfY_jU7oMipCWiyI1RklZNLN5DsRTaC0SyhJXszrV7GvH79396_fd1wX7-FXGw40i7u6ASdw"/>
+<button class="absolute top-3 right-3 p-2 bg-surface/80 backdrop-blur-md rounded-full text-error hover:bg-error hover:text-on-error transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+<div class="absolute bottom-3 left-3">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container font-label-caps text-[10px] rounded-full uppercase">Smoked</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<h3 class="font-h4 text-h4 text-on-surface">Pork Artisan Sausages</h3>
+<div class="flex items-baseline gap-2">
+<span class="font-price-lg text-price-lg text-primary">GHS 18.00</span>
+</div>
+<div class="flex items-center gap-2 text-on-secondary-fixed-variant mb-2">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-caps text-label-caps uppercase">In Stock</span>
+</div>
+<button class="w-full py-3 border-[1.5px] border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+</div>
+<!-- Recommended Section (Bento Inspired) -->
+<section class="mb-stack-lg">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-h2 text-h2 text-primary">Recommended for You</h2>
+<a class="font-label-caps text-label-caps text-primary hover:underline flex items-center gap-1" href="#">
+                        View All Recommendations
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter h-auto md:h-[500px]">
+<!-- Large Featured Recommendation -->
+<div class="md:col-span-8 bg-surface-container-high rounded-[24px] overflow-hidden relative group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An editorial-style shot of a high-end Butcher's Board featuring various cuts of beef, marrow bones, and artisanal salts. The setting is a rustic yet clean workshop with natural wood textures and professional studio lighting. The composition is artistic and premium, showcasing the brand's diversity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKGHfZoBaYG03fQTxnvcIU1cluwMm9vBPNVDSbO0-yQV5HGSv856XHzhv1CxzNWQP7du-LRzs7d9LX3ZA4AQ8olJiLeQ1gzNayFObdjmUcNxZzMjvIoCkiWgycJckmVeDYSsRhGOdYSpMsiYGXNDREMlHeGJBinKG2HtqquvoBVMQGECGCiNIb9UPuukBFa2eSNvkQq7rsJwSTyur9wQuvMrwHDUItm7V-KI2FRwo2aOP5y4VCNMW48b1KigoIw1v2ZTzvMa0eR-w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-mobile md:p-margin-desktop">
+<span class="w-fit px-4 py-1 bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-xs rounded-full uppercase mb-4">Limited Edition</span>
+<h3 class="font-h1 text-h1 text-white mb-2">The Heritage Collection</h3>
+<p class="font-body-lg text-body-lg text-white/80 max-w-lg mb-6">A curated selection of our finest dry-aged cuts, aged for 45 days for maximum tenderness and flavor depth.</p>
+<button class="w-fit px-8 py-4 bg-white text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">
+                                Explore Collection
+                            </button>
+</div>
+</div>
+<!-- Small Secondary Recommendation -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<div class="flex-1 bg-surface-container-lowest rounded-[24px] p-6 flex flex-col justify-between border border-outline-variant premium-shadow">
+<div>
+<h4 class="font-h3 text-h3 text-primary">Dry-Aged T-Bone</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Perfectly marbled and aged for peak flavor profile.</p>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-price-lg text-price-lg text-on-surface">GHS 55.00</span>
+<button class="p-3 bg-secondary-container text-on-secondary-container rounded-full hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="flex-1 bg-primary text-on-primary rounded-[24px] p-8 flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-[48px] mb-4" data-icon="award_star" style="font-variation-settings: 'FILL' 1;">award_star</span>
+<h4 class="font-h4 text-h4 mb-2">Subscription Box</h4>
+<p class="font-body-sm text-body-sm mb-6 opacity-90">Save 15% monthly on your favorite artisanal meat cuts.</p>
+<button class="px-6 py-2 bg-on-primary text-primary font-bold rounded-full text-sm">
+                                Join Now
+                            </button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<footer class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-stack-md mt-stack-lg w-full bg-surface-container dark:bg-surface-container-high">
+<div class="mb-4 md:mb-0">
+<h4 class="font-h4 text-h4 text-primary font-bold">EliKhope Farms</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 EliKhope Farms. Farm-to-Table Excellence.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Traceability</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Shipping Info</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a>
+</div>
+</footer>
+</main>
+<!-- Mobile Bottom Navigation (Visible only on small screens) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface shadow-lg border-t border-outline-variant z-50 flex justify-around items-center h-16 px-4">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-label-caps">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="text-[10px] font-label-caps">Explore</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="ac_unit" style="font-variation-settings: 'FILL' 1;">ac_unit</span>
+<span class="text-[10px] font-label-caps">Wishlist</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="text-[10px] font-label-caps">Cart</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-label-caps">Profile</span>
+</a>
+</nav>
+<script id="ek-toggle-init">
+(() => {
+  const openDrawer = (root) => {
+    root.classList.remove('hidden');
+    const panel = root.querySelector('[data-ek-drawer-panel]');
+    if (panel) requestAnimationFrame(() => panel.classList.remove('translate-x-full'));
+  };
+  const closeDrawer = (root) => {
+    const panel = root.querySelector('[data-ek-drawer-panel]');
+    if (panel) panel.classList.add('translate-x-full');
+    window.setTimeout(() => root.classList.add('hidden'), 220);
+  };
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-ek-toggle]');
+    if (!btn) return;
+    const id = btn.getAttribute('data-ek-toggle');
+    const root = document.getElementById(id);
+    if (!root) return;
+
+    const isDrawer = root.hasAttribute('data-ek-drawer');
+    if (!isDrawer) {
+      root.classList.toggle('hidden');
+      return;
+    }
+
+    const isOpen = !root.classList.contains('hidden');
+    if (isOpen) closeDrawer(root);
+    else openDrawer(root);
+  });
+})();
+</script>
+</body></html>

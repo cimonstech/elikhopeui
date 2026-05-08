@@ -1,0 +1,660 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Promotions | EliKhope Farms Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-h1, .font-h2, .font-h3, .font-h4, .font-price-lg { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#707a6a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1c1b1b",
+                        "tertiary-container": "#436300",
+                        "on-tertiary-fixed-variant": "#354e00",
+                        "surface-tint": "#0b6e10",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#004e05",
+                        "tertiary": "#314900",
+                        "surface-container-low": "#f6f3f2",
+                        "on-background": "#1c1b1b",
+                        "secondary": "#396a25",
+                        "background": "#fcf9f8",
+                        "surface-bright": "#fcf9f8",
+                        "tertiary-fixed-dim": "#9ad912",
+                        "on-tertiary-container": "#a4e524",
+                        "surface-variant": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#21510d",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#80db71",
+                        "secondary-fixed-dim": "#9ed583",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#b5f739",
+                        "inverse-surface": "#313030",
+                        "on-secondary-fixed": "#062100",
+                        "on-secondary-container": "#3f702a",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#eae7e7",
+                        "on-tertiary-fixed": "#131f00",
+                        "on-primary-fixed-variant": "#005306",
+                        "primary-fixed": "#9bf98b",
+                        "outline-variant": "#bfcab8",
+                        "on-surface-variant": "#404a3c",
+                        "surface-container": "#f0eded",
+                        "primary-fixed-dim": "#80db71",
+                        "primary-container": "#01690a",
+                        "surface": "#fcf9f8",
+                        "secondary-fixed": "#b9f29c",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#b9f29c",
+                        "on-primary-fixed": "#002201",
+                        "surface-dim": "#dcd9d9",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-primary-container": "#8be77b",
+                        "inverse-on-surface": "#f3f0ef",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "12px",
+                        "container-max": "1280px",
+                        "stack-lg": "48px",
+                        "margin-desktop": "48px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "stack-md": "24px",
+                        "margin-mobile": "16px"
+                    }
+                }
+            }
+        }
+    </script>
+<style id="elikhope-fonts">
+  body, button, input, textarea, select { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  .font-h1,.font-h2,.font-h3,.font-h4,.font-price-lg { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important; }
+  .font-body-sm,.font-body-md,.font-body-lg,.font-label-caps { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important; }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<aside class="hidden md:flex flex-col h-screen fixed left-0 top-0 bg-inverse-surface dark:bg-surface-container-lowest shadow-md docked left-0 h-full w-64 z-50">
+<div class="p-6">
+<a href="/Admin_Dashboard_Pages/admin_dashboard_overview_elikhope_farms/code.html" class="flex items-center gap-3 group">
+<img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 shrink-0 rounded-lg" width="40" height="40"/>
+<div class="leading-tight">
+<h1 class="text-h4 font-h4 text-primary-fixed dark:text-primary tracking-tight">EliKhope Farms</h1>
+<p class="font-body-sm text-body-sm text-surface-variant dark:text-outline opacity-70">Admin terminal</p>
+</div>
+</a>
+</div>
+<nav class="flex-1 px-4 space-y-1 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/admin_dashboard_overview_elikhope_farms/code.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/orders_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-body-md text-body-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/product_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-body-md text-body-md">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/inventory_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">warehouse</span>
+<span class="font-body-md text-body-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/delivery_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-body-md text-body-md">Deliveries</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/customer_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-body-md text-body-md">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary-fixed-dim font-bold border-l-4 border-primary-fixed-dim bg-on-surface-variant/10 transition-opacity" href="/Admin_Dashboard_Pages/promotions_campaigns_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-body-md text-body-md">Promotions</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/content_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">dvr</span>
+<span class="font-body-md text-body-md">CMS</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/homepage_hero_management_admin_cms/code.html">
+<span class="material-symbols-outlined">view_quilt</span>
+<span class="font-body-md text-body-md">Homepage hero</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/analytics_business_intelligence_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-md text-body-md">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/customer_support_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+</nav>
+<div class="p-4 border-t border-on-surface-variant/10" data-ek-admin-footer="1">
+<a class="w-full bg-primary-container text-on-primary font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2" href="/Admin_Dashboard_Pages/customer_support_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">support_agent</span>
+Contact support
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors mt-3 block" href="/Admin_Dashboard_Pages/admin_settings_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined align-middle mr-2">settings</span>
+Settings
+</a>
+<a class="flex items-center gap-3 px-4 py-2 mt-1 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright" href="/Authentication_Pages/admin_login_elikhope_farms/code.html">
+<span class="material-symbols-outlined">logout</span>
+Log out
+</a>
+</div>
+</aside>
+<button class="md:hidden fixed top-4 left-4 z-[60] p-3 rounded-xl bg-surface shadow-md border border-outline-variant/40" type="button" aria-label="Open admin menu" data-ek-toggle="ek-admin-drawer">
+  <i class="fa-solid fa-bars text-on-surface-variant"></i>
+</button>
+<div id="ek-admin-drawer" class="md:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="left">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-admin-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute left-0 top-0 h-full w-80 max-w-[85vw] bg-inverse-surface dark:bg-surface-container-lowest shadow-xl border-r border-on-surface-variant/10 flex flex-col translate-x-full transition-transform duration-200 ease-out">
+    <div class="p-6 flex items-start justify-between gap-4">
+      <div class="flex-1">
+        <a href="/Admin_Dashboard_Pages/admin_dashboard_overview_elikhope_farms/code.html" class="flex items-center gap-3 group">
+<img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 shrink-0 rounded-lg" width="40" height="40"/>
+<div class="leading-tight">
+<h1 class="text-h4 font-h4 text-primary-fixed dark:text-primary tracking-tight">EliKhope Farms</h1>
+<p class="font-body-sm text-body-sm text-surface-variant dark:text-outline opacity-70">Admin terminal</p>
+</div>
+</a>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-on-surface-variant/10" type="button" aria-label="Close menu" data-ek-toggle="ek-admin-drawer">
+        <i class="fa-solid fa-xmark text-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 px-4 space-y-1 overflow-auto pb-4">
+      <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/admin_dashboard_overview_elikhope_farms/code.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/orders_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-body-md text-body-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/product_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-body-md text-body-md">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/inventory_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">warehouse</span>
+<span class="font-body-md text-body-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/delivery_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-body-md text-body-md">Deliveries</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/customer_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-body-md text-body-md">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary-fixed-dim font-bold border-l-4 border-primary-fixed-dim bg-on-surface-variant/10 transition-opacity" href="/Admin_Dashboard_Pages/promotions_campaigns_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-body-md text-body-md">Promotions</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/content_management_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">dvr</span>
+<span class="font-body-md text-body-md">CMS</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/homepage_hero_management_admin_cms/code.html">
+<span class="material-symbols-outlined">view_quilt</span>
+<span class="font-body-md text-body-md">Homepage hero</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/analytics_business_intelligence_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-md text-body-md">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors" href="/Admin_Dashboard_Pages/customer_support_elikhope_farms_admin/code.html">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+    </nav>
+    <div class="p-4 border-t border-on-surface-variant/10" data-ek-admin-footer="1">
+      <a class="w-full bg-primary-container text-on-primary font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2" href="/Admin_Dashboard_Pages/customer_support_elikhope_farms_admin/code.html">
+        <span class="material-symbols-outlined">support_agent</span>
+        Contact support
+      </a>
+      <a class="flex items-center gap-3 px-4 py-2 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright hover:bg-on-surface-variant/5 transition-colors mt-3 block" href="/Admin_Dashboard_Pages/admin_settings_elikhope_farms_admin/code.html">
+        <span class="material-symbols-outlined align-middle mr-2">settings</span>
+        Settings
+      </a>
+      <a class="flex items-center gap-3 px-4 py-2 mt-1 rounded-lg text-surface-variant dark:text-outline hover:text-surface-bright" href="/Authentication_Pages/admin_login_elikhope_farms/code.html">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        Log out
+      </a>
+    </div>
+  </aside>
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+<!-- TopNavBar Shell -->
+<header class="bg-surface border-b border-surface-variant docked fixed top-0 h-16 ml-64 flex justify-between items-center px-gutter w-[calc(100%-16rem)] z-40">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-2 text-body-sm focus:ring-2 focus:ring-primary transition-all" placeholder="Search promotions, codes, or campaigns..." type="text">
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:bg-surface-container-high rounded-full p-2 transition-all text-on-surface-variant">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="hover:bg-surface-container-high rounded-full p-2 transition-all text-on-surface-variant">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="h-8 w-px bg-surface-variant mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="font-label-caps text-label-caps text-on-surface font-bold">EliKhope Admin</p>
+<p class="text-[10px] text-on-surface-variant">Store Manager</p>
+</div>
+<img alt="Admin User Profile" class="w-10 h-10 rounded-full border border-primary-container/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkKriwhx3GyYS3BSC6Srvx1i41iPzPBzkLImfz1I8LWMVBMKyoEw6WQic_FA4XdubzxwW5gZLNhMHPm-QVSr7k2btA8HYUZZqbwhyqnA1SDXInqk472z66PbIil5W5lprqF7cBXtWFuX7tiEhSTI566s6OXwEm-wvW2WCgYoF_R-6FZj832pV9hkydBf281C8Je403I0htVSj7sIkcBRD5SPNHGBovYFAxt_HYBAFSzOn1hj0ILlQumEPweMqOoZUKTGUzidQW0GU">
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 min-h-screen">
+<div class="max-w-[1280px] mx-auto p-margin-desktop space-y-stack-lg">
+<!-- Page Header & Main Action -->
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-h2 text-h2 text-primary">Promotions Management</h2>
+<p class="text-body-md text-on-surface-variant mt-2">Design, monitor, and scale your artisanal meat marketing campaigns.</p>
+</div>
+<button class="bg-primary text-white px-6 py-3 rounded-lg font-bold flex items-center gap-2 shadow-md hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined">add_circle</span>
+                    Create New Promo
+                </button>
+</div>
+<!-- KPI Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="col-span-1 md:col-span-2 bg-white p-6 rounded-xl shadow-[0_4px_20px_rgba(1,105,10,0.04)] border border-surface-variant flex flex-col justify-between">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase tracking-widest">Total Savings to Customers</p>
+<h3 class="font-price-lg text-price-lg text-primary">GHS 42,850.24</h3>
+</div>
+<div class="mt-4 flex items-center gap-2 text-secondary font-bold">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span class="text-body-sm">+12.5% from last month</span>
+</div>
+</div>
+<div class="col-span-1 bg-white p-6 rounded-xl shadow-[0_4px_20px_rgba(1,105,10,0.04)] border border-surface-variant">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase tracking-widest">Conversion Rate</p>
+<h3 class="font-price-lg text-price-lg text-on-surface">18.4%</h3>
+<div class="w-full bg-surface-container-low h-2 rounded-full mt-6">
+<div class="bg-tertiary-fixed-dim h-full rounded-full w-[18.4%]"></div>
+</div>
+</div>
+<div class="col-span-1 bg-white p-6 rounded-xl shadow-[0_4px_20px_rgba(1,105,10,0.04)] border border-surface-variant">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase tracking-widest">Active Codes</p>
+<h3 class="font-price-lg text-price-lg text-on-surface">24</h3>
+<p class="text-body-sm text-on-surface-variant mt-2">Across 8 campaigns</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Active Campaigns Table Section -->
+<div class="lg:col-span-8 bg-white rounded-xl shadow-[0_4px_20px_rgba(1,105,10,0.04)] border border-surface-variant overflow-hidden">
+<div class="px-6 py-4 border-b border-surface-variant flex justify-between items-center bg-surface-container-lowest">
+<h4 class="font-h4 text-h4 text-on-surface">Active Campaigns</h4>
+<div class="flex gap-2">
+<button class="text-body-sm font-bold text-primary px-3 py-1 hover:bg-primary-container/10 rounded">View History</button>
+<button class="text-body-sm font-bold text-on-surface-variant px-3 py-1 hover:bg-surface-container-high rounded">Export</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low text-label-caps font-label-caps text-on-surface-variant">
+<tr>
+<th class="px-6 py-4">Promo Code</th>
+<th class="px-6 py-4">Type / Offer</th>
+<th class="px-6 py-4">Usage</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4 text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-6 py-4">
+<span class="font-mono bg-surface-container-high px-2 py-1 rounded text-body-sm font-bold text-primary">WAGYU20</span>
+</td>
+<td class="px-6 py-4">
+<p class="text-body-md font-bold">15% Off Prime Beef</p>
+<p class="text-[12px] text-on-surface-variant">Minimum order GHS 150</p>
+</td>
+<td class="px-6 py-4">
+<p class="text-body-md">842 / 1000</p>
+<div class="w-24 bg-surface-container-low h-1.5 rounded-full mt-1">
+<div class="bg-primary h-full rounded-full w-[84%]"></div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-12 h-6 bg-primary-container rounded-full relative cursor-pointer">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full shadow"></div>
+</div>
+<span class="text-[12px] font-bold text-primary">ACTIVE</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-6 py-4">
+<span class="font-mono bg-surface-container-high px-2 py-1 rounded text-body-sm font-bold text-primary">BUTCHER_BLOCK</span>
+</td>
+<td class="px-6 py-4">
+<p class="text-body-md font-bold">Free Cleaver Set</p>
+<p class="text-[12px] text-on-surface-variant">First 50 VIP Customers</p>
+</td>
+<td class="px-6 py-4">
+<p class="text-body-md">12 / 50</p>
+<div class="w-24 bg-surface-container-low h-1.5 rounded-full mt-1">
+<div class="bg-primary h-full rounded-full w-[24%]"></div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-12 h-6 bg-primary-container rounded-full relative cursor-pointer">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full shadow"></div>
+</div>
+<span class="text-[12px] font-bold text-primary">ACTIVE</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-6 py-4">
+<span class="font-mono bg-surface-container-high px-2 py-1 rounded text-body-sm font-bold text-primary">SUMMER_BBQ</span>
+</td>
+<td class="px-6 py-4">
+<p class="text-body-md font-bold">GHS 25 Off Bundles</p>
+<p class="text-[12px] text-on-surface-variant">Store-wide promotion</p>
+</td>
+<td class="px-6 py-4">
+<p class="text-body-md">2,410 / ∞</p>
+<div class="w-24 bg-surface-container-low h-1.5 rounded-full mt-1">
+<div class="bg-secondary h-full rounded-full w-[100%]"></div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2 opacity-50">
+<div class="w-12 h-6 bg-outline-variant rounded-full relative cursor-pointer">
+<div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full shadow"></div>
+</div>
+<span class="text-[12px] font-bold text-on-surface-variant">PAUSED</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Calendar Widget -->
+<div class="lg:col-span-4 space-y-gutter">
+<div class="bg-white p-6 rounded-xl shadow-[0_4px_20px_rgba(1,105,10,0.04)] border border-surface-variant">
+<div class="flex justify-between items-center mb-6">
+<h4 class="font-h4 text-h4 text-on-surface">Scheduled</h4>
+<span class="text-body-sm text-primary font-bold cursor-pointer">Full Calendar</span>
+</div>
+<div class="space-y-4">
+<!-- Campaign Item -->
+<div class="flex gap-4 p-3 rounded-lg bg-surface-container-low border border-surface-variant/50">
+<div class="w-12 h-12 bg-tertiary-fixed rounded flex flex-col items-center justify-center shrink-0">
+<span class="text-[10px] font-bold uppercase">Oct</span>
+<span class="text-lg font-bold leading-none">12</span>
+</div>
+<div>
+<p class="text-body-md font-bold leading-tight">Harvest Festival Early Bird</p>
+<p class="text-[12px] text-on-surface-variant">Starts in 4 days • 10% Flat Off</p>
+</div>
+</div>
+<!-- Campaign Item -->
+<div class="flex gap-4 p-3 rounded-lg border border-surface-variant/30">
+<div class="w-12 h-12 bg-surface-container-high rounded flex flex-col items-center justify-center shrink-0">
+<span class="text-[10px] font-bold uppercase">Nov</span>
+<span class="text-lg font-bold leading-none">01</span>
+</div>
+<div>
+<p class="text-body-md font-bold leading-tight">Winter Roast Pre-sale</p>
+<p class="text-[12px] text-on-surface-variant">Membership Exclusive</p>
+</div>
+</div>
+<!-- Campaign Item -->
+<div class="flex gap-4 p-3 rounded-lg border border-surface-variant/30">
+<div class="w-12 h-12 bg-surface-container-high rounded flex flex-col items-center justify-center shrink-0">
+<span class="text-[10px] font-bold uppercase">Nov</span>
+<span class="text-lg font-bold leading-none">24</span>
+</div>
+<div>
+<p class="text-body-md font-bold leading-tight">Black Friday Carnivore</p>
+<p class="text-[12px] text-on-surface-variant">Tiered discounts 20-40%</p>
+</div>
+</div>
+</div>
+<div class="mt-8 relative h-48 rounded-lg overflow-hidden group">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A cinematic, high-contrast close-up of a raw, heavily marbled Wagyu ribeye steak resting on a rustic dark wooden butcher's block. The lighting is moody and focused, highlighting the intricate white fat patterns against the deep red meat. The scene communicates premium quality and artisanal butchery expertise, aligning with a luxury dark-themed professional food management interface. Soft shadows and a clean, hygienic environment underscore the brand's commitment to quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4FEk258GLU8l3YtW--gqJNY5hCnMwe0zyUof4KddfKjZ2YeuDJ_XHURshiff3_4bjWLRl3arPISm0GY-aZ7s_UqzEcJEae9lhc90f5L484Vyastw28m_x4ZlAdYMFG3Elfvh6awaVZHcG28ujKhcy91Meea56B3hM9pbVZvhQPJH0nuJ619YarTnV8IhH5uoqX2f3rF88xu8EzuR8NBREZBlOHhZe4WpzAtPP5J8F9-0IPC5RYQ5OtBTwUcrWUnoaFcVCNU5ofZE">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-4">
+<p class="text-white font-bold text-body-md">Seasonal Strategy Tip</p>
+<p class="text-white/80 text-[12px]">Bundled steak boxes see a 45% higher conversion in late autumn.</p>
+</div>
+</div>
+</div>
+<!-- Trust Indicators Card -->
+<div class="bg-primary-container text-on-primary-container p-6 rounded-xl shadow-lg relative overflow-hidden">
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-white/10 text-[120px]" style="font-variation-settings: &quot;FILL&quot; 1;">verified</span>
+<h5 class="font-h4 text-h4 mb-2">Campaign Integrity</h5>
+<p class="text-body-sm opacity-90 mb-4">All discounts are validated against current market pricing to maintain premium brand positioning.</p>
+<div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-2 rounded border border-white/20 inline-flex">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="text-[12px] font-bold">Hygienic Chain Verified</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Featured Category Chips -->
+<div class="space-y-4">
+<p class="font-label-caps text-label-caps text-on-surface-variant">Discount Categories Performance</p>
+<div class="flex flex-wrap gap-3">
+<span class="px-6 py-2 rounded-full bg-primary text-white font-bold text-body-sm flex items-center gap-2">
+                        Grass-fed <span class="bg-white/20 px-2 py-0.5 rounded-full text-[10px]">High Volume</span>
+</span>
+<span class="px-6 py-2 rounded-full border border-primary text-primary font-bold text-body-sm">Wagyu Gold</span>
+<span class="px-6 py-2 rounded-full border border-primary text-primary font-bold text-body-sm">Pork Shoulder</span>
+<span class="px-6 py-2 rounded-full border border-primary text-primary font-bold text-body-sm">Poultry</span>
+<span class="px-6 py-2 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-bold text-body-sm">Dry-Aged Special</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual FAB - Suppression Logic: This is a management page, but 'Create' is a primary action. Following instructions to suppress on details/settings but this is a Dashboard-level view. -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50 md:hidden">
+<span class="material-symbols-outlined">add</span>
+</button>
+
+
+<script id="ek-toggle-init">
+(() => {
+  const openDrawer = (root) => {
+    root.classList.remove('hidden');
+    const panel = root.querySelector('[data-ek-drawer-panel]');
+    if (panel) requestAnimationFrame(() => panel.classList.remove('translate-x-full'));
+  };
+  const closeDrawer = (root) => {
+    const panel = root.querySelector('[data-ek-drawer-panel]');
+    if (panel) panel.classList.add('translate-x-full');
+    window.setTimeout(() => root.classList.add('hidden'), 220);
+  };
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-ek-toggle]');
+    if (!btn) return;
+    const id = btn.getAttribute('data-ek-toggle');
+    const root = document.getElementById(id);
+    if (!root) return;
+
+    const isDrawer = root.hasAttribute('data-ek-drawer');
+    if (!isDrawer) {
+      root.classList.toggle('hidden');
+      return;
+    }
+
+    const isOpen = !root.classList.contains('hidden');
+    if (isOpen) closeDrawer(root);
+    else openDrawer(root);
+  });
+})();
+</script>
+</body></html>

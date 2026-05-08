@@ -1,0 +1,1882 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#004e05",
+                    "outline-variant": "#bfcab8",
+                    "tertiary-fixed": "#b5f739",
+                    "tertiary": "#314900",
+                    "surface-variant": "#e5e2e1",
+                    "surface-container": "#f0eded",
+                    "surface-tint": "#0b6e10",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#80db71",
+                    "on-error-container": "#93000a",
+                    "background": "#fcf9f8",
+                    "primary-fixed": "#9bf98b",
+                    "secondary-container": "#b9f29c",
+                    "inverse-on-surface": "#f3f0ef",
+                    "secondary-fixed-dim": "#9ed583",
+                    "tertiary-fixed-dim": "#9ad912",
+                    "on-surface-variant": "#404a3c",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#002201",
+                    "surface-container-high": "#eae7e7",
+                    "on-tertiary-fixed": "#131f00",
+                    "on-secondary-fixed": "#062100",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-surface": "#1c1b1b",
+                    "on-primary": "#ffffff",
+                    "on-secondary-container": "#3f702a",
+                    "primary-container": "#01690a",
+                    "on-error": "#ffffff",
+                    "secondary": "#396a25",
+                    "inverse-surface": "#313030",
+                    "on-primary-fixed-variant": "#005306",
+                    "inverse-primary": "#80db71",
+                    "surface-bright": "#fcf9f8",
+                    "outline": "#707a6a",
+                    "tertiary-container": "#436300",
+                    "secondary-fixed": "#b9f29c",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#a4e524",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#dcd9d9",
+                    "on-background": "#1c1b1b",
+                    "on-secondary-fixed-variant": "#21510d",
+                    "surface": "#fcf9f8",
+                    "on-primary-container": "#8be77b",
+                    "surface-container-low": "#f6f3f2",
+                    "on-tertiary-fixed-variant": "#354e00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "stack-sm": "12px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "stack-lg": "48px",
+                    "margin-desktop": "48px",
+                    "base": "8px",
+                    "stack-md": "24px"
+            },
+            "fontFamily": {
+                    "h1": ["Plus Jakarta Sans"],
+                    "body-sm": ["Inter"],
+                    "h4": ["Plus Jakarta Sans"],
+                    "price-lg": ["Plus Jakarta Sans"],
+                    "h3": ["Plus Jakarta Sans"],
+                    "h2": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-caps": ["Inter"]
+            },
+            "fontSize": {
+                    "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h4": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "price-lg": ["28px", {"lineHeight": "1", "fontWeight": "700"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "h2": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-auto-rows: 200px;
+            gap: 24px;
+        }
+        .masonry-tall { grid-row: span 2; }
+        .masonry-wide { grid-column: span 2; }
+        @media (max-width: 768px) {
+            .masonry-wide { grid-column: span 1; }
+        }
+    </style>
+<style id="elikhope-fonts">
+  body, button, input, textarea, select { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  .font-h1,.font-h2,.font-h3,.font-h4,.font-price-lg { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important; }
+  .font-body-sm,.font-body-md,.font-body-lg,.font-label-caps { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important; }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface dark:bg-inverse-surface shadow-sm">
+<div class="max-w-container-max mx-auto flex justify-between items-center px-margin-desktop h-20">
+<a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3 shrink-0">
+<img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+<span class="text-h4 font-h4 font-bold text-primary dark:text-primary-fixed">EliKhope Farms</span>
+</a>
+<div class="hidden lg:flex items-center gap-6 flex-wrap justify-center">
+
+<a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+<a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+<a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+<a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+<a class="font-body-md text-body-md text-primary font-semibold border-b-2 border-primary pb-1" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+<a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+<a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+
+</div>
+<div class="flex items-center gap-stack-sm">
+<a class="hidden sm:inline font-body-sm font-semibold text-primary hover:underline" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+<a class="hidden sm:inline-flex px-4 py-2 rounded-lg bg-primary text-white font-bold text-sm hover:opacity-90" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Sign up</a>
+<a class="p-2 rounded-full hover:bg-surface-container transition-colors" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_shopping_cart/code.html" title="Cart"><span class="material-symbols-outlined text-on-surface-variant">shopping_cart</span></a>
+<a class="p-2 rounded-full hover:bg-surface-container transition-colors" href="/Customer_Dashboard_Pages/dashboard_overview_elikhope_farms/code.html" title="Account"><span class="material-symbols-outlined text-on-surface-variant">account_circle</span></a>
+<button class="lg:hidden p-2 rounded-full hover:bg-surface-container transition-colors" type="button" aria-label="Open menu" data-ek-toggle="ek-site-drawer">
+  <i class="fa-solid fa-bars text-on-surface-variant"></i>
+</button>
+</div>
+</div>
+</nav>
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<div id="ek-site-drawer" class="lg:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="right">
+  <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-site-drawer" aria-label="Close menu"></div>
+  <aside data-ek-drawer-panel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-surface shadow-xl border-l border-outline-variant translate-x-full transition-transform duration-200 ease-out flex flex-col">
+    <div class="p-6 flex items-start justify-between gap-4 border-b border-outline-variant/40">
+      <div class="flex-1">
+        <a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+          <img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 rounded-lg" width="40" height="40"/>
+          <span class="text-h4 font-h4 font-bold text-primary">EliKhope Farms</span>
+        </a>
+        <p class="text-xs text-on-surface-variant mt-2">Menu</p>
+      </div>
+      <button class="p-2 rounded-lg hover:bg-surface-container" type="button" aria-label="Close menu" data-ek-toggle="ek-site-drawer">
+        <i class="fa-solid fa-xmark text-on-surface-variant"></i>
+      </button>
+    </div>
+    <nav class="flex-1 p-6 pt-4 flex flex-col gap-2 overflow-auto">
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html">Home</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_about_us/code.html">About</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_visual_gallery/code.html">Gallery</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_meat_preparation_farm_news/code.html">Blog</a>
+      <a class="py-2 font-body-md text-on-surface hover:text-primary" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact</a>
+    </nav>
+    <div class="p-6 border-t border-outline-variant/40 space-y-3">
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl border border-outline-variant text-on-surface font-semibold" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+      <a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-on-primary font-bold" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+    </div>
+  </aside>
+</div>
+
+<main class="pt-20">
+<!-- Hero Banner -->
+<section class="relative h-[614px] flex items-center justify-center overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A sweeping wide-angle landscape of a lush, emerald green farm at dawn, with soft golden sunlight filtering through a gentle morning mist. Grazing cattle are visible in the distance across rolling hills. The atmosphere is serene and pristine, capturing the essence of organic, premium farm-to-table origin in a sophisticated, minimalist high-key visual style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrBUssm1oZG4jq8v1ATLKwDZQEte_-zEQbVPURV8h1SZKlTtrLCtE5ZDhz8E1pQ5K9snjt45fF7BhmK0WAZ4GBVS8KVvtRFSbFLZH6FVDdZe2jtzRQj35GlzlCbacBQETgASxE7S8rUEUIG06yWYg7vAbAwYvjOSloKQYOEHBDBowSEvFwHdfA6ndztZfs22tdVMZsVIaS-dmp1juKdW1q9tJngWqcsZoaUAyMqjWJ8YWqoVlz7tEzy5LozifNCOR-nrMu7LpITII"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+<div class="relative text-center px-margin-mobile">
+<h1 class="font-h1 text-h1 text-on-primary mb-stack-sm">The Visual Journey</h1>
+<p class="font-body-lg text-body-lg text-on-primary/90 max-w-2xl mx-auto">Witness the dedication behind every cut, from our pristine pastures to your kitchen table.</p>
+</div>
+</section>
+<!-- Filterable Gallery Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop py-stack-lg">
+<div class="flex flex-wrap justify-center gap-stack-sm mb-stack-lg">
+<button class="px-6 py-2 rounded-full bg-primary text-on-primary font-label-caps text-label-caps shadow-lg">All Gallery</button>
+<button class="px-6 py-2 rounded-full bg-surface-container hover:bg-primary-container/20 text-primary font-label-caps text-label-caps transition-all">Farm</button>
+<button class="px-6 py-2 rounded-full bg-surface-container hover:bg-primary-container/20 text-primary font-label-caps text-label-caps transition-all">Processing</button>
+<button class="px-6 py-2 rounded-full bg-surface-container hover:bg-primary-container/20 text-primary font-label-caps text-label-caps transition-all">Products</button>
+<button class="px-6 py-2 rounded-full bg-surface-container hover:bg-primary-container/20 text-primary font-label-caps text-label-caps transition-all">Delivery</button>
+</div>
+<div class="masonry-grid">
+<!-- Farm -->
+<div class="masonry-tall group relative overflow-hidden rounded-xl bg-surface-container shadow-sm border border-outline-variant/30">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Close-up of a farmer's weathered hands gently inspecting high-quality, organic grain in a sunlit wooden barn. The lighting is warm and natural, emphasizing textures and the artisanal approach to livestock feeding. The overall aesthetic is clean, professional, and authentic to EliKhope Farms' commitment to quality and transparency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3lLMYZfdsn5NjOHFHt27ftrxxQZ40YtRMtk4QZK2vma3Bp9q77822tL1jBAy6g5OryCzKT9Ol6jfxgOCqqRebhc99e-1sPBq4bPJwSdj6J76UjmsQufYGlq7xkuybDqlH8-OObePuTsJk1455qMAjtu0hIAAflJ1NR89Jz-zMZZxMCJK2Tu2NHRdXilTKuKiQ01ONrWUkNTNeuK45jCzchZS3K7d_2DEjblFQmxldoJW5WhfUnZ1y_ulgbiDlapI_VaofkK-fDsw"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-stack-md">
+<span class="text-on-primary font-h4 text-h4">Ethical Farming</span>
+</div>
+</div>
+<!-- Products -->
+<div class="group relative overflow-hidden rounded-xl bg-surface-container shadow-sm border border-outline-variant/30">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Artistic flat lay of a premium marbled ribeye steak resting on a clean, dark slate board. Fresh sprigs of rosemary and coarse sea salt crystals are scattered elegantly around the meat. The photography is editorial-grade with high contrast and deep shadows, highlighting the rich red color and intricate fat marbling characteristic of premium beef." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOmfbE_aXHQcFYL82KOZNQCqCl6-w4p77uwsWZbMZYVnXwvxRuKpyp_yCW63YDYC687zAmVcyCc2CbQDeiLIxmI9FD2sMjIr_H-u53MF3UPw74MC7Ecvt4l3_ggQEM_iUyvWN_11FLTHWLEUka5h44Rut0EdXZxmY2BJayobEtYEMgSV81eJK7klvY9jNwgB4FK1aiI0s76ucKZsmM_QKrqu3TQtCW6rlCglDlAHEAQq5qgekz4-x3YcAtFa3TUVJyECH7lOuS5fs"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-stack-md">
+<span class="text-on-primary font-h4 text-h4">Signature Cuts</span>
+</div>
+</div>
+<!-- Processing -->
+<div class="masonry-wide group relative overflow-hidden rounded-xl bg-surface-container shadow-sm border border-outline-variant/30">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A modern, clinical-grade butcher shop interior with stainless steel surfaces gleaming under bright, neutral lighting. A master butcher in a pristine white coat is precisely trimming a large cut of meat. The environment communicates extreme hygiene, professionalism, and advanced meat processing standards, maintaining a clean and minimalist corporate modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqZubaU8xhOltrEqoVhhxDfgholLBaQUqI6hyt32H7678SzPdXg2h6qT-E594I8yXnDMR7NcQoR3RHyQtkEZcV-BencftRlGMCUWzkFz_hpdmgAPlbBqCu9ZYKH7LCkcefdEncfbRuKBMmyVGEzVUqGa0LV5TQbZ-jhx1nnmp5p4Tz3TzTwgvxQM8_pSEix2x3upxcHpKWu6YPO_pidxTpRz4KI4vOFqZBfHJPpM8uAKj9ICSIq3vhwDN3LyneqGa6dWVtYO7iJPY"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-stack-md">
+<span class="text-on-primary font-h4 text-h4">Hygienic Excellence</span>
+</div>
+</div>
+<!-- Delivery -->
+<div class="group relative overflow-hidden rounded-xl bg-surface-container shadow-sm border border-outline-variant/30">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A premium delivery package from EliKhope Farms, featuring a clean white cardboard box with minimalist green branding. Inside, the meat is vacuum-sealed in high-grade eco-friendly packaging, resting on ice packs. The image is shot on a modern kitchen countertop, suggesting the seamless transition from farm to doorstep in a high-end, convenient manner." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDahre2RMygt4M2kX9hun4clH4kqfL-Na6y3-5zqo4DXpC2KuQxi8Ng-QY4YrvcsjOZ-AQMahLgI_glI-pz96MQTUt7J8o8gkCo3_6FKK20YCfV6HBkudwfIp6PlwJh0gTAkgiqsD8G4MFD0iWJPowdPMDLFsMAnfsWsceZomZ6QHbzM0eaOiy9eN1HNNODKDRQl4Xppu7HCOPU18p5-hKBaP00hqkU49IZJAT57abXxbijGMrM4jw00n6Oai5sJJXPuX4JE-N0FVY"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-stack-md">
+<span class="text-on-primary font-h4 text-h4">Precision Logistics</span>
+</div>
+</div>
+<!-- Farm -->
+<div class="masonry-tall group relative overflow-hidden rounded-xl bg-surface-container shadow-sm border border-outline-variant/30">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Beautiful aerial view of sheep grazing in a sprawling green meadow divided by ancient stone walls. The pattern of the fields creates a natural geometric tapestry in shades of vibrant green and earth tones. The lighting is soft and even, highlighting the peaceful and sustainable farming practices utilized at EliKhope Farms." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL_omVaTWRhoU3bW7GRAfnFSokuPAITwyMfo0C3XjZ7ICNC23a5bwutAgWdya5ZCso0_n5AfXHzryfirQGzE9DvZMC5Cq-U3peWRlmG2tldNlsErGieWMZaZCQKufH2bvLjVwHl-b7KaWouTkg8_Ozulo4aUjhvgnidlEdEL_xvNlyjFmtDYopWj662VgbCQqWWum-dpm3ZR0eLatne5XGhnyU1U0_iFBchdOzqWzJZ7RBZ_XkriKD6aLULb6K2qkUCfVRuLBqzt8"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-stack-md">
+<span class="text-on-primary font-h4 text-h4">Natural Habitats</span>
+</div>
+</div>
+<!-- Products -->
+<div class="group relative overflow-hidden rounded-xl bg-surface-container shadow-sm border border-outline-variant/30">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Fresh organic chicken breast displayed on a clean white ceramic plate with a sprig of fresh thyme. The background is a soft neutral beige, creating a high-key, hygienic look that emphasizes the natural pale pink color and firm texture of the premium poultry. The visual style is minimal and focuses entirely on product quality and cleanliness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBudH4-w-bPDEfKcI6P5TUDWuKNnqR6z6ozpLktY3S_xgvHYhprwde5jE1huIPawIBm8FtSewiLfHTWfLoFCmMI9M7LRLjDiqMkiOrFuu7hPd12hhc8ps78inxgUZM7Yh2laZCVsRB_uyqCXcwCeXh5fFj4m3mP7GiJkvLsrynsZGR6sTpK3Q1OyXHZNF2AfpQnJ-p7ndhEnJpOKN3-P4iwMD6w_HyfbouPGKaPP1JU3V_HzRjh-IgYJdqOh_EtN1ni1MJCb56b8P4"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-stack-md">
+<span class="text-on-primary font-h4 text-h4">Premium Poultry</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Video Preview Section -->
+<section class="bg-primary py-stack-lg my-stack-lg">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center">
+<div class="space-y-stack-md">
+<span class="text-tertiary-fixed font-label-caps text-label-caps">IMMERSIVE EXPERIENCE</span>
+<h2 class="font-h2 text-h2 text-on-primary">A Farm Tour Like No Other</h2>
+<p class="font-body-lg text-body-lg text-on-primary/80">Take a virtual walk through our fields and witness the meticulous care our herds receive daily. We believe in total transparency from pasture to plate.</p>
+<button class="flex items-center gap-base text-on-primary font-bold hover:underline">
+                        Learn about our standards <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="relative rounded-xl overflow-hidden shadow-2xl group cursor-pointer">
+<img class="w-full aspect-video object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A cinematic wide shot of a farmer walking through tall golden wheat at sunset, with a silhouette against the vibrant orange and purple sky. The camera focus is on the movement and the natural beauty of the agricultural setting. The mood is nostalgic yet premium, conveying the deep connection between the land and the quality products EliKhope Farms provides." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAMQEMmeBUYfHGlAtjLW5kd9IiIyeB__G_OXGhPvckDyPmG-0Yn6sP3fMt3ZTrKEYQDcnjDb2g4obMDBPQO15M5eS1Z4blxj56qrjjbfp9XEYUqI7EerPQ_Uf94DrLm3yjf6nB_R_CYARteepn1bmAMcw0C_0lYiJ4f9GKyKmqYdLlWIh0aFqrl1cGJUnCKrzd84ZplsCjvY8oWjnXOFuNcyXiMSCBf77V9RYleoWXXcJ3nxe4xjLQk1-YFypuAOgEk2vmS6wbeI0"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-20 h-20 bg-on-primary/20 backdrop-blur-md rounded-full flex items-center justify-center border border-on-primary/40 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-primary text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Instagram Social Wall -->
+<section class="max-w-container-max mx-auto px-margin-desktop py-stack-lg">
+<div class="text-center mb-stack-lg">
+<h3 class="font-h3 text-h3 text-primary">#EliKhopeEats</h3>
+<p class="text-on-surface-variant">Follow our community's culinary creations on Instagram</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+<div class="aspect-square relative group overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover" data-alt="A vibrant Instagram-style square photo of a homemade gourmet burger featuring a thick, juicy beef patty from EliKhope Farms. The burger is topped with melting cheese, crisp lettuce, and artisanal pickles, served on a rustic wooden board. The lighting is warm and domestic, emphasizing the delicious real-world application of the farm's premium meat products." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA95Z-UsIE7yeCY4-8fA1X8lt9_wde8Z1tNTWC-f15-zIIJrbpEDyjHHOgsbrjqonZTBkcgWN7Mw8bkC5nPo6usOy_R9EDBQHjxlxZrKc8tE2i6De1hBvAopx6BP5aBg11uYPnqJXFtaJXCkTF8JS8vo6YgAsoSVtBYZMwSB9oYv69n2cbfWLHmibNgNRXUzyXiFyjmWjjaQCCTZbZFkopy9vHBXAF4IBETS_m3dzQ3tw0oX_CCFhAtFJS3ixxQGmzSWFzQ_655ltI"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<span class="material-symbols-outlined text-on-primary">favorite</span>
+</div>
+</div>
+<div class="aspect-square relative group overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover" data-alt="Social media photography showing a festive outdoor barbecue scene with skewers of prime goat meat grilling over hot coals. Soft smoke curls into the air, and vibrant vegetables provide a pop of color. The style is casual yet high-quality, showcasing the versatility of EliKhope products in social settings and traditional cooking methods." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJkt_TnseA4dReFcOvg-Mn_VC3qf_xktIZwUxLGVBfvp7NivO-vDdT3f5v6dWY7IUtxOqnFL-Au6hykp2wQpoOfQiG8zJU1XbHkwzbBOWAJa65fUY6ah0Io75PAsRvaZVfJqDkrKMz1qaFCXa0yglH3vzIioAZCryAZxku5H5dp0hXoA9RMIrdjxnwl8MUtxkWtGsq31mtiuKPqGlmnnSppz0V4ilhhKLH40Wa4xSoN_YqrreHb9k8Pz3Y5_q5mSwZ1p6dIiQtRPE"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<span class="material-symbols-outlined text-on-primary">favorite</span>
+</div>
+</div>
+<div class="aspect-square relative group overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover" data-alt="Close-up Instagram shot of a perfectly seared steak being sliced, revealing a juicy medium-rare center. The meat fibers and moisture are highly visible, suggesting superior freshness and quality. The image is filtered with a warm, appetizing tone that fits a premium lifestyle feed, focusing on the sensory experience of cooking high-end farm-to-table meat." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaamVzJTFFPrT2DdCOAO5awu6dEpVSuF9sVUUMJCtHHPgLVz9vt79JCeI7T9HyQwXAIwUAcQ06d9uOyve93NmbLlRWW4IPvyepZwZhOVvTai8vWfjRsOfmJg38Ft5Q64UOp3mYIdLal3zquX7ATiQO9gqOmJZ5A9jfACxb4MjIR1qjcB5TunIRAFnrqTsQjgWUaXiY9qTq1Yurc33Waz7m0DhhBv43u4MLVeo84aMDW6ZnB1jVRx95EDH5IJoeG7TNo2MOEOWEmyw"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<span class="material-symbols-outlined text-on-primary">favorite</span>
+</div>
+</div>
+<div class="aspect-square relative group overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover" data-alt="A minimalist overhead shot of a charcuterie board featuring thin slices of cured meat, artisanal cheeses, and clusters of grapes. The high-contrast lighting creates a sophisticated, boutique market feel. The presentation is elegant and structured, highlighting the premium nature of EliKhope's special cuts and artisanal meat selection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh0eYlbWV9OLRLUmoklKH8gqdrbLgVyA1UoRKpc7pDoRW37kEdhLTgrHXwIUz74mDioahucVTOAjeaZo6mZub7cQExBN-8WC84gnCJrbpiJSgUL-uCP6SNTQQz-PnmDvN8AdQ-0ONm3kW7ZVRXBR9OobVhKxP-1VkR2KUosvsl3bq-aFE0Qm1vqh7t7HSC8YUNdbkZ89JAje87FmOxsEVcG-e1rsKbStlr3eGjPLulEuf7HHhqbFgRHCf7gK9AlyH4ejEgd5nht3k"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<span class="material-symbols-outlined text-on-primary">favorite</span>
+</div>
+</div>
+<div class="aspect-square relative group overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover" data-alt="A creative kitchen shot showing a chef's knife resting next to a vacuum-sealed package of EliKhope chicken. The clean, modern packaging is the focus, representing the brand's commitment to hygiene and professional standards. The background is a crisp white kitchen, reinforcing the corporate modern and minimal aesthetic of the farm's visual identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSSgjnIo13sXZNcvBbgIXFjKIXcy4aAGvCy17F7lUWGA_spFkI2DGrPGl-VhPRxvhV7N1rn_4YqY-3aQBFpepq_VxX5apOzAobRCe1Mp-Ekw1yOaQDCh2Lk9DUg4nz4yTuUDC62Hn-z9-sVEfKeYFgR4QbDJ-2gecmJwxtyUZ5tMqf4ybuvX8E-nBNgPVq4vtNwWGXf9z_WIFX48duobpPRHjAO8YB6gwdkjTXjHMVHAgChnHdJkQJnNFMhicB4eFKKdlB-qcwXVQ"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<span class="material-symbols-outlined text-on-primary">favorite</span>
+</div>
+</div>
+<div class="aspect-square relative group overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover" data-alt="Atmospheric shot of a farm delivery van parked at a modern residential driveway during the golden hour. The sunlight reflects off the clean white vehicle with the green EliKhope logo prominently displayed. The scene suggests reliability, freshness, and the premium home delivery service that connects the farm directly to the consumer's lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY16QhBNj5TWc1ozcuRc7lX-EZ-F4Uqy77Acz0gQ7JeH2LuJ51OGyIEahEABHhdo7FCRhj_7hw_zaKYvZ9wVIV2Gh6UKjOuycyQwGf-UA3jQInBJm0MbOpFnDYJ5fGWy6PxDcJDZCnr72w9ZkhjP5t6trnfJgFz43O5sJsNL-YTN4oUTAV2SUUsOmNV23qWCYQS7xjprQT-QKA66ExYL99fsUdJu-S-DcciY0zM2YVkml9xMhk4XzmtOMg4sEiHdlf9fdpxTwlmak"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<span class="material-symbols-outlined text-on-primary">favorite</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-highest dark:bg-inverse-surface border-t border-outline-variant">
+<div class="py-stack-lg px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto">
+<div class="flex flex-col gap-4">
+<a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+<img src="/assets/elikhope-logo.svg" alt="" class="h-9 w-9 rounded-lg" width="36" height="36"/>
+<span class="text-h3 font-h3 font-bold text-primary dark:text-primary-fixed">EliKhope Farms</span>
+</a>
+<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-surface-variant">© 2026 EliKhope Farms. Premium farm-to-consumer meat.</p>
+<p class="text-xs text-on-surface-variant"><a href="/Authentication_Pages/admin_login_elikhope_farms/code.html" class="underline hover:text-primary">Staff login</a></p>
+</div>
+<div class="flex flex-col gap-2">
+<h5 class="font-bold mb-2">Shop</h5>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop home</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Browse cuts</a>
+</div>
+<div class="flex flex-col gap-2">
+<h5 class="font-bold mb-2">Trust</h5>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality standards</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline" href="/elikhope_farms_marketing_pages/elikhope_farms_help_center/code.html">Help center</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact us</a>
+</div>
+<div class="flex flex-col gap-2">
+<h5 class="font-bold mb-2">Account</h5>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline" href="/Customer_Dashboard_Pages/dashboard_overview_elikhope_farms/code.html">Customer dashboard</a>
+</div>
+</div>
+</footer>
+<script id="ek-toggle-init">
+(() => {
+  const openDrawer = (root) => {
+    root.classList.remove('hidden');
+    const panel = root.querySelector('[data-ek-drawer-panel]');
+    if (panel) requestAnimationFrame(() => panel.classList.remove('translate-x-full'));
+  };
+  const closeDrawer = (root) => {
+    const panel = root.querySelector('[data-ek-drawer-panel]');
+    if (panel) panel.classList.add('translate-x-full');
+    window.setTimeout(() => root.classList.add('hidden'), 220);
+  };
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-ek-toggle]');
+    if (!btn) return;
+    const id = btn.getAttribute('data-ek-toggle');
+    const root = document.getElementById(id);
+    if (!root) return;
+
+    const isDrawer = root.hasAttribute('data-ek-drawer');
+    if (!isDrawer) {
+      root.classList.toggle('hidden');
+      return;
+    }
+
+    const isOpen = !root.classList.contains('hidden');
+    if (isOpen) closeDrawer(root);
+    else openDrawer(root);
+  });
+})();
+</script>
+</body></html>

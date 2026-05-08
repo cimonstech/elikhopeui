@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout Order Review - EliKhope Farms</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#436300",
+                        "secondary-fixed": "#b9f29c",
+                        "on-primary-fixed-variant": "#005306",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fcf9f8",
+                        "secondary-fixed-dim": "#9ed583",
+                        "on-primary-fixed": "#002201",
+                        "surface-bright": "#fcf9f8",
+                        "outline": "#707a6a",
+                        "primary-fixed-dim": "#80db71",
+                        "secondary": "#396a25",
+                        "inverse-surface": "#313030",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#131f00",
+                        "on-secondary-container": "#3f702a",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#9ad912",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dcd9d9",
+                        "tertiary-fixed": "#b5f739",
+                        "on-background": "#1c1b1b",
+                        "surface": "#fcf9f8",
+                        "secondary-container": "#b9f29c",
+                        "on-tertiary-fixed-variant": "#354e00",
+                        "on-secondary-fixed": "#062100",
+                        "primary": "#004e05",
+                        "primary-fixed": "#9bf98b",
+                        "surface-container": "#f0eded",
+                        "surface-variant": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#21510d",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#314900",
+                        "surface-container-low": "#f6f3f2",
+                        "inverse-on-surface": "#f3f0ef",
+                        "inverse-primary": "#80db71",
+                        "on-primary-container": "#8be77b",
+                        "surface-tint": "#0b6e10",
+                        "on-surface": "#1c1b1b",
+                        "on-surface-variant": "#404a3c",
+                        "surface-container-high": "#eae7e7",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#01690a",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-tertiary-container": "#a4e524",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#bfcab8",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "12px",
+                        "stack-lg": "48px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "stack-md": "24px",
+                        "margin-desktop": "48px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "price-lg": ["Plus Jakarta Sans"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h4": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "h2": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "price-lg": ["28px", {"lineHeight": "1", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "h4": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fcf9f8;
+            color: #1c1b1b;
+        }
+    </style>
+<style id="elikhope-fonts">
+  body, button, input, textarea, select { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  .font-h1,.font-h2,.font-h3,.font-h4,.font-price-lg { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important; }
+  .font-body-sm,.font-body-md,.font-body-lg,.font-label-caps { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important; }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+</head>
+<body class="font-body-md text-body-md antialiased">
+<!-- Top Navigation Anchor -->
+<header class="bg-surface dark:bg-surface-dim shadow-sm docked full-width top-0 z-50 sticky">
+<div class="flex justify-center items-center py-stack-sm px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-base">
+<span class="font-h3 text-h3 font-bold text-primary dark:text-primary-fixed">EliKhope Farms</span>
+</div>
+<div class="ml-auto hidden md:flex items-center gap-stack-md">
+<a class="text-on-surface-variant dark:text-outline-variant hover:opacity-80 transition-opacity font-body-md text-body-md" href="#">Shop</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:opacity-80 transition-opacity font-body-md text-body-md" href="#">About Us</a>
+<span class="text-primary font-bold border-b-2 border-primary py-1 font-body-md text-body-md">Checkout</span>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
+<div class="flex flex-col lg:flex-row gap-gutter">
+<!-- Main Content Area -->
+<div class="flex-1 space-y-stack-md">
+<!-- Progress Indicator -->
+<div class="flex items-center justify-between mb-stack-lg overflow-x-auto pb-4">
+<div class="flex items-center gap-stack-sm min-w-max">
+<div class="flex items-center gap-2 text-primary font-semibold">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center text-label-caps">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</span>
+<span class="font-body-md">Delivery</span>
+</div>
+<div class="h-px w-8 md:w-16 bg-outline-variant"></div>
+<div class="flex items-center gap-2 text-primary font-semibold">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center text-label-caps">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</span>
+<span class="font-body-md">Payment</span>
+</div>
+<div class="h-px w-8 md:w-16 bg-outline-variant"></div>
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center text-label-caps border-2 border-primary">3</span>
+<span class="font-body-md">Review</span>
+</div>
+</div>
+</div>
+<!-- Order Header -->
+<div class="bg-surface-container-low p-stack-md rounded-xl shadow-sm space-y-2">
+<h1 class="font-h2 text-h2 text-on-surface">Review Your Order</h1>
+<div class="flex flex-wrap items-center gap-stack-md text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<span class="font-body-md">Estimated Delivery: Tomorrow, 9:00 AM - 12:00 PM</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+<span class="font-body-md">Premium Eco-Chilled Van</span>
+</div>
+</div>
+</div>
+<!-- Products Summary -->
+<section class="space-y-stack-sm">
+<h2 class="font-h3 text-h3 text-on-surface">Items in your cart</h2>
+<div class="space-y-stack-sm">
+<!-- Product Item 1 -->
+<div class="bg-surface-container-lowest p-stack-sm rounded-xl flex gap-stack-md border border-outline-variant hover:shadow-md transition-shadow">
+<div class="w-24 h-24 rounded-lg overflow-hidden bg-surface-variant flex-shrink-0">
+<img alt="Prime Grass-fed Ribeye Steak" class="w-full h-full object-cover" data-alt="A close-up, high-detail macro shot of a fresh, raw prime grass-fed ribeye steak resting on a rustic wooden cutting board. The marbling is exquisite and clear, illuminated by soft natural light. In the background, fresh rosemary sprigs and sea salt crystals are scattered. The overall mood is high-end, clean, and artisanal butchery style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4C25ASN0VZCNUFA5n59vOyWuHHh8prZ7xdDnnhHZppq4xuHB_V27XGCcMZVKK0gJ0Pg5FwBEQ6TKJJapppi8d42W248y-YAVoEMGZiWPsoQoRban6ZXqIUL7_jdLyIcqxlhjC3sWRLedLr9sxBN58YFmwIRjH-InqAsRP9xXmU2Mh-9VQz7myKCzENJsNyAQx6gQncS0saiu_kkVCZTQLlLRR3uWK6SAjSJQpUBosPiu_Lkp4ELe5PgF2T4a8aC9TECUJWDNvzjY"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-h4 text-h4">Prime Grass-fed Ribeye Steak</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full text-label-caps flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                                Freshness Guaranteed
+                                            </span>
+<span class="text-on-surface-variant text-body-sm">500g</span>
+</div>
+</div>
+<p class="font-price-lg text-price-lg text-primary">GHS 42.00</p>
+</div>
+<div class="flex justify-between items-center mt-2">
+<span class="text-body-md">Quantity: 1</span>
+<button class="text-primary hover:underline text-body-sm font-semibold">Modify</button>
+</div>
+</div>
+</div>
+<!-- Product Item 2 -->
+<div class="bg-surface-container-lowest p-stack-sm rounded-xl flex gap-stack-md border border-outline-variant hover:shadow-md transition-shadow">
+<div class="w-24 h-24 rounded-lg overflow-hidden bg-surface-variant flex-shrink-0">
+<img alt="Premium lamb chops" class="w-full h-full object-cover" data-alt="Three fresh, high-quality artisanal lamb chops arranged on a minimalist white ceramic plate. The meat is deep red with clean white fat, illuminated by bright, professional studio lighting that emphasizes freshness. The background is a clean, neutral surface, evoking a premium boutique market feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbnGWMnmsmDAMCqXt7pOY_IrvxgDtuGLsVJq7zddYwzUSGv2g2cueh5ZljP-0rWmHbpjGMm-UEBR6yXPEpO7ZwDF6-mq1DxHItLJOgS17MUQgRU8PaWq83VFUm-hJOdpvnX_PXSlCUvuKrJZOnvFDYLhd1Xmpk1x8dHcCGR0R837MvbsEKGjJu7cFlSrjy_Fgw5tufLkCmQRsMVo0bVpqXwYWmy8SAhVzaO3tY3nkCJng3QdefP_eq-mlUPrOup9GqctbQEelYrhc"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-h4 text-h4">Heritage lamb chops</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full text-label-caps flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+                                                Pasture Raised
+                                            </span>
+<span class="text-on-surface-variant text-body-sm">400g</span>
+</div>
+</div>
+<p class="font-price-lg text-price-lg text-primary">GHS 35.50</p>
+</div>
+<div class="flex justify-between items-center mt-2">
+<span class="text-body-md">Quantity: 1</span>
+<button class="text-primary hover:underline text-body-sm font-semibold">Modify</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Information Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Delivery Info -->
+<div class="bg-surface-container-low p-stack-md rounded-xl border border-outline-variant relative">
+<button class="absolute top-4 right-4 text-primary font-semibold text-body-sm hover:underline">Edit</button>
+<h3 class="font-h4 text-h4 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">location_on</span>
+                            Delivery Details
+                        </h3>
+<div class="space-y-2 text-on-surface-variant">
+<p class="font-semibold text-on-surface">Jonathan Doe</p>
+<p class="text-body-md">42 Orchard Street, Highland Park</p>
+<p class="text-body-md">London, NW1 5TH</p>
+<p class="text-body-md">+44 7700 900077</p>
+</div>
+</div>
+<!-- Payment Info -->
+<div class="bg-surface-container-low p-stack-md rounded-xl border border-outline-variant relative">
+<button class="absolute top-4 right-4 text-primary font-semibold text-body-sm hover:underline">Edit</button>
+<h3 class="font-h4 text-h4 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">payments</span>
+                            Payment Method
+                        </h3>
+<div class="flex items-center gap-stack-sm">
+<div class="w-12 h-8 bg-surface rounded flex items-center justify-center border border-outline-variant overflow-hidden">
+<img alt="Payment Method" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uhUCxk5haz0MIXncOaC2TL56Xh4JkUrLFh74KW9p5kPlkSNXD0siGkz3HEukZcbsrIMy8F1U2MuwcQzWPvWYVaKDAZK04g1AVMbtEof16izMSk2gFiSCnRdxqFVCF999zN82rTe2QbL66UOj_WDZia4HrEAJX-C997cQH87xCYczd3SfX_C0DB81RggAkkvCULHgvdceJQMU5FlNUnkb5yporKJhb3u45tGEAAN9HIqOQqsEYlHqFKab20"/>
+</div>
+<div class="space-y-1">
+<p class="font-semibold text-on-surface">Visa ending in 4242</p>
+<p class="text-on-surface-variant text-body-sm">Expires 12/26</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Trust Banner -->
+<div class="bg-tertiary-container text-on-tertiary-container p-stack-md rounded-xl flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-[48px]" style="font-variation-settings: 'FILL' 1;">security</span>
+<div>
+<h4 class="font-h4 text-h4 text-on-tertiary-container">Farm-to-Table Quality Guarantee</h4>
+<p class="text-body-sm opacity-90">Every item is vacuum-sealed and transported in temperature-controlled units to ensure maximum freshness and food safety from our farm to your kitchen.</p>
+</div>
+</div>
+</div>
+<!-- Side Summary Panel (Checkout Sidebar) -->
+<aside class="w-full lg:w-80 space-y-stack-md">
+<div class="bg-surface-container-low p-stack-md rounded-xl shadow-md border border-outline-variant sticky top-stack-lg">
+<h2 class="font-h3 text-h3 mb-stack-md">Order Summary</h2>
+<div class="space-y-stack-sm border-b border-outline-variant pb-stack-sm mb-stack-sm">
+<div class="flex justify-between text-body-md text-on-surface-variant">
+<span>Subtotal (2 items)</span>
+<span>GHS 77.50</span>
+</div>
+<div class="flex justify-between text-body-md text-on-surface-variant">
+<span>Delivery Fee</span>
+<span class="text-primary font-semibold">FREE</span>
+</div>
+<div class="flex justify-between text-body-md text-on-surface-variant">
+<span>Packaging (Eco-Chill)</span>
+<span>GHS 2.50</span>
+</div>
+<div class="flex justify-between text-secondary font-semibold">
+<span>Promo Discount</span>
+<span>-GHS 5.00</span>
+</div>
+</div>
+<div class="flex justify-between items-center mb-stack-md">
+<span class="font-h4 text-h4">Total</span>
+<span class="font-price-lg text-price-lg text-primary">GHS 75.00</span>
+</div>
+<!-- Terms & Place Order -->
+<div class="space-y-stack-sm">
+<label class="flex items-start gap-stack-sm cursor-pointer group">
+<input class="mt-1 rounded border-outline text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
+                                I agree to the <a class="text-primary font-semibold underline" href="#">Terms of Service</a> and confirm my understanding of the perishable delivery policy.
+                            </span>
+</label>
+<a href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_order_success/code.html" class="w-full bg-primary-container text-on-primary py-4 rounded-lg font-h4 text-h4 shadow-md hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-2">
+                            Place order
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<p class="text-center text-label-caps text-on-surface-variant flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+                            Secure 256-bit SSL Encrypted
+                        </p>
+</div>
+</div>
+<!-- Secondary Support Info -->
+<div class="p-stack-sm text-center">
+<p class="text-body-sm text-on-surface-variant mb-1">Need help with your order?</p>
+<a class="text-primary font-semibold hover:underline flex items-center justify-center gap-1" href="tel:+123456789">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+                        Contact Farm Support
+                    </a>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-highest dark:bg-inverse-surface border-t border-outline-variant">
+<div class="py-stack-lg px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto">
+<div class="flex flex-col gap-4">
+<a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-3">
+<img src="/assets/elikhope-logo.svg" alt="" class="h-9 w-9 rounded-lg" width="36" height="36"/>
+<span class="text-h3 font-h3 font-bold text-primary dark:text-primary-fixed">EliKhope Farms</span>
+</a>
+<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-surface-variant">© 2026 EliKhope Farms. Premium farm-to-consumer meat.</p>
+<p class="text-xs text-on-surface-variant"><a href="/Authentication_Pages/admin_login_elikhope_farms/code.html" class="underline hover:text-primary">Staff login</a></p>
+</div>
+<div class="flex flex-col gap-2">
+<h5 class="font-bold mb-2">Shop</h5>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop home</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Shop</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html">Browse cuts</a>
+</div>
+<div class="flex flex-col gap-2">
+<h5 class="font-bold mb-2">Trust</h5>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality standards</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline" href="/elikhope_farms_marketing_pages/elikhope_farms_help_center/code.html">Help center</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact us</a>
+</div>
+<div class="flex flex-col gap-2">
+<h5 class="font-bold mb-2">Account</h5>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Create account</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline" href="/Customer_Dashboard_Pages/dashboard_overview_elikhope_farms/code.html">Customer dashboard</a>
+</div>
+</div>
+</footer>
+</body></html>
