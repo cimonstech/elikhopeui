@@ -1,0 +1,9 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/", "destination": "/handoff/by-flow/01_public_website/marketing_home.html" },
+    { "source": "/handoff", "destination": "/handoff/by-flow/01_public_website/marketing_home.html" }
+  ]
+}
+
