@@ -66,6 +66,14 @@
       "flatFile": "marketing__contact.html"
     },
     {
+      "id": "marketing_all_categories",
+      "flowSection": "01_public_website",
+      "displayName": "All categories",
+      "sourcePath": "elikhope_farms_marketing_pages/elikhope_farms_all_categories/code.html",
+      "urlPath": "/elikhope_farms_marketing_pages/elikhope_farms_all_categories/code.html",
+      "flatFile": "marketing__all_categories.html"
+    },
+    {
       "id": "auth_login",
       "flowSection": "02_authentication",
       "displayName": "Customer login",
@@ -131,6 +139,38 @@
       "urlPath": "/E-Commerce_Shop_UI%20Pages/elikhope_farms_browse_products/code.html",
       "flatFile": "shop__product_listing.html",
       "notes": "Same file as shop_home."
+    },
+    {
+      "id": "shop_category_beef",
+      "flowSection": "03_ecommerce",
+      "displayName": "Category: Beef",
+      "sourcePath": "E-Commerce_Shop_UI Pages/category_beef_elikhope_farms/code.html",
+      "urlPath": "/E-Commerce_Shop_UI%20Pages/category_beef_elikhope_farms/code.html",
+      "flatFile": "shop__category_beef.html"
+    },
+    {
+      "id": "shop_category_goat",
+      "flowSection": "03_ecommerce",
+      "displayName": "Category: Goat",
+      "sourcePath": "E-Commerce_Shop_UI Pages/category_goat_elikhope_farms/code.html",
+      "urlPath": "/E-Commerce_Shop_UI%20Pages/category_goat_elikhope_farms/code.html",
+      "flatFile": "shop__category_goat.html"
+    },
+    {
+      "id": "shop_category_chicken",
+      "flowSection": "03_ecommerce",
+      "displayName": "Category: Chicken",
+      "sourcePath": "E-Commerce_Shop_UI Pages/category_chicken_elikhope_farms/code.html",
+      "urlPath": "/E-Commerce_Shop_UI%20Pages/category_chicken_elikhope_farms/code.html",
+      "flatFile": "shop__category_chicken.html"
+    },
+    {
+      "id": "shop_category_special",
+      "flowSection": "03_ecommerce",
+      "displayName": "Category: Special cuts",
+      "sourcePath": "E-Commerce_Shop_UI Pages/category_special_elikhope_farms/code.html",
+      "urlPath": "/E-Commerce_Shop_UI%20Pages/category_special_elikhope_farms/code.html",
+      "flatFile": "shop__category_special.html"
     },
     {
       "id": "shop_search",

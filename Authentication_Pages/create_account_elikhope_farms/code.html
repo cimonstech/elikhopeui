@@ -111,7 +111,12 @@
             background-color: #fcf9f8;
             color: #1c1b1b;
         }
-    </style>
+    
+        .auth-split-layout { display: flex; align-items: stretch; justify-content: center; min-height: 100vh; }
+        @media (min-width: 1024px) {
+            .auth-split-layout { flex-direction: row; }
+        }
+</style>
 <style id="elikhope-fonts">
   body, button, input, textarea, select { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
   h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
@@ -119,50 +124,277 @@
   .font-body-sm,.font-body-md,.font-body-lg,.font-label-caps { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important; }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style id="elikhope-responsive-v2">
+/* EliKhope Farms — comprehensive mobile responsiveness pass */
+/* Product listing cards: ~30% smaller than global price-lg (70% scale) */
+.ek-product-card .ek-product-price,
+.ek-product-card .font-price-lg.text-price-lg.text-primary {
+  font-size: 19.6px !important;
+  line-height: 1.15 !important;
+  white-space: nowrap !important;
+}
+/* PDP hero price: same ~70% scale as cards (vs default 28px price-lg) */
+.ek-pdp-hero-price {
+  font-size: 19.6px !important;
+  line-height: 1.15 !important;
+}
+@media (max-width: 1023px) {
+  /* Generic tightened horizontal margin where Tailwind used the desktop token */
+  .px-margin-desktop { padding-left: 16px !important; padding-right: 16px !important; }
+  .pl-margin-desktop { padding-left: 16px !important; }
+  .pr-margin-desktop { padding-right: 16px !important; }
+  .mx-margin-desktop { margin-left: 16px !important; margin-right: 16px !important; }
+}
+@media (max-width: 640px) {
+  /* ---------- Typography ---------- */
+  h1, .text-h1, .font-h1 { font-size: 30px !important; line-height: 1.15 !important; letter-spacing: -0.02em !important; }
+  h2, .text-h2, .font-h2 { font-size: 24px !important; line-height: 1.2 !important; }
+  h3, .text-h3, .font-h3 { font-size: 20px !important; line-height: 1.25 !important; }
+  h4, .text-h4, .font-h4 { font-size: 17px !important; line-height: 1.3 !important; }
+  .text-body-lg, .font-body-lg { font-size: 15px !important; line-height: 1.55 !important; }
+  .text-body-md, .font-body-md { font-size: 14.5px !important; line-height: 1.55 !important; }
+  .text-price-lg, .font-price-lg { font-size: 22px !important; }
+  .ek-product-card .ek-product-price,
+  .ek-product-card .font-price-lg.text-price-lg.text-primary {
+    font-size: 15.4px !important;
+  }
+  .ek-pdp-hero-price {
+    font-size: 15.4px !important;
+  }
+  /* Some Stitch designs use raw Tailwind sizes; soften the very largest */
+  .text-5xl, .text-6xl { font-size: 28px !important; line-height: 1.15 !important; }
+  .text-4xl { font-size: 24px !important; line-height: 1.2 !important; }
+  .text-3xl { font-size: 20px !important; }
+  .text-2xl { font-size: 18px !important; }
+  .text-xl { font-size: 16px !important; }
+  /* Cap absurd arbitrary icon sizes */
+  [class*="text-[120px]"] { font-size: 72px !important; }
+  [class*="text-[96px]"] { font-size: 56px !important; }
+
+  /* ---------- Section spacing ---------- */
+  .py-stack-lg { padding-top: 32px !important; padding-bottom: 32px !important; }
+  .pt-stack-lg { padding-top: 32px !important; }
+  .pb-stack-lg { padding-bottom: 32px !important; }
+  .my-stack-lg { margin-top: 24px !important; margin-bottom: 24px !important; }
+  .mt-stack-lg { margin-top: 24px !important; }
+  .mb-stack-lg { margin-bottom: 24px !important; }
+  .py-stack-md { padding-top: 20px !important; padding-bottom: 20px !important; }
+  .my-stack-md { margin-top: 16px !important; margin-bottom: 16px !important; }
+  .mb-stack-md { margin-bottom: 16px !important; }
+  .gap-gutter { gap: 16px !important; }
+  .gap-stack-lg { gap: 20px !important; }
+  .gap-stack-md { gap: 16px !important; }
+
+  /* ---------- Card / container paddings ---------- */
+  .p-stack-lg { padding: 20px !important; }
+  .p-stack-md { padding: 14px !important; }
+  .p-8 { padding: 16px !important; }
+  .p-6 { padding: 14px !important; }
+  .px-8 { padding-left: 16px !important; padding-right: 16px !important; }
+  .px-10 { padding-left: 18px !important; padding-right: 18px !important; }
+  .px-12 { padding-left: 18px !important; padding-right: 18px !important; }
+  .py-12 { padding-top: 28px !important; padding-bottom: 28px !important; }
+  .py-16 { padding-top: 32px !important; padding-bottom: 32px !important; }
+  .py-20, .py-24 { padding-top: 36px !important; padding-bottom: 36px !important; }
+
+  /* Rounded big banners shouldn't have huge corners on mobile */
+  .rounded-3xl { border-radius: 18px !important; }
+  .rounded-2xl { border-radius: 14px !important; }
+
+  /* ---------- Heroes / banners ---------- */
+  [class*="h-[870px]"], [class*="h-[800px]"], [class*="h-[720px]"], [class*="h-[700px]"], [class*="h-[680px]"], [class*="h-[640px]"], [class*="h-[600px]"], [class*="h-[560px]"] {
+    height: auto !important;
+    min-height: 460px !important;
+  }
+  [class*="min-h-[870px]"], [class*="min-h-[800px]"], [class*="min-h-[720px]"], [class*="min-h-[700px]"], [class*="min-h-[680px]"], [class*="min-h-[640px]"], [class*="min-h-[600px]"] {
+    min-height: 460px !important;
+  }
+  /* Wide editorial heroes (21/9, 16/9, 3/1, 2/1) become a portrait card on phones.
+     Tailwind escapes the bracketed value so we target it both ways. */
+  [class*="aspect-[21/9]"], [class*="aspect-[16/9]"], [class*="aspect-[3/1]"], [class*="aspect-[2/1]"],
+  .aspect-\[21\/9\], .aspect-\[16\/9\], .aspect-\[3\/1\], .aspect-\[2\/1\] {
+    aspect-ratio: 4 / 5 !important;
+  }
+
+  /* ---------- Image / card heights ---------- */
+  .h-96 { height: 14rem !important; }    /* 224px */
+  .h-80 { height: 13rem !important; }    /* 208px */
+  .h-72 { height: 12rem !important; }
+  .h-64 { height: 11rem !important; }    /* 176px */
+  .h-60 { height: 10.5rem !important; }
+  .h-56 { height: 10rem !important; }
+
+  /* Product / blog card image headers become square at narrow widths */
+  .rounded-2xl > .relative.h-64,
+  .rounded-2xl > .relative.h-60,
+  .rounded-2xl > .relative.h-72,
+  .rounded-2xl > .relative.h-56 {
+    height: auto !important;
+    aspect-ratio: 1 / 1;
+  }
+  /* Standalone tile-style image cards (e.g. Curated Categories on home) */
+  .group.relative.h-80,
+  .group.relative.h-64 {
+    height: auto !important;
+    aspect-ratio: 1 / 1;
+  }
+
+  /* CTA promo banner orb container */
+  .w-64.h-64, .w-80.h-80 { width: 11rem !important; height: 11rem !important; }
+
+  /* ---------- Top nav / header ---------- */
+  nav.fixed.top-0 .h-20 { height: 64px !important; }
+  nav.fixed.top-0 [class*="h-20"] { height: 64px !important; }
+  main.pt-20, main[class*="pt-20"] { padding-top: 64px !important; }
+  main.pt-24, main[class*="pt-24"] { padding-top: 72px !important; }
+
+  /* Reduce logo wordmark size beside the logo image in nav/footer */
+  nav.fixed.top-0 .text-h4.font-h4 { font-size: 17px !important; }
+  footer .text-h3.font-h3 { font-size: 18px !important; }
+
+  /* ---------- Newsletter / inline forms ---------- */
+  form input[type="email"], form input[type="text"] { padding: 12px 14px !important; font-size: 14.5px !important; }
+  form button[type="submit"] { padding-top: 12px !important; padding-bottom: 12px !important; }
+
+  /* ---------- Footer columns ---------- */
+  footer .grid.grid-cols-1.md\:grid-cols-4 { row-gap: 24px !important; }
+  footer .grid.grid-cols-2.md\:grid-cols-4 { row-gap: 22px !important; align-items: start !important; }
+  footer .grid h5 { margin-bottom: 6px !important; }
+
+  /* ---------- Margins / spacing utilities used heavily ---------- */
+  .mb-8 { margin-bottom: 18px !important; }
+  .mb-6 { margin-bottom: 14px !important; }
+  .mt-8 { margin-top: 18px !important; }
+  .mt-6 { margin-top: 14px !important; }
+  .gap-8 { gap: 16px !important; }
+  .gap-6 { gap: 14px !important; }
+
+  /* ---------- Buttons ---------- */
+  button { font-size: 14px !important; }
+  a[class*="bg-"], a[class*="border"] { font-size: 14px !important; }
+  button,
+  input[type="submit"],
+  a.inline-block,
+  a.inline-flex,
+  a.rounded-lg,
+  a.rounded-xl,
+  a.rounded-full {
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+  }
+  /* Keep horizontally-scrollable chip rows intact (don't shrink chips) */
+  .overflow-x-auto { flex-wrap: nowrap !important; }
+  .overflow-x-auto > button,
+  .overflow-x-auto > a,
+  .overflow-x-auto > * {
+    flex: 0 0 auto !important;
+    flex-shrink: 0 !important;
+    min-width: max-content !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+  a.px-8.py-4, button.px-8.py-4,
+  a.px-6.py-3, button.px-6.py-3,
+  a.px-4.py-3, button.px-4.py-3,
+  a.px-10.py-4, button.px-10.py-4 {
+    padding: 11px 16px !important;
+  }
+  button.rounded-full, a.rounded-full { padding-top: 8px !important; padding-bottom: 8px !important; }
+
+  /* ---------- Inverse promo CTA banner: stack neatly ---------- */
+  section .flex.flex-col.md\:flex-row.items-center.justify-between { gap: 18px !important; }
+
+  /* ---------- Process / step lists ---------- */
+  .lg\:pl-stack-lg { padding-left: 0 !important; }
+  .pl-stack-lg { padding-left: 0 !important; }
+
+  /* Prevent overflow from absolute decoration cards */
+  [class*="-bottom-6"][class*="-right-6"].absolute { display: none !important; }
+
+  /* ---------- Admin dashboard mobile cleanups ---------- */
+  /* Make page-action toolbars wrap nicely instead of overflowing.
+     Scoped to `gap-3` to avoid wrapping numbered-step rows (which use `flex gap-4`
+     with a fixed-size circle next to text). */
+  main .flex.justify-between.items-center.flex-wrap,
+  main .flex.justify-between.items-center { flex-wrap: wrap !important; gap: 8px !important; }
+  main .flex.items-center.gap-4,
+  main .flex.gap-3 { flex-wrap: wrap !important; gap: 8px !important; }
+  main .flex.gap-3 > * { min-width: 0; }
+  /* Hide the admin header text user-info block; keep avatar */
+  main > header .text-right,
+  main > header .h-8.w-\[1px\] { display: none !important; }
+  /* Allow sticky admin header to still wrap content if it overflows */
+  main > header.sticky { gap: 8px !important; }
+  main > header.sticky .max-w-md { max-width: 100% !important; }
+  /* Push admin sticky header right of the floating hamburger on mobile */
+  main > header.sticky { padding-left: 56px !important; }
+  /* Promotion CTA banner: tame extreme decorative orbs */
+  [class*="blur-3xl"] { filter: blur(40px) !important; }
+
+  /* Final safety: prevent horizontal scroll bleed */
+  html, body { overflow-x: hidden !important; }
+}
+@media (max-width: 380px) {
+  h1, .text-h1, .font-h1 { font-size: 26px !important; }
+  h2, .text-h2, .font-h2 { font-size: 22px !important; }
+  .px-margin-desktop { padding-left: 14px !important; padding-right: 14px !important; }
+}
+</style>
 </head>
 <body class="min-h-screen">
-<main class="flex min-h-screen w-full">
-<!-- Left Side: Branded Illustration & Benefits -->
-<section class="hidden lg:flex lg:w-1/2 relative bg-primary-container overflow-hidden p-margin-desktop flex-col justify-between">
-<!-- Decorative Background Element -->
-<div class="absolute inset-0 opacity-10 pointer-events-none">
-<img class="w-full h-full object-cover" data-alt="A lush, expansive green pasture with a soft morning fog rolling over rolling hills. The scene is illuminated by golden sunrise light, casting long shadows across the grass. The overall atmosphere is serene, high-quality, and deeply rooted in nature, reflecting a premium farm-to-table brand identity with a clean and professional photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOU6eO6oLp7D1eBQoynFNVHpa7oobvXBGsIcayd1aS9jJtEfZhd3q2NHqkA6YHVJxgJ593d9c0fvtLa6nBLpm3XoaYfW8SzUt3i6XotWutu0ISaeQPKKJ1h0hLLhMSuHv9NOWo02x7nND0hwZoROeiT7OmV_cSPbKa3gC0KINT8CtqE3NqjN7e3VGR__axaeeuB9e88Rc0jBHkoMKIkZMaiDjSKWWQItX13VCnTOSllf3bBNmgHgIresVXTKh-NLBL-QgDj-v2fsw"/>
-</div>
-<div class="relative z-10">
-<h1 class="font-h1 text-h1 text-on-primary-container mb-stack-sm">EliKhope Farms</h1>
-<p class="font-body-lg text-body-lg text-on-primary-container opacity-90 max-w-md">
-                    Bringing the freshness of the field directly to your doorstep with uncompromising hygiene and traceability.
-                </p>
-</div>
-<!-- Benefit Bento Grid -->
-<div class="relative z-10 grid grid-cols-1 gap-gutter mb-stack-lg">
-<div class="bg-white/10 backdrop-blur-md rounded-xl p-stack-md border border-white/20">
-<div class="flex items-center gap-stack-sm mb-2">
-<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
-<h4 class="font-h4 text-h4 text-on-primary-container">Priority Delivery</h4>
-</div>
-<p class="font-body-sm text-body-sm text-on-primary-container opacity-80">Our members get first-access shipping slots and expedited cold-chain handling for maximum freshness.</p>
-</div>
-<div class="grid grid-cols-2 gap-gutter">
-<div class="bg-white/10 backdrop-blur-md rounded-xl p-stack-md border border-white/20">
-<span class="material-symbols-outlined text-on-primary-container mb-2" style="font-variation-settings: 'FILL' 1;">location_on</span>
-<h4 class="font-h4 text-h4 text-on-primary-container">Order Tracking</h4>
-<p class="font-body-sm text-body-sm text-on-primary-container opacity-80">Real-time farm-to-door traceability.</p>
-</div>
-<div class="bg-white/10 backdrop-blur-md rounded-xl p-stack-md border border-white/20">
-<span class="material-symbols-outlined text-on-primary-container mb-2" style="font-variation-settings: 'FILL' 1;">loyalty</span>
-<h4 class="font-h4 text-h4 text-on-primary-container">Exclusive Offers</h4>
-<p class="font-body-sm text-body-sm text-on-primary-container opacity-80">Special cuts and seasonal member pricing.</p>
-</div>
-</div>
-</div>
-<div class="relative z-10">
-<p class="font-label-caps text-label-caps text-on-primary-container/60 uppercase tracking-widest">Premium Quality Since 1994</p>
-</div>
+<main class="auth-split-layout">
+<!-- Auth desktop hero (image left) -->
+<section class="hidden lg:flex lg:w-1/2 relative min-h-[280px] lg:min-h-screen overflow-hidden bg-black" data-ek-auth-hero>
+  <img src="/assets/butcher-smiling-with-beef.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" width="1200" height="1600"/>
+  <div class="absolute inset-0 bg-gradient-to-tr from-black/90 via-black/55 to-black/40"></div>
+  <div class="relative z-10 flex flex-col justify-end p-margin-desktop max-w-xl mt-auto">
+    <p class="font-label-caps text-white/70 tracking-widest mb-2">FARM · AKUSE · EASTERN REGION</p>
+    <h2 class="font-h2 text-h2 text-white mb-3">Premium cuts from our pastures to your kitchen.</h2>
+    <p class="font-body-md text-white/80 max-w-md">Ethically raised in Ghana, cold-chain delivery, and the hygiene standards you expect from EliKhope Farms.</p>
+  </div>
 </section>
 <!-- Right Side: Registration Form -->
-<section class="w-full lg:w-1/2 flex items-center justify-center p-margin-mobile md:p-margin-desktop bg-surface">
+<section class="w-full lg:w-1/2 flex flex-1 items-center justify-center p-margin-mobile md:p-margin-desktop bg-surface">
 <div class="w-full max-w-md">
+<div class="mb-stack-lg flex flex-col items-center text-center lg:hidden" data-ek-auth-brand><img src="/assets/elilogo.png" alt="EliKhope Farms" class="h-12 w-12 rounded-lg shadow-sm" width="48" height="48"/><h2 class="font-h3 text-h3 text-primary mt-base">EliKhope Farms</h2></div>
 <div class="mb-stack-lg">
 <h2 class="font-h2 text-h2 text-primary mb-2">Create Account</h2>
 <p class="font-body-md text-body-md text-on-surface-variant">Join our community of artisanal meat enthusiasts.</p>
@@ -260,13 +492,12 @@
 <span class="font-label-caps text-label-caps text-on-surface-variant">Secure 256-bit Encrypted Connection</span>
 </div>
 </div>
-<footer class="w-full py-8 px-margin-desktop border-t border-outline-variant bg-surface-container-low">
-<div class="max-w-container-max mx-auto flex flex-col sm:flex-row gap-4 justify-between items-center text-sm text-on-surface-variant">
-<a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="flex items-center gap-2 font-semibold text-primary"><img src="/assets/elikhope-logo.svg" alt="" class="h-8 w-8 rounded-lg" width="32" height="32"/>EliKhope Farms</a>
+<footer class="w-full py-6 px-margin-mobile md:px-margin-desktop border-t border-outline-variant bg-surface-container-low">
+<div class="max-w-container-max mx-auto flex flex-col sm:flex-row gap-3 justify-between items-center text-sm text-on-surface-variant">
+<a href="/elikhope_farms_marketing_pages/elikhope_farms_home_page/code.html" class="font-semibold text-primary hover:underline">EliKhope Farms</a>
 <div class="flex gap-4 flex-wrap justify-center">
 <a href="/elikhope_farms_marketing_pages/elikhope_farms_help_center/code.html" class="hover:text-primary underline">Help</a>
 <a href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html" class="hover:text-primary underline">Contact</a>
-<a href="/Authentication_Pages/admin_login_elikhope_farms/code.html" class="hover:text-primary underline">Staff login</a>
 </div>
 </div>
 </footer>

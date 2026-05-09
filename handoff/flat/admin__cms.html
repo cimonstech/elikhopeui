@@ -114,12 +114,266 @@
   .font-body-sm,.font-body-md,.font-body-lg,.font-label-caps { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important; }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style id="elikhope-responsive-v2">
+/* EliKhope Farms — comprehensive mobile responsiveness pass */
+/* Product listing cards: ~30% smaller than global price-lg (70% scale) */
+.ek-product-card .ek-product-price,
+.ek-product-card .font-price-lg.text-price-lg.text-primary {
+  font-size: 19.6px !important;
+  line-height: 1.15 !important;
+  white-space: nowrap !important;
+}
+/* PDP hero price: same ~70% scale as cards (vs default 28px price-lg) */
+.ek-pdp-hero-price {
+  font-size: 19.6px !important;
+  line-height: 1.15 !important;
+}
+@media (max-width: 1023px) {
+  /* Generic tightened horizontal margin where Tailwind used the desktop token */
+  .px-margin-mobile md:px-margin-desktop { padding-left: 16px !important; padding-right: 16px !important; }
+  .pl-margin-desktop { padding-left: 16px !important; }
+  .pr-margin-desktop { padding-right: 16px !important; }
+  .mx-margin-desktop { margin-left: 16px !important; margin-right: 16px !important; }
+}
+@media (max-width: 640px) {
+  /* ---------- Typography ---------- */
+  h1, .text-h1, .font-h1 { font-size: 30px !important; line-height: 1.15 !important; letter-spacing: -0.02em !important; }
+  h2, .text-h2, .font-h2 { font-size: 24px !important; line-height: 1.2 !important; }
+  h3, .text-h3, .font-h3 { font-size: 20px !important; line-height: 1.25 !important; }
+  h4, .text-h4, .font-h4 { font-size: 17px !important; line-height: 1.3 !important; }
+  .text-body-lg, .font-body-lg { font-size: 15px !important; line-height: 1.55 !important; }
+  .text-body-md, .font-body-md { font-size: 14.5px !important; line-height: 1.55 !important; }
+  .text-price-lg, .font-price-lg { font-size: 22px !important; }
+  .ek-product-card .ek-product-price,
+  .ek-product-card .font-price-lg.text-price-lg.text-primary {
+    font-size: 15.4px !important;
+  }
+  .ek-pdp-hero-price {
+    font-size: 15.4px !important;
+  }
+  /* Some Stitch designs use raw Tailwind sizes; soften the very largest */
+  .text-5xl, .text-6xl { font-size: 28px !important; line-height: 1.15 !important; }
+  .text-4xl { font-size: 24px !important; line-height: 1.2 !important; }
+  .text-3xl { font-size: 20px !important; }
+  .text-2xl { font-size: 18px !important; }
+  .text-xl { font-size: 16px !important; }
+  /* Cap absurd arbitrary icon sizes */
+  [class*="text-[120px]"] { font-size: 72px !important; }
+  [class*="text-[96px]"] { font-size: 56px !important; }
+
+  /* ---------- Section spacing ---------- */
+  .py-stack-lg { padding-top: 32px !important; padding-bottom: 32px !important; }
+  .pt-stack-lg { padding-top: 32px !important; }
+  .pb-stack-lg { padding-bottom: 32px !important; }
+  .my-stack-lg { margin-top: 24px !important; margin-bottom: 24px !important; }
+  .mt-stack-lg { margin-top: 24px !important; }
+  .mb-stack-lg { margin-bottom: 24px !important; }
+  .py-stack-md { padding-top: 20px !important; padding-bottom: 20px !important; }
+  .my-stack-md { margin-top: 16px !important; margin-bottom: 16px !important; }
+  .mb-stack-md { margin-bottom: 16px !important; }
+  .gap-gutter { gap: 16px !important; }
+  .gap-stack-lg { gap: 20px !important; }
+  .gap-stack-md { gap: 16px !important; }
+
+  /* ---------- Card / container paddings ---------- */
+  .p-stack-lg { padding: 20px !important; }
+  .p-stack-md { padding: 14px !important; }
+  .p-8 { padding: 16px !important; }
+  .p-6 { padding: 14px !important; }
+  .px-8 { padding-left: 16px !important; padding-right: 16px !important; }
+  .px-10 { padding-left: 18px !important; padding-right: 18px !important; }
+  .px-12 { padding-left: 18px !important; padding-right: 18px !important; }
+  .py-12 { padding-top: 28px !important; padding-bottom: 28px !important; }
+  .py-16 { padding-top: 32px !important; padding-bottom: 32px !important; }
+  .py-20, .py-24 { padding-top: 36px !important; padding-bottom: 36px !important; }
+
+  /* Rounded big banners shouldn't have huge corners on mobile */
+  .rounded-3xl { border-radius: 18px !important; }
+  .rounded-2xl { border-radius: 14px !important; }
+
+  /* ---------- Heroes / banners ---------- */
+  [class*="h-[870px]"], [class*="h-[800px]"], [class*="h-[720px]"], [class*="h-[700px]"], [class*="h-[680px]"], [class*="h-[640px]"], [class*="h-[600px]"], [class*="h-[560px]"] {
+    height: auto !important;
+    min-height: 460px !important;
+  }
+  [class*="min-h-[870px]"], [class*="min-h-[800px]"], [class*="min-h-[720px]"], [class*="min-h-[700px]"], [class*="min-h-[680px]"], [class*="min-h-[640px]"], [class*="min-h-[600px]"] {
+    min-height: 460px !important;
+  }
+  /* Wide editorial heroes (21/9, 16/9, 3/1, 2/1) become a portrait card on phones.
+     Tailwind escapes the bracketed value so we target it both ways. */
+  [class*="aspect-[21/9]"], [class*="aspect-[16/9]"], [class*="aspect-[3/1]"], [class*="aspect-[2/1]"],
+  .aspect-\[21\/9\], .aspect-\[16\/9\], .aspect-\[3\/1\], .aspect-\[2\/1\] {
+    aspect-ratio: 4 / 5 !important;
+  }
+
+  /* ---------- Image / card heights ---------- */
+  .h-96 { height: 14rem !important; }    /* 224px */
+  .h-80 { height: 13rem !important; }    /* 208px */
+  .h-72 { height: 12rem !important; }
+  .h-64 { height: 11rem !important; }    /* 176px */
+  .h-60 { height: 10.5rem !important; }
+  .h-56 { height: 10rem !important; }
+
+  /* Product / blog card image headers become square at narrow widths */
+  .rounded-2xl > .relative.h-64,
+  .rounded-2xl > .relative.h-60,
+  .rounded-2xl > .relative.h-72,
+  .rounded-2xl > .relative.h-56 {
+    height: auto !important;
+    aspect-ratio: 1 / 1;
+  }
+  /* Standalone tile-style image cards (e.g. Curated Categories on home) */
+  .group.relative.h-80,
+  .group.relative.h-64 {
+    height: auto !important;
+    aspect-ratio: 1 / 1;
+  }
+
+  /* CTA promo banner orb container */
+  .w-64.h-64, .w-80.h-80 { width: 11rem !important; height: 11rem !important; }
+
+  /* ---------- Top nav / header ---------- */
+  nav.fixed.top-0 .h-20 { height: 64px !important; }
+  nav.fixed.top-0 [class*="h-20"] { height: 64px !important; }
+  main.pt-20, main[class*="pt-20"] { padding-top: 64px !important; }
+  main.pt-24, main[class*="pt-24"] { padding-top: 72px !important; }
+
+  /* Reduce logo wordmark size beside the logo image in nav/footer */
+  nav.fixed.top-0 .text-h4.font-h4 { font-size: 17px !important; }
+  footer .text-h3.font-h3 { font-size: 18px !important; }
+
+  /* ---------- Newsletter / inline forms ---------- */
+  form input[type="email"], form input[type="text"] { padding: 12px 14px !important; font-size: 14.5px !important; }
+  form button[type="submit"] { padding-top: 12px !important; padding-bottom: 12px !important; }
+
+  /* ---------- Footer columns ---------- */
+  footer .grid.grid-cols-1.md\:grid-cols-4 { row-gap: 24px !important; }
+  footer .grid.grid-cols-2.md\:grid-cols-4 { row-gap: 22px !important; align-items: start !important; }
+  footer .grid h5 { margin-bottom: 6px !important; }
+
+  /* ---------- Margins / spacing utilities used heavily ---------- */
+  .mb-8 { margin-bottom: 18px !important; }
+  .mb-6 { margin-bottom: 14px !important; }
+  .mt-8 { margin-top: 18px !important; }
+  .mt-6 { margin-top: 14px !important; }
+  .gap-8 { gap: 16px !important; }
+  .gap-6 { gap: 14px !important; }
+
+  /* ---------- Buttons ---------- */
+  button { font-size: 14px !important; }
+  a[class*="bg-"], a[class*="border"] { font-size: 14px !important; }
+  button,
+  input[type="submit"],
+  a.inline-block,
+  a.inline-flex,
+  a.rounded-lg,
+  a.rounded-xl,
+  a.rounded-full {
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+  }
+  /* Keep horizontally-scrollable chip rows intact (don't shrink chips) */
+  .overflow-x-auto { flex-wrap: nowrap !important; }
+  .overflow-x-auto > button,
+  .overflow-x-auto > a,
+  .overflow-x-auto > * {
+    flex: 0 0 auto !important;
+    flex-shrink: 0 !important;
+    min-width: max-content !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+  a.px-8.py-4, button.px-8.py-4,
+  a.px-6.py-3, button.px-6.py-3,
+  a.px-4.py-3, button.px-4.py-3,
+  a.px-10.py-4, button.px-10.py-4 {
+    padding: 11px 16px !important;
+  }
+  button.rounded-full, a.rounded-full { padding-top: 8px !important; padding-bottom: 8px !important; }
+
+  /* ---------- Inverse promo CTA banner: stack neatly ---------- */
+  section .flex.flex-col.md\:flex-row.items-center.justify-between { gap: 18px !important; }
+
+  /* ---------- Process / step lists ---------- */
+  .lg\:pl-stack-lg { padding-left: 0 !important; }
+  .pl-stack-lg { padding-left: 0 !important; }
+
+  /* Prevent overflow from absolute decoration cards */
+  [class*="-bottom-6"][class*="-right-6"].absolute { display: none !important; }
+
+  /* ---------- Admin dashboard mobile cleanups ---------- */
+  /* Make page-action toolbars wrap nicely instead of overflowing.
+     Scoped to `gap-3` to avoid wrapping numbered-step rows (which use `flex gap-4`
+     with a fixed-size circle next to text). */
+  main .flex.justify-between.items-center.flex-wrap,
+  main .flex.justify-between.items-center { flex-wrap: wrap !important; gap: 8px !important; }
+  main .flex.items-center.gap-4,
+  main .flex.gap-3 { flex-wrap: wrap !important; gap: 8px !important; }
+  main .flex.gap-3 > * { min-width: 0; }
+  /* Hide the admin header text user-info block; keep avatar */
+  main > header .text-right,
+  main > header .h-8.w-\[1px\] { display: none !important; }
+  /* Allow sticky admin header to still wrap content if it overflows */
+  main > header.sticky { gap: 8px !important; }
+  main > header.sticky .max-w-md { max-width: 100% !important; }
+  /* Push admin sticky header right of the floating hamburger on mobile */
+  main > header.sticky { padding-left: 56px !important; }
+  /* Promotion CTA banner: tame extreme decorative orbs */
+  [class*="blur-3xl"] { filter: blur(40px) !important; }
+
+  /* Final safety: prevent horizontal scroll bleed */
+  html, body { overflow-x: hidden !important; }
+}
+@media (max-width: 380px) {
+  h1, .text-h1, .font-h1 { font-size: 26px !important; }
+  h2, .text-h2, .font-h2 { font-size: 22px !important; }
+  .px-margin-mobile md:px-margin-desktop { padding-left: 14px !important; padding-right: 14px !important; }
+}
+</style>
 </head>
 <body class="bg-surface font-body-md text-on-surface">
-<aside class="hidden md:flex flex-col h-screen fixed left-0 top-0 bg-inverse-surface dark:bg-surface-container-lowest shadow-md docked left-0 h-full w-64 z-50">
+<aside class="hidden md:flex flex-col h-screen fixed left-0 top-0 bg-inverse-surface dark:bg-surface-container-lowest shadow-md docked h-full w-64 z-50">
 <div class="p-6">
 <a href="/Admin_Dashboard_Pages/admin_dashboard_overview_elikhope_farms/code.html" class="flex items-center gap-3 group">
-<img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 shrink-0 rounded-lg" width="40" height="40"/>
+<img src="/assets/elilogo.png" alt="" class="h-10 w-10 shrink-0 rounded-lg" width="40" height="40"/>
 <div class="leading-tight">
 <h1 class="text-h4 font-h4 text-primary-fixed dark:text-primary tracking-tight">EliKhope Farms</h1>
 <p class="font-body-sm text-body-sm text-surface-variant dark:text-outline opacity-70">Admin terminal</p>
@@ -187,16 +441,16 @@ Log out
 </a>
 </div>
 </aside>
-<button class="md:hidden fixed top-4 left-4 z-[60] p-3 rounded-xl bg-surface shadow-md border border-outline-variant/40" type="button" aria-label="Open admin menu" data-ek-toggle="ek-admin-drawer">
+<button class="md:hidden fixed top-3 left-3 z-[60] p-3 rounded-xl bg-surface shadow-md border border-outline-variant/40" type="button" aria-label="Open admin menu" data-ek-toggle="ek-admin-drawer">
   <i class="fa-solid fa-bars text-on-surface-variant"></i>
 </button>
 <div id="ek-admin-drawer" class="md:hidden hidden fixed inset-0 z-[70]" data-ek-drawer="left">
   <div class="absolute inset-0 bg-black/40" data-ek-toggle="ek-admin-drawer" aria-label="Close menu"></div>
-  <aside data-ek-drawer-panel class="absolute left-0 top-0 h-full w-80 max-w-[85vw] bg-inverse-surface dark:bg-surface-container-lowest shadow-xl border-r border-on-surface-variant/10 flex flex-col translate-x-full transition-transform duration-200 ease-out">
+  <aside data-ek-drawer-panel class="absolute left-0 top-0 h-full w-80 max-w-[85vw] bg-inverse-surface dark:bg-surface-container-lowest shadow-xl border-r border-on-surface-variant/10 flex flex-col -translate-x-full transition-transform duration-200 ease-out">
     <div class="p-6 flex items-start justify-between gap-4">
       <div class="flex-1">
         <a href="/Admin_Dashboard_Pages/admin_dashboard_overview_elikhope_farms/code.html" class="flex items-center gap-3 group">
-<img src="/assets/elikhope-logo.svg" alt="" class="h-10 w-10 shrink-0 rounded-lg" width="40" height="40"/>
+<img src="/assets/elilogo.png" alt="" class="h-10 w-10 shrink-0 rounded-lg" width="40" height="40"/>
 <div class="leading-tight">
 <h1 class="text-h4 font-h4 text-primary-fixed dark:text-primary tracking-tight">EliKhope Farms</h1>
 <p class="font-body-sm text-body-sm text-surface-variant dark:text-outline opacity-70">Admin terminal</p>
@@ -268,6 +522,221 @@ Log out
       </a>
     </div>
   </aside>
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
 </div>
 
 
@@ -407,7 +876,7 @@ Log out
 </div>
 </header>
 <!-- Main Content Canvas -->
-<main class="ml-64 mt-16 p-stack-md min-h-screen">
+<main class="md:ml-64 ml-0 mt-16 p-stack-md pt-12 md:pt-0 min-h-screen">
 <div class="max-w-[1280px] mx-auto space-y-stack-lg">
 <!-- Page Header -->
 <section class="flex justify-between items-end">
@@ -702,17 +1171,60 @@ Log out
 <span class="text-[10px]">Config</span>
 </a>
 </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script id="ek-toggle-init">
 (() => {
+  const closedClass = (root) => (root.getAttribute('data-ek-drawer') === 'left') ? '-translate-x-full' : 'translate-x-full';
   const openDrawer = (root) => {
     root.classList.remove('hidden');
     const panel = root.querySelector('[data-ek-drawer-panel]');
-    if (panel) requestAnimationFrame(() => panel.classList.remove('translate-x-full'));
+    if (panel) requestAnimationFrame(() => panel.classList.remove(closedClass(root)));
+    document.documentElement.classList.add('overflow-hidden');
   };
   const closeDrawer = (root) => {
     const panel = root.querySelector('[data-ek-drawer-panel]');
-    if (panel) panel.classList.add('translate-x-full');
-    window.setTimeout(() => root.classList.add('hidden'), 220);
+    if (panel) panel.classList.add(closedClass(root));
+    window.setTimeout(() => {
+      root.classList.add('hidden');
+      document.documentElement.classList.remove('overflow-hidden');
+    }, 220);
   };
   document.addEventListener('click', (e) => {
     const btn = e.target.closest('[data-ek-toggle]');
@@ -720,16 +1232,14 @@ Log out
     const id = btn.getAttribute('data-ek-toggle');
     const root = document.getElementById(id);
     if (!root) return;
-
     const isDrawer = root.hasAttribute('data-ek-drawer');
-    if (!isDrawer) {
-      root.classList.toggle('hidden');
-      return;
-    }
-
+    if (!isDrawer) { root.classList.toggle('hidden'); return; }
     const isOpen = !root.classList.contains('hidden');
-    if (isOpen) closeDrawer(root);
-    else openDrawer(root);
+    if (isOpen) closeDrawer(root); else openDrawer(root);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    document.querySelectorAll('[data-ek-drawer]:not(.hidden)').forEach(closeDrawer);
   });
 })();
 </script>
