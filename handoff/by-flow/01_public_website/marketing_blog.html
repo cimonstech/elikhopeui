@@ -161,6 +161,10 @@
 
 
 
+
+
+
+
 <style id="elikhope-responsive-v2">
 /* EliKhope Farms — comprehensive mobile responsiveness pass */
 /* Product listing cards: ~30% smaller than global price-lg (70% scale) */
@@ -197,6 +201,17 @@
   }
   .ek-pdp-hero-price {
     font-size: 15.4px !important;
+  }
+  /* Shopping cart + checkout review: currency ~30% smaller than default mobile price-lg */
+  [data-ek-cart-page] .font-price-lg.text-price-lg,
+  [data-ek-checkout-review-money] .font-price-lg.text-price-lg {
+    font-size: 15.4px !important;
+    line-height: 1.15 !important;
+  }
+  [data-ek-cart-summary] .space-y-4.pb-6 .flex.justify-between span:last-child,
+  [data-ek-checkout-summary] .space-y-stack-sm.border-b .flex.justify-between span:last-child {
+    font-size: 10.15px !important;
+    line-height: 1.25 !important;
   }
   /* Some Stitch designs use raw Tailwind sizes; soften the very largest */
   .text-5xl, .text-6xl { font-size: 28px !important; line-height: 1.15 !important; }
@@ -401,7 +416,6 @@
 <a class="hidden sm:inline font-body-sm font-semibold text-primary hover:underline" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
 <a class="hidden sm:inline-flex px-4 py-2 rounded-lg bg-primary text-white font-bold text-sm hover:opacity-90" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Sign up</a>
 <a class="p-2 rounded-full hover:bg-surface-container transition-colors" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_shopping_cart/code.html" title="Cart"><span class="material-symbols-outlined text-on-surface-variant">shopping_cart</span></a>
-<a class="hidden sm:inline-flex p-2 rounded-full hover:bg-surface-container transition-colors" href="/Customer_Dashboard_Pages/dashboard_overview_elikhope_farms/code.html" title="Account"><span class="material-symbols-outlined text-on-surface-variant">account_circle</span></a>
 <button class="lg:hidden p-2 rounded-full hover:bg-surface-container transition-colors" type="button" aria-label="Open menu" data-ek-toggle="ek-site-drawer">
   <i class="fa-solid fa-bars text-on-surface-variant"></i>
 </button>
@@ -561,6 +575,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 <main class="pt-20">
 <!-- Section 1: Featured Article Hero -->
 <section class="max-w-container-max mx-auto px-margin-desktop py-stack-lg">
@@ -571,7 +597,7 @@
 <h1 class="font-h1 text-h1 text-white max-w-2xl mb-stack-sm">The Art of Aging: Why Our 28-Day Dry Process Redefines Flavor</h1>
 <p class="font-body-lg text-body-lg text-white/90 max-w-xl mb-stack-md">Discover the science and patience behind the perfect cut of beef, from our lush pastures to your dining table.</p>
 <div class="flex items-center gap-stack-md">
-<button class="bg-primary text-on-primary px-stack-md py-stack-sm rounded-lg font-h4 text-body-md hover:bg-primary-container transition-all">Read Article</button>
+<a href="/elikhope_farms_marketing_pages/elikhope_farms_blog_post_detail/code.html" class="inline-block bg-primary text-on-primary px-stack-md py-stack-sm rounded-lg font-h4 text-body-md hover:bg-primary-container transition-all">Read Article</a>
 </div>
 </div>
 </div>
@@ -604,7 +630,7 @@
 <span class="font-label-caps text-label-caps text-outline">MARCH 12, 2024</span>
 <h3 class="font-h3 text-h3 mt-2 mb-3 leading-tight group-hover:text-primary transition-colors">5 Summer Marinades for Grass-Fed Beef</h3>
 <p class="font-body-md text-body-md text-on-surface-variant mb-stack-md line-clamp-3">Unlock the deep umami flavors of grass-fed beef with these simple, natural marinades using farm-fresh herbs.</p>
-<a class="text-primary font-h4 text-body-md flex items-center gap-1" href="#">Read more <span class="material-symbols-outlined text-base">arrow_forward</span></a>
+<a class="text-primary font-h4 text-body-md flex items-center gap-1" href="/elikhope_farms_marketing_pages/elikhope_farms_blog_post_detail/code.html">Read more <span class="material-symbols-outlined text-base">arrow_forward</span></a>
 </div>
 </article>
 <!-- Blog Card 2 -->
@@ -617,7 +643,7 @@
 <span class="font-label-caps text-label-caps text-outline">MARCH 08, 2024</span>
 <h3 class="font-h3 text-h3 mt-2 mb-3 leading-tight group-hover:text-primary transition-colors">Spring Pasture Management: Our Commitment</h3>
 <p class="font-body-md text-body-md text-on-surface-variant mb-stack-md line-clamp-3">How we ensure our soil health stays optimal for the coming grazing season using regenerative agriculture.</p>
-<a class="text-primary font-h4 text-body-md flex items-center gap-1" href="#">Read more <span class="material-symbols-outlined text-base">arrow_forward</span></a>
+<a class="text-primary font-h4 text-body-md flex items-center gap-1" href="/elikhope_farms_marketing_pages/elikhope_farms_blog_post_detail/code.html">Read more <span class="material-symbols-outlined text-base">arrow_forward</span></a>
 </div>
 </article>
 <!-- Blog Card 3 -->
@@ -630,7 +656,7 @@
 <span class="font-label-caps text-label-caps text-outline">MARCH 01, 2024</span>
 <h3 class="font-h3 text-h3 mt-2 mb-3 leading-tight group-hover:text-primary transition-colors">The Master Butcher’s Guide to Choosing Cuts</h3>
 <p class="font-body-md text-body-md text-on-surface-variant mb-stack-md line-clamp-3">Understanding the differences between chuck, loin, and brisket to elevate your home cooking experience.</p>
-<a class="text-primary font-h4 text-body-md flex items-center gap-1" href="#">Read more <span class="material-symbols-outlined text-base">arrow_forward</span></a>
+<a class="text-primary font-h4 text-body-md flex items-center gap-1" href="/elikhope_farms_marketing_pages/elikhope_farms_blog_post_detail/code.html">Read more <span class="material-symbols-outlined text-base">arrow_forward</span></a>
 </div>
 </article>
 <!-- Blog Card 4 -->
@@ -643,7 +669,7 @@
 <span class="font-label-caps text-label-caps text-outline">FEBRUARY 24, 2024</span>
 <h3 class="font-h3 text-h3 mt-2 mb-3 leading-tight group-hover:text-primary transition-colors">Slow-Cooked Goat: A Traditional Farm Favorite</h3>
 <p class="font-body-md text-body-md text-on-surface-variant mb-stack-md line-clamp-3">A step-by-step guide to achieving tender, flavorful results with our premium free-range goat meat.</p>
-<a class="text-primary font-h4 text-body-md flex items-center gap-1" href="#">Read more <span class="material-symbols-outlined text-base">arrow_forward</span></a>
+<a class="text-primary font-h4 text-body-md flex items-center gap-1" href="/elikhope_farms_marketing_pages/elikhope_farms_blog_post_detail/code.html">Read more <span class="material-symbols-outlined text-base">arrow_forward</span></a>
 </div>
 </article>
 </div>
@@ -663,7 +689,7 @@
 <div class="bg-surface-container rounded-xl p-stack-md">
 <h4 class="font-h4 text-h4 mb-stack-md border-b border-outline-variant pb-2">Most Popular</h4>
 <div class="space-y-stack-md">
-<a class="flex gap-stack-sm group" href="#">
+<a class="flex gap-stack-sm group" href="/elikhope_farms_marketing_pages/elikhope_farms_blog_post_detail/code.html">
 <div class="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden">
 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="Close up of raw beef steaks showing exquisite marbling patterns on a white background, highlighting product quality and purity." src="/assets/meat-in-cold-room.jpg"/>
 </div>
@@ -672,7 +698,7 @@
 <span class="font-label-caps text-label-caps text-outline">12K READS</span>
 </div>
 </a>
-<a class="flex gap-stack-sm group" href="#">
+<a class="flex gap-stack-sm group" href="/elikhope_farms_marketing_pages/elikhope_farms_blog_post_detail/code.html">
 <div class="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden">
 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="Artistic culinary plating of a poultry dish with colorful vegetable purees and edible flowers, demonstrating high-end food presentation." src="/assets/products/fresh-chicken-meat.jpg"/>
 </div>
@@ -681,7 +707,7 @@
 <span class="font-label-caps text-label-caps text-outline">9K READS</span>
 </div>
 </a>
-<a class="flex gap-stack-sm group" href="#">
+<a class="flex gap-stack-sm group" href="/elikhope_farms_marketing_pages/elikhope_farms_blog_post_detail/code.html">
 <div class="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden">
 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="A beautiful spread of fresh herbs and organic oils in glass bottles on a sunlit wooden counter, reflecting natural farm life." src="/assets/butchers-in-butchery.jpg"/>
 </div>
@@ -724,6 +750,8 @@
 <a class="font-body-sm text-on-surface-variant hover:text-primary underline block" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
 <a class="font-body-sm text-on-surface-variant hover:text-primary underline block" href="/elikhope_farms_marketing_pages/elikhope_farms_help_center/code.html">Help center</a>
 <a class="font-body-sm text-on-surface-variant hover:text-primary underline block" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact us</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline block" href="/elikhope_farms_marketing_pages/elikhope_farms_terms_of_service/code.html">Terms of service</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline block" href="/elikhope_farms_marketing_pages/elikhope_farms_privacy_policy/code.html">Privacy policy</a>
 </div>
 <div class="flex flex-col gap-2 min-w-0">
 <h5 class="font-bold text-on-surface mb-1">Account</h5>
@@ -734,6 +762,10 @@
 </div>
 </div>
 </footer>
+
+
+
+
 
 
 

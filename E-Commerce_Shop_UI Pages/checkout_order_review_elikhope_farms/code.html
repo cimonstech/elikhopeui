@@ -158,6 +158,10 @@
 
 
 
+
+
+
+
 <style id="elikhope-responsive-v2">
 /* EliKhope Farms — comprehensive mobile responsiveness pass */
 /* Product listing cards: ~30% smaller than global price-lg (70% scale) */
@@ -194,6 +198,17 @@
   }
   .ek-pdp-hero-price {
     font-size: 15.4px !important;
+  }
+  /* Shopping cart + checkout review: currency ~30% smaller than default mobile price-lg */
+  [data-ek-cart-page] .font-price-lg.text-price-lg,
+  [data-ek-checkout-review-money] .font-price-lg.text-price-lg {
+    font-size: 15.4px !important;
+    line-height: 1.15 !important;
+  }
+  [data-ek-cart-summary] .space-y-4.pb-6 .flex.justify-between span:last-child,
+  [data-ek-checkout-summary] .space-y-stack-sm.border-b .flex.justify-between span:last-child {
+    font-size: 10.15px !important;
+    line-height: 1.25 !important;
   }
   /* Some Stitch designs use raw Tailwind sizes; soften the very largest */
   .text-5xl, .text-6xl { font-size: 28px !important; line-height: 1.15 !important; }
@@ -391,7 +406,7 @@
 </div>
 </header>
 
-<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg" data-ek-checkout-review-money>
 <div class="flex flex-col lg:flex-row gap-gutter">
 <!-- Main Content Area -->
 <div class="flex-1 space-y-stack-md">
@@ -532,7 +547,7 @@
 </div>
 </div>
 <!-- Side Summary Panel (Checkout Sidebar) -->
-<aside class="w-full lg:w-80 space-y-stack-md">
+<aside class="w-full lg:w-80 space-y-stack-md" data-ek-checkout-summary>
 <div class="bg-surface-container-low p-stack-md rounded-xl shadow-md border border-outline-variant sticky top-stack-lg">
 <h2 class="font-h3 text-h3 mb-stack-md">Order Summary</h2>
 <div class="space-y-stack-sm border-b border-outline-variant pb-stack-sm mb-stack-sm">
@@ -607,6 +622,8 @@
 <a class="font-body-sm text-on-surface-variant hover:text-primary underline block" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
 <a class="font-body-sm text-on-surface-variant hover:text-primary underline block" href="/elikhope_farms_marketing_pages/elikhope_farms_help_center/code.html">Help center</a>
 <a class="font-body-sm text-on-surface-variant hover:text-primary underline block" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact us</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline block" href="/elikhope_farms_marketing_pages/elikhope_farms_terms_of_service/code.html">Terms of service</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline block" href="/elikhope_farms_marketing_pages/elikhope_farms_privacy_policy/code.html">Privacy policy</a>
 </div>
 <div class="flex flex-col gap-2 min-w-0">
 <h5 class="font-bold text-on-surface mb-1">Account</h5>
@@ -617,6 +634,10 @@
 </div>
 </div>
 </footer>
+
+
+
+
 
 
 

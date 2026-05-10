@@ -152,6 +152,10 @@
 
 
 
+
+
+
+
 <style id="elikhope-responsive-v2">
 /* EliKhope Farms — comprehensive mobile responsiveness pass */
 /* Product listing cards: ~30% smaller than global price-lg (70% scale) */
@@ -188,6 +192,17 @@
   }
   .ek-pdp-hero-price {
     font-size: 15.4px !important;
+  }
+  /* Shopping cart + checkout review: currency ~30% smaller than default mobile price-lg */
+  [data-ek-cart-page] .font-price-lg.text-price-lg,
+  [data-ek-checkout-review-money] .font-price-lg.text-price-lg {
+    font-size: 15.4px !important;
+    line-height: 1.15 !important;
+  }
+  [data-ek-cart-summary] .space-y-4.pb-6 .flex.justify-between span:last-child,
+  [data-ek-checkout-summary] .space-y-stack-sm.border-b .flex.justify-between span:last-child {
+    font-size: 10.15px !important;
+    line-height: 1.25 !important;
   }
   /* Some Stitch designs use raw Tailwind sizes; soften the very largest */
   .text-5xl, .text-6xl { font-size: 28px !important; line-height: 1.15 !important; }
@@ -789,6 +804,26 @@ Log out
   
 </div>
 
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
 </div>
 
 
@@ -856,36 +891,43 @@ Log out
   
 </div>
 
-<!-- Top Navigation Shell -->
-<header class="bg-surface dark:bg-surface-dim border-b border-surface-variant flex justify-between items-center px-gutter h-16 ml-64 fixed top-0 right-0 left-0 z-40">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center h-16 px-gutter ml-64 w-[calc(100%-16rem)] sticky top-0 z-40 bg-surface dark:bg-surface-container shadow-sm">
 <div class="flex items-center gap-4">
-<div class="bg-surface-container px-4 py-2 rounded-full flex items-center gap-2 w-80">
-<span class="material-symbols-outlined text-on-surface-variant">search</span>
-<input class="bg-transparent border-none outline-none text-body-sm w-full placeholder:text-on-surface-variant" placeholder="Search content..." type="text"/>
+<nav aria-label="Breadcrumb" class="flex text-body-sm text-outline">
+<ol class="flex items-center space-x-2">
+<li>Terminal</li>
+<li><span class="material-symbols-outlined text-[16px] leading-none">chevron_right</span></li>
+<li>CMS</li>
+<li><span class="material-symbols-outlined text-[16px] leading-none">chevron_right</span></li>
+<li class="text-primary font-bold">CMS Manager</li>
+</ol>
+</nav>
+<div class="relative ml-8">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full text-body-sm focus:ring-2 focus:ring-primary w-64 transition-all" placeholder="Search CMS assets..." type="text"/>
 </div>
 </div>
-<div class="flex items-center gap-4">
-<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-bold flex items-center gap-2 hover:opacity-90 transition-all">
-<span class="material-symbols-outlined">visibility</span>
-        Live Preview
-      </button>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-high rounded-full p-2 cursor-pointer transition-all">notifications</span>
-<span class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-high rounded-full p-2 cursor-pointer transition-all">help_outline</span>
+<div class="flex items-center gap-stack-sm">
+<button type="button" class="px-4 py-2 rounded-lg border-2 border-primary text-primary font-bold text-body-sm hover:bg-primary/5 transition-colors">
+Quick Publish
+</button>
+<div class="flex gap-2">
+<button type="button" class="p-2 hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-full transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+<button type="button" class="p-2 hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-full transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">account_circle</span>
+</button>
 </div>
 </div>
 </header>
 <!-- Main Content Canvas -->
-<main class="md:ml-64 ml-0 mt-16 p-stack-md pt-12 md:pt-0 min-h-screen">
+<main class="md:ml-64 ml-0 p-gutter pb-32 pt-12 md:pt-0 min-h-screen">
 <div class="max-w-[1280px] mx-auto space-y-stack-lg">
 <!-- Page Header -->
 <section class="flex justify-between items-end">
 <div>
-<nav class="flex items-center gap-2 text-on-surface-variant font-label-caps text-label-caps mb-2">
-<span>Enterprise Admin</span>
-<span class="material-symbols-outlined text-[14px]">chevron_right</span>
-<span class="text-primary font-bold">CMS Manager</span>
-</nav>
 <h2 class="font-h2 text-h2">EliKhope Farms Portal</h2>
 </div>
 <div class="flex gap-stack-sm">
@@ -901,76 +943,6 @@ Log out
 </section>
 <!-- Content Bento Grid -->
 <div class="grid grid-cols-12 gap-gutter">
-<!-- Homepage Banners Section -->
-<section class="col-span-8 bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(1,105,10,0.03)] p-stack-md border border-outline-variant/10">
-<div class="flex justify-between items-center mb-stack-md">
-<h3 class="font-h3 text-h3 flex items-center gap-3">
-<span class="material-symbols-outlined text-primary">view_carousel</span>
-              Homepage Banners
-            </h3>
-<button class="text-primary font-bold flex items-center gap-1 text-body-sm">
-<span class="material-symbols-outlined text-sm">add_circle</span>
-              Add Slide
-            </button>
-</div>
-<div class="space-y-4">
-<div class="flex gap-4 p-4 rounded-lg bg-surface-container-low border border-outline-variant/30 items-center">
-<div class="w-32 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-surface-variant">
-<img class="w-full h-full object-cover" data-alt="A premium close-up shot of marbled Wagyu beef resting on a dark slate board with fresh rosemary sprigs. The lighting is soft and cinematic, highlighting the rich textures of the meat. The overall aesthetic is professional, minimalist, and high-end, fitting a luxury artisanal butchery brand's digital presence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlmKnof4y6tgyNDhGtS_lSVay50xPE_kQ1HpQjojCLAWJjmhubx7I8EQtglD7FT-l2Nn2qqYsiLbETPl0RRdUlO_acI6NDw7SWL-fZyQhl8XiKsLlEICmkEDBQ9sv-T1M_5_0ZtxajfMMV04p8BoLnSrYdIMRiIsy95fyMmKdRoK_pbRk-XhQGoKO32_RMdNq-TtBbd3cSpktBIW8gA8GWfs1vGSwR3ZsrSp32sioATQxTwgLC9klL6Lo2d8i9ZV7uliXpbgwJs6M"/>
-</div>
-<div class="flex-1">
-<p class="font-h4 text-on-surface">Summer BBQ Selection</p>
-<p class="text-on-surface-variant text-body-sm">Active until Aug 31, 2024</p>
-</div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">drag_indicator</span>
-<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">edit</span>
-<span class="material-symbols-outlined text-error cursor-pointer">delete</span>
-</div>
-</div>
-<div class="flex gap-4 p-4 rounded-lg bg-surface-container-low border border-outline-variant/30 items-center opacity-60">
-<div class="w-32 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-surface-variant">
-<img class="w-full h-full object-cover" data-alt="High-quality editorial photography of various smoked meats and artisanal sausages arranged on a rustic wooden platter. Warm, natural morning light creates a welcoming market atmosphere. The background is softly blurred to focus on the textures and natural colors of the farm-to-table products." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkuFgFcINjYhkkHT__Sr-uVC0YN3SbOXLeDHXAtT9hkufotDf3oqtzDvHs8oxd_2duaM0QW1IbTSu06KGJDN_nnaaiWmG_TX09trBPK-HcRSNnKN9kTNTjNrFumu8TUja5XencMy5nyFFkngpOcPb1_QUSVJMGrqkMli4Kx3t1IHa86olGqYRgVBY4htfCzHeoW4llwJqWyuWDDkENVNTUq5HnSFXxhqJmnxQFC6MoFra4MMwdrBRbFfKJPWrvV1Q-JT5W-Blu6gY"/>
-</div>
-<div class="flex-1">
-<p class="font-h4 text-on-surface">New Farm Additions</p>
-<p class="text-on-surface-variant text-body-sm">Scheduled: Sept 1, 2024</p>
-</div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-on-surface-variant">drag_indicator</span>
-<span class="material-symbols-outlined text-on-surface-variant">edit</span>
-<span class="material-symbols-outlined text-error">delete</span>
-</div>
-</div>
-</div>
-</section>
-<!-- Meta SEO Settings Panel -->
-<section class="col-span-4 bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(1,105,10,0.03)] p-stack-md border border-outline-variant/10">
-<h3 class="font-h3 text-h3 flex items-center gap-3 mb-stack-md">
-<span class="material-symbols-outlined text-primary">search_check</span>
-            SEO &amp; Meta
-          </h3>
-<div class="space-y-stack-sm">
-<div>
-<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">Meta Title</label>
-<input class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-2 focus:border-primary outline-none text-body-sm" type="text" value="EliKhope Farms | Premium Artisanal Meats"/>
-</div>
-<div>
-<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">Meta Description</label>
-<textarea class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-2 focus:border-primary outline-none text-body-sm" rows="4">Shop the finest grass-fed beef, heritage poultry, and cured meats delivered from EliKhope Farms directly to your kitchen. Artisanal quality you can trust.</textarea>
-</div>
-<div class="pt-2">
-<span class="font-label-caps text-label-caps text-on-surface-variant block mb-3">SEO Health Score</span>
-<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
-<div class="h-full bg-primary w-[85%]"></div>
-</div>
-<p class="text-[11px] text-primary mt-2 flex items-center gap-1 font-bold">
-<span class="material-symbols-outlined text-[14px]">check_circle</span>
-                Optimization Great (85/100)
-              </p>
-</div>
-</div>
-</section>
 <!-- Blog Posts Management Table -->
 <section class="col-span-12 bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(1,105,10,0.03)] overflow-hidden border border-outline-variant/10">
 <div class="px-stack-md py-6 border-b border-surface-variant flex justify-between items-center">
@@ -1040,7 +1012,7 @@ Log out
 <!-- Media Gallery & Scheduling -->
 <section class="col-span-12 grid grid-cols-12 gap-gutter">
 <!-- Recent Media Gallery -->
-<div class="col-span-8 bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(1,105,10,0.03)] p-stack-md border border-outline-variant/10">
+<div class="col-span-12 bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(1,105,10,0.03)] p-stack-md border border-outline-variant/10">
 <div class="flex justify-between items-center mb-stack-md">
 <h3 class="font-h3 text-h3 flex items-center gap-3">
 <span class="material-symbols-outlined text-primary">photo_library</span>
@@ -1077,39 +1049,6 @@ Log out
 </div>
 </div>
 </div>
-</div>
-<!-- Content Scheduling Timeline -->
-<div class="col-span-4 bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(1,105,10,0.03)] p-stack-md border border-outline-variant/10">
-<h3 class="font-h3 text-h3 flex items-center gap-3 mb-stack-md">
-<span class="material-symbols-outlined text-primary">schedule</span>
-              Timeline
-            </h3>
-<div class="relative space-y-8 before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-outline-variant/30">
-<div class="relative flex gap-4 pl-8">
-<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-primary border-4 border-surface flex items-center justify-center"></div>
-<div>
-<p class="font-bold text-body-md">Holiday Flash Sale</p>
-<p class="text-on-surface-variant text-body-sm">Starts tomorrow, 09:00 AM</p>
-</div>
-</div>
-<div class="relative flex gap-4 pl-8">
-<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-secondary-container border-4 border-surface flex items-center justify-center"></div>
-<div>
-<p class="font-bold text-body-md">Blog: Thanksgiving Prep</p>
-<p class="text-on-surface-variant text-body-sm">Scheduled for Friday, Nov 15</p>
-</div>
-</div>
-<div class="relative flex gap-4 pl-8 opacity-50">
-<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-surface-container-high border-4 border-surface flex items-center justify-center"></div>
-<div>
-<p class="font-bold text-body-md">Winter Catalog Release</p>
-<p class="text-on-surface-variant text-body-sm">Scheduled for Dec 01</p>
-</div>
-</div>
-</div>
-<button class="w-full mt-6 py-3 border-[1.5px] border-primary text-primary font-bold rounded-lg hover:bg-primary/5 transition-all text-sm">
-              Manage All Tasks
-            </button>
 </div>
 </section>
 <!-- FAQs Management Section -->
@@ -1171,6 +1110,10 @@ Log out
 <span class="text-[10px]">Config</span>
 </a>
 </nav>
+
+
+
+
 
 
 

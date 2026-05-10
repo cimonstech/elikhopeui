@@ -158,6 +158,18 @@
         @media (min-width: 1024px) {
             .auth-split-layout { flex-direction: row; }
         }
+        @media (min-width: 1024px) {
+            .auth-split-layout { flex-direction: row; }
+        }
+        @media (min-width: 1024px) {
+            .auth-split-layout { flex-direction: row; }
+        }
+        @media (min-width: 1024px) {
+            .auth-split-layout { flex-direction: row; }
+        }
+        @media (min-width: 1024px) {
+            .auth-split-layout { flex-direction: row; }
+        }
         
     </style>
 <style id="elikhope-fonts">
@@ -167,6 +179,10 @@
   .font-body-sm,.font-body-md,.font-body-lg,.font-label-caps { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important; }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+
+
+
 
 
 
@@ -241,6 +257,17 @@
   }
   .ek-pdp-hero-price {
     font-size: 15.4px !important;
+  }
+  /* Shopping cart + checkout review: currency ~30% smaller than default mobile price-lg */
+  [data-ek-cart-page] .font-price-lg.text-price-lg,
+  [data-ek-checkout-review-money] .font-price-lg.text-price-lg {
+    font-size: 15.4px !important;
+    line-height: 1.15 !important;
+  }
+  [data-ek-cart-summary] .space-y-4.pb-6 .flex.justify-between span:last-child,
+  [data-ek-checkout-summary] .space-y-stack-sm.border-b .flex.justify-between span:last-child {
+    font-size: 10.15px !important;
+    line-height: 1.25 !important;
   }
   /* Some Stitch designs use raw Tailwind sizes; soften the very largest */
   .text-5xl, .text-6xl { font-size: 28px !important; line-height: 1.15 !important; }

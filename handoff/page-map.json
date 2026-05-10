@@ -50,6 +50,30 @@
       "flatFile": "marketing__blog.html"
     },
     {
+      "id": "marketing_blog_post",
+      "flowSection": "01_public_website",
+      "displayName": "Blog article",
+      "sourcePath": "elikhope_farms_marketing_pages/elikhope_farms_blog_post_detail/code.html",
+      "urlPath": "/elikhope_farms_marketing_pages/elikhope_farms_blog_post_detail/code.html",
+      "flatFile": "marketing__blog_post.html"
+    },
+    {
+      "id": "marketing_terms",
+      "flowSection": "01_public_website",
+      "displayName": "Terms of service",
+      "sourcePath": "elikhope_farms_marketing_pages/elikhope_farms_terms_of_service/code.html",
+      "urlPath": "/elikhope_farms_marketing_pages/elikhope_farms_terms_of_service/code.html",
+      "flatFile": "marketing__terms_of_service.html"
+    },
+    {
+      "id": "marketing_privacy",
+      "flowSection": "01_public_website",
+      "displayName": "Privacy policy",
+      "sourcePath": "elikhope_farms_marketing_pages/elikhope_farms_privacy_policy/code.html",
+      "urlPath": "/elikhope_farms_marketing_pages/elikhope_farms_privacy_policy/code.html",
+      "flatFile": "marketing__privacy_policy.html"
+    },
+    {
       "id": "marketing_help",
       "flowSection": "01_public_website",
       "displayName": "FAQs / Help",

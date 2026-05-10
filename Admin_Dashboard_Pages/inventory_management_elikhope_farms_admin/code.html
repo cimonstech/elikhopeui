@@ -152,6 +152,10 @@
 
 
 
+
+
+
+
 <style id="elikhope-responsive-v2">
 /* EliKhope Farms — comprehensive mobile responsiveness pass */
 /* Product listing cards: ~30% smaller than global price-lg (70% scale) */
@@ -188,6 +192,17 @@
   }
   .ek-pdp-hero-price {
     font-size: 15.4px !important;
+  }
+  /* Shopping cart + checkout review: currency ~30% smaller than default mobile price-lg */
+  [data-ek-cart-page] .font-price-lg.text-price-lg,
+  [data-ek-checkout-review-money] .font-price-lg.text-price-lg {
+    font-size: 15.4px !important;
+    line-height: 1.15 !important;
+  }
+  [data-ek-cart-summary] .space-y-4.pb-6 .flex.justify-between span:last-child,
+  [data-ek-checkout-summary] .space-y-stack-sm.border-b .flex.justify-between span:last-child {
+    font-size: 10.15px !important;
+    line-height: 1.25 !important;
   }
   /* Some Stitch designs use raw Tailwind sizes; soften the very largest */
   .text-5xl, .text-6xl { font-size: 28px !important; line-height: 1.15 !important; }
@@ -789,6 +804,26 @@ Log out
   
 </div>
 
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
 </div>
 
 
@@ -877,7 +912,7 @@ Log out
 </div>
 </header>
 <!-- Main Content Canvas -->
-<main class="md:ml-64 ml-0 pt-16 pt-12 md:pt-0 min-h-screen">
+<main class="md:ml-64 ml-0 pt-16 pt-12 md:pt-16 min-h-screen">
 <div class="p-gutter max-w-container-max mx-auto space-y-stack-md">
 <!-- Page Header Actions -->
 <div class="flex justify-between items-end">
@@ -1158,18 +1193,6 @@ Log out
 </div>
 </div>
 </section>
-<!-- Quick Tools Card -->
-<section class="bg-primary-container text-on-primary-container p-6 rounded-xl shadow-lg relative overflow-hidden group">
-<div class="relative z-10">
-<h4 class="font-h4 text-white mb-2">Inventory Sync</h4>
-<p class="text-body-sm text-white/80 mb-4 leading-relaxed">Your warehouse sensors are perfectly synced with the dashboard.</p>
-<button class="w-full py-3 bg-white text-primary font-bold rounded-lg flex items-center justify-center gap-2 group-hover:bg-primary-fixed transition-all">
-<span class="material-symbols-outlined" data-icon="sync">sync</span>
-                                Run Full Health Check
-                            </button>
-</div>
-<span class="material-symbols-outlined absolute -bottom-4 -right-4 text-9xl text-white/10" data-icon="check_circle">check_circle</span>
-</section>
 </div>
 </div>
 </div>
@@ -1180,6 +1203,10 @@ Log out
 <span class="material-symbols-outlined text-3xl" data-icon="qr_code_scanner">qr_code_scanner</span>
 </button>
 </div>
+
+
+
+
 
 
 

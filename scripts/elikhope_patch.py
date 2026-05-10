@@ -147,6 +147,9 @@ U = {
     "quality": f"{MARK}/elikhope_farms_quality_standards/code.html",
     "gallery": f"{MARK}/elikhope_farms_visual_gallery/code.html",
     "blog": f"{MARK}/elikhope_farms_meat_preparation_farm_news/code.html",
+    "blog_post": f"{MARK}/elikhope_farms_blog_post_detail/code.html",
+    "terms": f"{MARK}/elikhope_farms_terms_of_service/code.html",
+    "privacy": f"{MARK}/elikhope_farms_privacy_policy/code.html",
     "help": f"{MARK}/elikhope_farms_help_center/code.html",
     "contact": f"{MARK}/elikhope_farms_contact_us/code.html",
     "login": f"{AUTH}/login_elikhope_farms/code.html",
@@ -345,6 +348,17 @@ RESPONSIVE_STYLE_ALL = """<style id="elikhope-responsive-v2">
   }
   .ek-pdp-hero-price {
     font-size: 15.4px !important;
+  }
+  /* Shopping cart + checkout review: currency ~30% smaller than default mobile price-lg */
+  [data-ek-cart-page] .font-price-lg.text-price-lg,
+  [data-ek-checkout-review-money] .font-price-lg.text-price-lg {
+    font-size: 15.4px !important;
+    line-height: 1.15 !important;
+  }
+  [data-ek-cart-summary] .space-y-4.pb-6 .flex.justify-between span:last-child,
+  [data-ek-checkout-summary] .space-y-stack-sm.border-b .flex.justify-between span:last-child {
+    font-size: 10.15px !important;
+    line-height: 1.25 !important;
   }
   /* Some Stitch designs use raw Tailwind sizes; soften the very largest */
   .text-5xl, .text-6xl { font-size: 28px !important; line-height: 1.15 !important; }
@@ -898,7 +912,6 @@ def marketing_top_nav() -> str:
 <a class="hidden sm:inline font-body-sm font-semibold text-primary hover:underline" href="{U["login"]}">Login</a>
 <a class="hidden sm:inline-flex px-4 py-2 rounded-lg bg-primary text-white font-bold text-sm hover:opacity-90" href="{U["register"]}">Sign up</a>
 <a class="p-2 rounded-full hover:bg-surface-container transition-colors" href="{U["cart"]}" title="Cart"><span class="material-symbols-outlined text-on-surface-variant">shopping_cart</span></a>
-<a class="hidden sm:inline-flex p-2 rounded-full hover:bg-surface-container transition-colors" href="{U["dash"]}" title="Account"><span class="material-symbols-outlined text-on-surface-variant">account_circle</span></a>
 <button class="lg:hidden p-2 rounded-full hover:bg-surface-container transition-colors" type="button" aria-label="Open menu" data-ek-toggle="ek-site-drawer">
   <i class="fa-solid fa-bars text-on-surface-variant"></i>
 </button>
@@ -962,6 +975,8 @@ MARKETING_FOOTER = f"""<footer class="w-full bg-surface-container-highest dark:b
 <a class="font-body-sm text-on-surface-variant hover:text-primary underline block" href="{U["quality"]}">Quality Control</a>
 <a class="font-body-sm text-on-surface-variant hover:text-primary underline block" href="{U["help"]}">Help center</a>
 <a class="font-body-sm text-on-surface-variant hover:text-primary underline block" href="{U["contact"]}">Contact us</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline block" href="{U["terms"]}">Terms of service</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline block" href="{U["privacy"]}">Privacy policy</a>
 </div>
 <div class="flex flex-col gap-2 min-w-0">
 <h5 class="font-bold text-on-surface mb-1">Account</h5>
@@ -2086,6 +2101,25 @@ def patch_home_hero_slider(html: str, current_url: str | None) -> str:
     return html
 
 
+def patch_blog_listing_page(html: str) -> str:
+    """Point featured CTA, grid cards, and sidebar popular posts to the blog detail page."""
+    url = U["blog_post"]
+    html = html.replace(
+        '<button class="bg-primary text-on-primary px-stack-md py-stack-sm rounded-lg font-h4 text-body-md hover:bg-primary-container transition-all">Read Article</button>',
+        f'<a href="{url}" class="inline-block bg-primary text-on-primary px-stack-md py-stack-sm rounded-lg font-h4 text-body-md hover:bg-primary-container transition-all">Read Article</a>',
+        1,
+    )
+    html = html.replace(
+        'a class="text-primary font-h4 text-body-md flex items-center gap-1" href="#"',
+        f'a class="text-primary font-h4 text-body-md flex items-center gap-1" href="{url}"',
+    )
+    html = html.replace(
+        'a class="flex gap-stack-sm group" href="#"',
+        f'a class="flex gap-stack-sm group" href="{url}"',
+    )
+    return html
+
+
 def patch_marketing_page(html: str, current_url: str | None = None) -> str:
     # Strip any previously injected mobile site drawer to keep idempotent.
     html = re.sub(r'(?is)<div id="ek-site-drawer"[^>]*>[\s\S]*?</aside>\s*</div>', "", html)
@@ -2119,6 +2153,8 @@ def patch_marketing_page(html: str, current_url: str | None = None) -> str:
             # Map pages that don't have a 1:1 menu item.
             if "shop" in active_href:
                 active_href = U["shop_home"]
+            if "elikhope_farms_blog_post_detail" in active_href:
+                active_href = U["blog"]
         # Set active nav state by matching href= active_href
         html = re.sub(
             r'(<a class=")([^"]*)(" href="' + re.escape(active_href) + r'">)',
@@ -2159,6 +2195,8 @@ def patch_marketing_page(html: str, current_url: str | None = None) -> str:
         html = patch_all_categories_hub_page(html)
     if current_url and "elikhope_farms_visual_gallery" in current_url:
         html = patch_visual_gallery_page(html)
+    if current_url and "elikhope_farms_meat_preparation_farm_news" in current_url:
+        html = patch_blog_listing_page(html)
     html = patch_marketing_editorial_image_fixes(html)
     html = patch_about_us_page(html, current_url)
     return html
@@ -3292,11 +3330,44 @@ def patch_shopping_cart_line_images(html: str) -> str:
         html,
         count=1,
     )
+    if not re.search(r'<main[^>]*\bdata-ek-cart-page\b', html):
+        html = html.replace(
+            '<main class="max-w-container-max mx-auto px-margin-desktop pt-32 pb-stack-lg">',
+            '<main class="max-w-container-max mx-auto px-margin-desktop pt-32 pb-stack-lg" data-ek-cart-page>',
+            1,
+        )
+    if not re.search(
+        r'<div class="bg-surface-container-highest rounded-2xl p-8 shadow-sm"\s+data-ek-cart-summary',
+        html,
+    ):
+        html = html.replace(
+            '<div class="bg-surface-container-highest rounded-2xl p-8 shadow-sm">',
+            '<div class="bg-surface-container-highest rounded-2xl p-8 shadow-sm" data-ek-cart-summary>',
+            1,
+        )
+    if 'data-ek-promo-row' not in html.split("</style>", 1)[-1]:
+        html = html.replace(
+            '<div class="py-6">\n<div class="flex gap-2">\n<input class="flex-1 bg-surface-container rounded-lg border-outline-variant px-4 py-2 focus:ring-primary focus:border-primary" placeholder="Promo code" type="text"/>\n<button class="bg-on-surface text-surface px-4 py-2 rounded-lg font-semibold">Apply</button>\n</div>\n</div>',
+            '<div class="py-6">\n<div class="flex flex-col sm:flex-row gap-2 w-full min-w-0" data-ek-promo-row>\n<input class="w-full sm:flex-1 min-w-0 bg-surface-container rounded-lg border-outline-variant px-4 py-2 focus:ring-primary focus:border-primary" placeholder="Promo code" type="text"/>\n<button type="button" class="w-full sm:w-auto shrink-0 bg-on-surface text-surface px-4 py-2 rounded-lg font-semibold text-center">Apply</button>\n</div>\n</div>',
+            1,
+        )
     return html
 
 
 def patch_checkout_order_review_line_images(html: str) -> str:
     """Review order: ribeye row uses chicken per prototype; lamb → goat from products folder."""
+    if not re.search(r'<main[^>]*\bdata-ek-checkout-review-money\b', html):
+        html = html.replace(
+            '<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">',
+            '<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg" data-ek-checkout-review-money>',
+            1,
+        )
+    if not re.search(r'<aside[^>]*\bdata-ek-checkout-summary\b', html):
+        html = html.replace(
+            '<aside class="w-full lg:w-80 space-y-stack-md">',
+            '<aside class="w-full lg:w-80 space-y-stack-md" data-ek-checkout-summary>',
+            1,
+        )
     html = re.sub(
         r'(\balt="Prime Grass-fed Ribeye Steak" class="w-full h-full object-cover" data-alt="[^"]*" src=")([^"]+)(")',
         rf"\1{PD_CHICKEN}\3",
@@ -3497,6 +3568,12 @@ def process_file(path: Path) -> None:
                 f"""<a href="{U["checkout_review"]}" class="w-full py-4 px-6 bg-primary text-on-primary rounded-lg font-h4 shadow-md hover:bg-primary-container transition-all active:scale-95 mt-auto inline-flex justify-center items-center">
                     Continue to review
                 </a>""",
+            )
+            html = re.sub(
+                r'(?is)<!-- Floating Action Button[^>]*-->[\s\n]*<div class="md:hidden fixed bottom-6 right-6 z-40">[\s\S]*?</div>\s*',
+                "",
+                html,
+                count=1,
             )
         if parent == "checkout_order_review_elikhope_farms":
             html = patch_checkout_order_review_line_images(html)

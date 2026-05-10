@@ -157,6 +157,10 @@
 
 
 
+
+
+
+
 <style id="elikhope-responsive-v2">
 /* EliKhope Farms — comprehensive mobile responsiveness pass */
 /* Product listing cards: ~30% smaller than global price-lg (70% scale) */
@@ -193,6 +197,17 @@
   }
   .ek-pdp-hero-price {
     font-size: 15.4px !important;
+  }
+  /* Shopping cart + checkout review: currency ~30% smaller than default mobile price-lg */
+  [data-ek-cart-page] .font-price-lg.text-price-lg,
+  [data-ek-checkout-review-money] .font-price-lg.text-price-lg {
+    font-size: 15.4px !important;
+    line-height: 1.15 !important;
+  }
+  [data-ek-cart-summary] .space-y-4.pb-6 .flex.justify-between span:last-child,
+  [data-ek-checkout-summary] .space-y-stack-sm.border-b .flex.justify-between span:last-child {
+    font-size: 10.15px !important;
+    line-height: 1.25 !important;
   }
   /* Some Stitch designs use raw Tailwind sizes; soften the very largest */
   .text-5xl, .text-6xl { font-size: 28px !important; line-height: 1.15 !important; }
@@ -794,6 +809,26 @@ Log out
   
 </div>
 
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
 </div>
 
 
@@ -885,7 +920,7 @@ Log out
 </div>
 </header>
 <!-- Main Content Canvas -->
-<main class="md:ml-64 ml-0 pt-16 pt-12 md:pt-0 min-h-screen">
+<main class="md:ml-64 ml-0 pt-16 pt-12 md:pt-16 min-h-screen">
 <div class="max-w-container-max mx-auto p-gutter">
 <!-- Statistics Bento Grid -->
 <section class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-stack-lg">
@@ -1191,50 +1226,11 @@ Log out
 </div>
 </div>
 </div>
-<!-- Agent Leaderboard -->
-<div class="bg-white rounded-xl shadow-sm border border-outline-variant/30 p-6">
-<h4 class="font-bold text-body-md mb-4">Agent Performance</h4>
-<div class="space-y-4">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-3">
-<img alt="Agent" class="w-8 h-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMTqzXpao-AflMo_IrgRVrWIG3qXkCx3IUJTp8-CnTLNlgqwQOWfL_q_E3IH3e4StqzB2MStjzFLGn6S6n1z08VXbOGu8KUUHESvDB9tiFJxkEOUlcFucNEHgOsB-2OCXQcyCmjw9SL9pcsTPUwPZqWQ9mDjDmy-O3epA7Rog2gh0xdDVdID134hlsqtiojOVwfYLHQ2Jdryc5lQ3tqoFdNPzSpxMbPFMmxpaeIDjzUypk6ZWmX85IUFxsOjB8GFICcUxQMbPiWvI"/>
-<span class="text-body-sm font-semibold">Marcus L.</span>
-</div>
-<div class="text-right">
-<p class="text-body-sm font-bold">98%</p>
-<p class="text-[10px] text-primary">12 Resolved</p>
-</div>
-</div>
-<div class="flex items-center justify-between opacity-70">
-<div class="flex items-center gap-3">
-<img alt="Agent" class="w-8 h-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAid-IfFzR2brUYcmk2XVnettGe5i5Bt17ynWIJv5uaCRaGXuXXcq_8cHLDXtlePUSmAWg_GqKPSWnqzgF5QeN3dX4Oaw6eKy-MLvYpX_Aue_rxkRNup5PzVPT0KimD73uZgfGp5dyaQ3MhFEm19yHFyc-86aaUhjc8Or2o8JApk-fb6io0RfvfLi7WDXrf4-WgnLqwYfwxISkBL__oF8K-XHYiQxpp9gI0hiSPsS4Nvgzj6Aj9j_mzcPQ8jnNtN0KONuXDwoE8KLE"/>
-<span class="text-body-sm font-semibold">Elena S.</span>
-</div>
-<div class="text-right">
-<p class="text-body-sm font-bold">94%</p>
-<p class="text-[10px] text-primary">10 Resolved</p>
-</div>
-</div>
-<div class="flex items-center justify-between opacity-70">
-<div class="flex items-center gap-3">
-<img alt="Agent" class="w-8 h-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAML-VIVRJL3TQ8M3uUof2rplZfYmkFUyZWYb5fuUmI4EwWl-zVwktDe5mjJbnAOW0CJKoYNf_yeFsxdNYSdFi9pR7UsG8GjpWvWlIuYgzX2lJDEe_cWBZLjb9jkKBH27Vy9T_AKQT9xvfV2UTl3mYCrryjQWNMiX3zzEIGRxtH0l5bmYobF1VHJD1kdG8SuMEGsq1HyrzG_zIGrUAs00VCG1Tu4oZULSSdNwWBgImwh93sM-FdZwQ3Q4KBai_j_WGJ3aCWO4I9nZg"/>
-<span class="text-body-sm font-semibold">David K.</span>
-</div>
-<div class="text-right">
-<p class="text-body-sm font-bold">91%</p>
-<p class="text-[10px] text-primary">8 Resolved</p>
-</div>
-</div>
-</div>
-</div>
 </aside>
 </div>
 </div>
 </main>
-<!-- Floating Action Button - Only on relevant screens -->
-<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50">
-<span class="material-symbols-outlined text-[28px]">chat_bubble</span>
-</button>
+
 
 
 

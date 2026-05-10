@@ -159,6 +159,10 @@
 
 
 
+
+
+
+
 <style id="elikhope-responsive-v2">
 /* EliKhope Farms — comprehensive mobile responsiveness pass */
 /* Product listing cards: ~30% smaller than global price-lg (70% scale) */
@@ -195,6 +199,17 @@
   }
   .ek-pdp-hero-price {
     font-size: 15.4px !important;
+  }
+  /* Shopping cart + checkout review: currency ~30% smaller than default mobile price-lg */
+  [data-ek-cart-page] .font-price-lg.text-price-lg,
+  [data-ek-checkout-review-money] .font-price-lg.text-price-lg {
+    font-size: 15.4px !important;
+    line-height: 1.15 !important;
+  }
+  [data-ek-cart-summary] .space-y-4.pb-6 .flex.justify-between span:last-child,
+  [data-ek-checkout-summary] .space-y-stack-sm.border-b .flex.justify-between span:last-child {
+    font-size: 10.15px !important;
+    line-height: 1.25 !important;
   }
   /* Some Stitch designs use raw Tailwind sizes; soften the very largest */
   .text-5xl, .text-6xl { font-size: 28px !important; line-height: 1.15 !important; }
@@ -796,6 +811,26 @@ Log out
   
 </div>
 
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
 </div>
 
 
@@ -881,7 +916,7 @@ Log out
 <span class="material-symbols-outlined text-on-surface-variant" data-icon="help_outline">help_outline</span>
 </button>
 <div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant ml-2">
-<img alt="Admin User Profile" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzaWJqWo6GLbUDDr5L2Zr3f6NjE4Xp6SZjNceIhTDUBQhbzsq8hxgeBfTT9102tXt0HBFRoPFX8IjlPLxSF04zvpmEaMNMl_hOKnIg6gE79hC8fyfw-dDTk7ab8jUe-J1B_w-0mbkFS8OHZRclKBQc_5IDLi2MCtjhZfWKW_FDuIi2LaOYQwVFMtGMgFelVicMdKi0oshpdW2kUFA9HKlMX0CtMOXM6vFiLwQZxq7tBvtmf2PObJs6Grb33gRknLPcKL5RJ8GCP1I"/>
+<img alt="" class="h-full w-full object-cover" src="/assets/person.jpg"/>
 </div>
 </div>
 </header>
@@ -973,13 +1008,13 @@ Log out
 </tr>
 </thead>
 <tbody class="divide-y divide-surface-variant">
-<tr class="hover:bg-surface-container-low transition-colors group">
+<tr class="hover:bg-surface-container-low transition-colors group" data-customer-name="Ama Serwaa" data-customer-email="ama.serwaa@gmail.com" data-customer-loyalty="Gold" data-customer-orders="48" data-customer-spent="GHS 5,240.15" data-customer-since="Oct 2021">
 <td class="px-6 py-4">
 <div class="flex items-center gap-3">
-<img alt="Marianne Anderson" class="h-10 w-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqE_HbkasfvNFUDf4iXA-oKHuESjdMbqgB6Kn_dWZanL_zkDLj4roQjl6o_Jy3IuONtXK37KJ0RH7u_noF6m74p8O_G3fstwBiCOjfRuSj7DIiptTbaXq_eCgTMEhFGH6ZqwMFPwkh3NbMwoBye6gQoW-4CCEUZTfIAJBvK6pIYERM-LsVUhbs0K3MVSe-q4P2-_lqyXXCa9Ff0GcW_UbZssKhK6clqVIvfieqHjt2SsdzWab8X6WFp7BCA3Thlh4nNku23vt9nV4"/>
+<img alt="" class="h-10 w-10 rounded-full object-cover" src="/assets/person.jpg"/>
 <div>
-<p class="font-bold text-body-md text-on-surface">Marianne Anderson</p>
-<p class="text-body-sm text-on-surface-variant">m.anderson@example.com</p>
+<p class="font-bold text-body-md text-on-surface">Ama Serwaa</p>
+<p class="text-body-sm text-on-surface-variant">ama.serwaa@gmail.com</p>
 </div>
 </div>
 </td>
@@ -991,19 +1026,19 @@ Log out
 <td class="px-6 py-4 text-right font-body-md">48</td>
 <td class="px-6 py-4 text-right font-price-lg text-[18px]">GHS 5,240.15</td>
 <td class="px-6 py-4 text-center">
-<div class="flex justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-<button class="p-2 text-primary hover:bg-primary/5 rounded-full" title="Email"><span class="material-symbols-outlined" data-icon="mail">mail</span></button>
-<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-full" title="View Details"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button>
+<div class="flex justify-center gap-2">
+<button type="button" class="p-2 text-primary hover:bg-primary/5 rounded-full" title="Email"><span class="material-symbols-outlined" data-icon="mail">mail</span></button>
+<button type="button" data-ek-customer-view="" class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-full" title="View details"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button>
 </div>
 </td>
 </tr>
-<tr class="hover:bg-surface-container-low transition-colors group">
+<tr class="hover:bg-surface-container-low transition-colors group" data-customer-name="Kwame Mensah" data-customer-email="kwame.mensah@email.gh" data-customer-loyalty="Silver" data-customer-orders="24" data-customer-spent="GHS 2,110.50" data-customer-since="Mar 2022">
 <td class="px-6 py-4">
 <div class="flex items-center gap-3">
-<img alt="Julian Howard" class="h-10 w-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ3GZ6znyYJrAAW3nt2MhKizDb-fQISBlMgf_mFMqPT28-OPz0DlylzGhArvFVDFsI03Zm4t2-m9t7FiNG1g_yc8CXV6jLiOf5sRITIVYGOsScNg4N-8qDzjB6vfX505lQj_H5SrOrXIC4urTWKqjinApsi8CEsNdmfW6b9uu-VViTtNZlnfI12XBHpy1WEnI6HNBCBCGedBUBjvG2LYm25AGqCPwNhX4RRWhMRNjLhG8PlBaabhuq0AyaSSFSjzTgmXI56YWzo30"/>
+<img alt="" class="h-10 w-10 rounded-full object-cover" src="/assets/person.jpg"/>
 <div>
-<p class="font-bold text-body-md text-on-surface">Julian Howard</p>
-<p class="text-body-sm text-on-surface-variant">julian.h@webmail.org</p>
+<p class="font-bold text-body-md text-on-surface">Kwame Mensah</p>
+<p class="text-body-sm text-on-surface-variant">kwame.mensah@email.gh</p>
 </div>
 </div>
 </td>
@@ -1015,19 +1050,19 @@ Log out
 <td class="px-6 py-4 text-right font-body-md">24</td>
 <td class="px-6 py-4 text-right font-price-lg text-[18px]">GHS 2,110.50</td>
 <td class="px-6 py-4 text-center">
-<div class="flex justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-<button class="p-2 text-primary hover:bg-primary/5 rounded-full" title="Email"><span class="material-symbols-outlined" data-icon="mail">mail</span></button>
-<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-full" title="View Details"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button>
+<div class="flex justify-center gap-2">
+<button type="button" class="p-2 text-primary hover:bg-primary/5 rounded-full" title="Email"><span class="material-symbols-outlined" data-icon="mail">mail</span></button>
+<button type="button" data-ek-customer-view="" class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-full" title="View details"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button>
 </div>
 </td>
 </tr>
-<tr class="hover:bg-surface-container-low transition-colors group">
+<tr class="hover:bg-surface-container-low transition-colors group" data-customer-name="Abena Owusu" data-customer-email="abena.owusu@outlook.com" data-customer-loyalty="Bronze" data-customer-orders="12" data-customer-spent="GHS 945.00" data-customer-since="Jun 2023">
 <td class="px-6 py-4">
 <div class="flex items-center gap-3">
-<img alt="Sarah Lofton" class="h-10 w-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3xoTS5INsf9cEQyZjiqZ0r3HX6TOb26tc8TP2gxnfnQdN2apTsmt_1wdZFZCilzJF4y8iWYB6jltQHNOwSfZYzwEaCcMUOl_VmIR3NCXGmv93wp0eMGE3_A1UtykoOOLt1uGAe6sWy16HcArG8N0yUfp3WPvjX41H1Lqz0v-KazQliF1BntWSKLgLxWaveEQ5P1rMWBtExP5g_uKeJl91RKJ0xGyBQ-Q-XXiIJiJEi4ln-FoA6nrZ5HcPNDf2Ok4iA4SCPYIBC1w"/>
+<img alt="" class="h-10 w-10 rounded-full object-cover" src="/assets/person.jpg"/>
 <div>
-<p class="font-bold text-body-md text-on-surface">Sarah Lofton</p>
-<p class="text-body-sm text-on-surface-variant">slofton@gmail.com</p>
+<p class="font-bold text-body-md text-on-surface">Abena Owusu</p>
+<p class="text-body-sm text-on-surface-variant">abena.owusu@outlook.com</p>
 </div>
 </div>
 </td>
@@ -1039,19 +1074,19 @@ Log out
 <td class="px-6 py-4 text-right font-body-md">12</td>
 <td class="px-6 py-4 text-right font-price-lg text-[18px]">GHS 945.00</td>
 <td class="px-6 py-4 text-center">
-<div class="flex justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-<button class="p-2 text-primary hover:bg-primary/5 rounded-full" title="Email"><span class="material-symbols-outlined" data-icon="mail">mail</span></button>
-<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-full" title="View Details"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button>
+<div class="flex justify-center gap-2">
+<button type="button" class="p-2 text-primary hover:bg-primary/5 rounded-full" title="Email"><span class="material-symbols-outlined" data-icon="mail">mail</span></button>
+<button type="button" data-ek-customer-view="" class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-full" title="View details"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button>
 </div>
 </td>
 </tr>
-<tr class="hover:bg-surface-container-low transition-colors group">
+<tr class="hover:bg-surface-container-low transition-colors group" data-customer-name="Kofi Asante" data-customer-email="kofi.asante@ymail.com.gh" data-customer-loyalty="Gold" data-customer-orders="31" data-customer-spent="GHS 4,820.00" data-customer-since="Jan 2022">
 <td class="px-6 py-4">
 <div class="flex items-center gap-3">
-<img alt="Robert K." class="h-10 w-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxPAc7UA0Ykou5rYH9yb4YE03PTe2kuCV8wC9RFFUuAfKe13fzbjPbXaA_ZiHCDt5g4mzVeh2aQmXPL8DT36lg6F4kltFdAltR62-OzYEbpRrVDLvDHgyh4CvmQkf24UkWgx4h1xDjtsaws3FJddBCmKGdDKHRzJPLJIHXJVLdDsfCCGtljHfrJY121gV1NEuqIjNcgyf6iC7qGsO-SH-H0yWcApt12KdTzPXbykV2d9EJ55slyXsYkbNKAJ55Ugr0uonKIb_8As8"/>
+<img alt="" class="h-10 w-10 rounded-full object-cover" src="/assets/person.jpg"/>
 <div>
-<p class="font-bold text-body-md text-on-surface">Robert King</p>
-<p class="text-body-sm text-on-surface-variant">rking_88@outlook.com</p>
+<p class="font-bold text-body-md text-on-surface">Kofi Asante</p>
+<p class="text-body-sm text-on-surface-variant">kofi.asante@ymail.com.gh</p>
 </div>
 </div>
 </td>
@@ -1063,9 +1098,9 @@ Log out
 <td class="px-6 py-4 text-right font-body-md">31</td>
 <td class="px-6 py-4 text-right font-price-lg text-[18px]">GHS 4,820.00</td>
 <td class="px-6 py-4 text-center">
-<div class="flex justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-<button class="p-2 text-primary hover:bg-primary/5 rounded-full" title="Email"><span class="material-symbols-outlined" data-icon="mail">mail</span></button>
-<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-full" title="View Details"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button>
+<div class="flex justify-center gap-2">
+<button type="button" class="p-2 text-primary hover:bg-primary/5 rounded-full" title="Email"><span class="material-symbols-outlined" data-icon="mail">mail</span></button>
+<button type="button" data-ek-customer-view="" class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-full" title="View details"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button>
 </div>
 </td>
 </tr>
@@ -1087,13 +1122,13 @@ Log out
 <div class="bg-white rounded-xl border border-surface-variant shadow-lg overflow-hidden relative">
 <div class="h-24 bg-primary-container relative">
 <div class="absolute -bottom-10 left-6 h-20 w-20 rounded-xl border-4 border-white overflow-hidden bg-white shadow-md">
-<img alt="Top Buyer Portrait" class="h-full w-full object-cover" data-alt="A high-end editorial style portrait of a middle-aged elegant woman with a warm, professional smile. She is set against a soft, natural background of an artisanal boutique market with warm wooden accents and soft lighting. The image captures a sense of premium lifestyle and brand loyalty in a modern light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu3-V64H5iXx3ph3SoCFZgt-48cqMQMyWMyGK2AHiUz2oDZVo7pwhJ-tj0__Up3ppJzDqjr3QIxKZxM51QYoGPeehUYBJ5_azUTXn8NNIj8G4NwQ0Kr69wNcCAugEiKLtDv_oJaU94QoeOLigsr9rb_KnXgFB6-SMkeuQwkVzAaYUMRX5PDLLCMw6_ryQhGkAs8uJUU0c1A7DSYNh9ze8wivlfhUyVhZxvo36kXAYgGhpIZgdIV4SpmLiDVF7c9p63Dc6V-rI4b2I"/>
+<img alt="" class="h-full w-full object-cover" src="/assets/person.jpg"/>
 </div>
 </div>
 <div class="pt-12 p-6">
 <div class="flex justify-between items-start mb-4">
 <div>
-<h4 class="text-h4 font-h4 text-on-surface">Marianne Anderson</h4>
+<h4 class="text-h4 font-h4 text-on-surface">Ama Serwaa</h4>
 <p class="text-body-sm text-on-surface-variant">Customer since Oct 2021</p>
 </div>
 <span class="bg-accent-green bg-[#95D405] text-on-primary-container px-3 py-1 rounded-full text-label-caps font-bold">TOP BUYER</span>
@@ -1184,6 +1219,63 @@ Log out
 
 
 
+
+
+
+
+
+<dialog id="ek-customer-modal" class="max-w-md w-[min(100vw-2rem,28rem)] rounded-2xl border border-surface-variant shadow-2xl bg-surface text-on-surface p-0 backdrop:bg-black/40">
+<form method="dialog" class="p-0 m-0">
+<div class="px-6 py-4 border-b border-surface-variant flex justify-between items-center gap-4">
+<h3 class="font-h4 text-h4">Customer details</h3>
+<button type="submit" class="p-2 rounded-full hover:bg-surface-container text-on-surface-variant shrink-0" aria-label="Close">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-6 space-y-1 text-body-md">
+<p id="ek-cm-name" class="font-h4 text-h4 text-on-surface"></p>
+<p id="ek-cm-email" class="text-body-sm text-on-surface-variant"></p>
+<dl class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-3 text-body-sm mt-4">
+<dt class="text-on-surface-variant font-label-caps uppercase text-label-caps">Loyalty</dt>
+<dd id="ek-cm-loyalty" class="font-semibold text-on-surface"></dd>
+<dt class="text-on-surface-variant font-label-caps uppercase text-label-caps">Orders</dt>
+<dd id="ek-cm-orders" class="text-on-surface"></dd>
+<dt class="text-on-surface-variant font-label-caps uppercase text-label-caps">Total spent</dt>
+<dd id="ek-cm-spent" class="text-on-surface"></dd>
+<dt class="text-on-surface-variant font-label-caps uppercase text-label-caps">Member since</dt>
+<dd id="ek-cm-since" class="text-on-surface"></dd>
+</dl>
+</div>
+<div class="px-6 py-4 border-t border-surface-variant flex justify-end">
+<button type="submit" class="px-5 py-2.5 rounded-lg bg-primary text-white font-bold text-body-sm">Close</button>
+</div>
+</form>
+</dialog>
+
+<script id="ek-customer-modal-init">
+(() => {
+  const dlg = document.getElementById("ek-customer-modal");
+  if (!dlg) return;
+  const set = (id, v) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = v || "";
+  };
+  document.querySelectorAll("[data-ek-customer-view]").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const tr = btn.closest("tr");
+      if (!tr) return;
+      set("ek-cm-name", tr.dataset.customerName);
+      set("ek-cm-email", tr.dataset.customerEmail);
+      set("ek-cm-loyalty", tr.dataset.customerLoyalty);
+      set("ek-cm-orders", tr.dataset.customerOrders);
+      set("ek-cm-spent", tr.dataset.customerSpent);
+      set("ek-cm-since", tr.dataset.customerSince);
+      dlg.showModal();
+    });
+  });
+})();
+</script>
 
 
 <script id="ek-toggle-init">

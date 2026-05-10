@@ -155,6 +155,10 @@
 
 
 
+
+
+
+
 <style id="elikhope-responsive-v2">
 /* EliKhope Farms — comprehensive mobile responsiveness pass */
 /* Product listing cards: ~30% smaller than global price-lg (70% scale) */
@@ -191,6 +195,17 @@
   }
   .ek-pdp-hero-price {
     font-size: 15.4px !important;
+  }
+  /* Shopping cart + checkout review: currency ~30% smaller than default mobile price-lg */
+  [data-ek-cart-page] .font-price-lg.text-price-lg,
+  [data-ek-checkout-review-money] .font-price-lg.text-price-lg {
+    font-size: 15.4px !important;
+    line-height: 1.15 !important;
+  }
+  [data-ek-cart-summary] .space-y-4.pb-6 .flex.justify-between span:last-child,
+  [data-ek-checkout-summary] .space-y-stack-sm.border-b .flex.justify-between span:last-child {
+    font-size: 10.15px !important;
+    line-height: 1.25 !important;
   }
   /* Some Stitch designs use raw Tailwind sizes; soften the very largest */
   .text-5xl, .text-6xl { font-size: 28px !important; line-height: 1.15 !important; }
@@ -395,7 +410,6 @@
 <a class="hidden sm:inline font-body-sm font-semibold text-primary hover:underline" href="/Authentication_Pages/login_elikhope_farms/code.html">Login</a>
 <a class="hidden sm:inline-flex px-4 py-2 rounded-lg bg-primary text-white font-bold text-sm hover:opacity-90" href="/Authentication_Pages/create_account_elikhope_farms/code.html">Sign up</a>
 <a class="p-2 rounded-full hover:bg-surface-container transition-colors" href="/E-Commerce_Shop_UI%20Pages/elikhope_farms_shopping_cart/code.html" title="Cart"><span class="material-symbols-outlined text-on-surface-variant">shopping_cart</span></a>
-<a class="hidden sm:inline-flex p-2 rounded-full hover:bg-surface-container transition-colors" href="/Customer_Dashboard_Pages/dashboard_overview_elikhope_farms/code.html" title="Account"><span class="material-symbols-outlined text-on-surface-variant">account_circle</span></a>
 <button class="lg:hidden p-2 rounded-full hover:bg-surface-container transition-colors" type="button" aria-label="Open menu" data-ek-toggle="ek-site-drawer">
   <i class="fa-solid fa-bars text-on-surface-variant"></i>
 </button>
@@ -433,6 +447,18 @@
     </div>
   </aside>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -914,16 +940,14 @@
 </section>
 <!-- Section 9: Promotional CTA Banner -->
 <section class="py-stack-lg px-margin-desktop">
-<div class="relative bg-inverse-surface rounded-3xl overflow-hidden p-stack-lg max-w-container-max mx-auto text-white flex flex-col md:flex-row items-center justify-between">
+<div class="relative bg-inverse-surface rounded-3xl overflow-hidden p-stack-lg md:p-stack-lg max-w-container-max mx-auto text-white isolate min-h-[200px] md:min-h-[240px]">
 <div class="relative z-10 max-w-xl">
 <h2 class="font-h2 text-h2 mb-4">Get 15% Off Your First Order</h2>
 <p class="font-body-lg opacity-80 mb-8">Join the EliKhope family today and experience the premium quality of farm-fresh meat at your doorstep. Limited time offer for new members.</p>
 <button class="px-10 py-4 bg-tertiary-fixed text-on-tertiary-fixed font-bold rounded-lg hover:scale-105 transition-transform">Claim My Discount</button>
 </div>
-<div class="mt-stack-lg md:mt-0 relative w-64 h-64 md:w-80 md:h-80">
-<div class="absolute inset-0 bg-primary/20 rounded-full blur-3xl"></div>
-<span class="material-symbols-outlined text-[120px] text-primary-fixed opacity-50 block text-center" data-icon="redeem">redeem</span>
-</div>
+<div class="pointer-events-none absolute -right-4 -bottom-12 md:-right-8 md:-bottom-20 w-[min(92vw,28rem)] h-[min(92vw,28rem)] max-h-[320px] md:max-h-[420px] rounded-full bg-primary/15 blur-3xl z-[1]" aria-hidden="true"></div>
+<span class="material-symbols-outlined absolute right-0 bottom-0 translate-x-[12%] translate-y-[22%] md:translate-x-[18%] md:translate-y-[28%] z-[1] text-[clamp(9rem,38vw,22rem)] md:text-[clamp(11rem,28vw,24rem)] text-primary-fixed opacity-50 leading-none pointer-events-none select-none" aria-hidden="true" data-icon="redeem">redeem</span>
 </div>
 </section>
 <!-- Section 10: Blog Preview -->
@@ -997,6 +1021,8 @@
 <a class="font-body-sm text-on-surface-variant hover:text-primary underline block" href="/elikhope_farms_marketing_pages/elikhope_farms_quality_standards/code.html">Quality Control</a>
 <a class="font-body-sm text-on-surface-variant hover:text-primary underline block" href="/elikhope_farms_marketing_pages/elikhope_farms_help_center/code.html">Help center</a>
 <a class="font-body-sm text-on-surface-variant hover:text-primary underline block" href="/elikhope_farms_marketing_pages/elikhope_farms_contact_us/code.html">Contact us</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline block" href="/elikhope_farms_marketing_pages/elikhope_farms_terms_of_service/code.html">Terms of service</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline block" href="/elikhope_farms_marketing_pages/elikhope_farms_privacy_policy/code.html">Privacy policy</a>
 </div>
 <div class="flex flex-col gap-2 min-w-0">
 <h5 class="font-bold text-on-surface mb-1">Account</h5>
@@ -1045,40 +1071,7 @@
 
 
 
-<script id="ek-toggle-init">
-(() => {
-  const closedClass = (root) => (root.getAttribute('data-ek-drawer') === 'left') ? '-translate-x-full' : 'translate-x-full';
-  const openDrawer = (root) => {
-    root.classList.remove('hidden');
-    const panel = root.querySelector('[data-ek-drawer-panel]');
-    if (panel) requestAnimationFrame(() => panel.classList.remove(closedClass(root)));
-    document.documentElement.classList.add('overflow-hidden');
-  };
-  const closeDrawer = (root) => {
-    const panel = root.querySelector('[data-ek-drawer-panel]');
-    if (panel) panel.classList.add(closedClass(root));
-    window.setTimeout(() => {
-      root.classList.add('hidden');
-      document.documentElement.classList.remove('overflow-hidden');
-    }, 220);
-  };
-  document.addEventListener('click', (e) => {
-    const btn = e.target.closest('[data-ek-toggle]');
-    if (!btn) return;
-    const id = btn.getAttribute('data-ek-toggle');
-    const root = document.getElementById(id);
-    if (!root) return;
-    const isDrawer = root.hasAttribute('data-ek-drawer');
-    if (!isDrawer) { root.classList.toggle('hidden'); return; }
-    const isOpen = !root.classList.contains('hidden');
-    if (isOpen) closeDrawer(root); else openDrawer(root);
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key !== 'Escape') return;
-    document.querySelectorAll('[data-ek-drawer]:not(.hidden)').forEach(closeDrawer);
-  });
-})();
-</script>
+
 <script id="ek-hero-slider-script">
 (function(){
   var root=document.querySelector("[data-ek-home-hero-slider]");
@@ -1111,6 +1104,43 @@
   arm();
   root.addEventListener("mouseenter",function(){clearInterval(timer);});
   root.addEventListener("mouseleave",arm);
+})();
+</script>
+
+
+
+<script id="ek-toggle-init">
+(() => {
+  const closedClass = (root) => (root.getAttribute('data-ek-drawer') === 'left') ? '-translate-x-full' : 'translate-x-full';
+  const openDrawer = (root) => {
+    root.classList.remove('hidden');
+    const panel = root.querySelector('[data-ek-drawer-panel]');
+    if (panel) requestAnimationFrame(() => panel.classList.remove(closedClass(root)));
+    document.documentElement.classList.add('overflow-hidden');
+  };
+  const closeDrawer = (root) => {
+    const panel = root.querySelector('[data-ek-drawer-panel]');
+    if (panel) panel.classList.add(closedClass(root));
+    window.setTimeout(() => {
+      root.classList.add('hidden');
+      document.documentElement.classList.remove('overflow-hidden');
+    }, 220);
+  };
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-ek-toggle]');
+    if (!btn) return;
+    const id = btn.getAttribute('data-ek-toggle');
+    const root = document.getElementById(id);
+    if (!root) return;
+    const isDrawer = root.hasAttribute('data-ek-drawer');
+    if (!isDrawer) { root.classList.toggle('hidden'); return; }
+    const isOpen = !root.classList.contains('hidden');
+    if (isOpen) closeDrawer(root); else openDrawer(root);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    document.querySelectorAll('[data-ek-drawer]:not(.hidden)').forEach(closeDrawer);
+  });
 })();
 </script>
 </body></html>

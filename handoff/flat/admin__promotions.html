@@ -131,6 +131,10 @@
 
 
 
+
+
+
+
 <style id="elikhope-responsive-v2">
 /* EliKhope Farms — comprehensive mobile responsiveness pass */
 /* Product listing cards: ~30% smaller than global price-lg (70% scale) */
@@ -167,6 +171,17 @@
   }
   .ek-pdp-hero-price {
     font-size: 15.4px !important;
+  }
+  /* Shopping cart + checkout review: currency ~30% smaller than default mobile price-lg */
+  [data-ek-cart-page] .font-price-lg.text-price-lg,
+  [data-ek-checkout-review-money] .font-price-lg.text-price-lg {
+    font-size: 15.4px !important;
+    line-height: 1.15 !important;
+  }
+  [data-ek-cart-summary] .space-y-4.pb-6 .flex.justify-between span:last-child,
+  [data-ek-checkout-summary] .space-y-stack-sm.border-b .flex.justify-between span:last-child {
+    font-size: 10.15px !important;
+    line-height: 1.25 !important;
   }
   /* Some Stitch designs use raw Tailwind sizes; soften the very largest */
   .text-5xl, .text-6xl { font-size: 28px !important; line-height: 1.15 !important; }
@@ -768,6 +783,26 @@ Log out
   
 </div>
 
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
+
+
+  
+</div>
+
 </div>
 
 
@@ -861,7 +896,7 @@ Log out
 </div>
 </header>
 <!-- Main Content Canvas -->
-<main class="md:ml-64 ml-0 pt-16 pt-12 md:pt-0 min-h-screen">
+<main class="md:ml-64 ml-0 pt-16 pt-12 md:pt-16 min-h-screen">
 <div class="max-w-[1280px] mx-auto p-margin-mobile md:p-margin-mobile md:p-margin-desktop space-y-stack-lg">
 <!-- Page Header & Main Action -->
 <div class="flex justify-between items-end">
@@ -1093,6 +1128,10 @@ Log out
 <button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50 md:hidden">
 <span class="material-symbols-outlined">add</span>
 </button>
+
+
+
+
 
 
 
