@@ -25,6 +25,9 @@ PD_GOAT = f"{_PD}/fresh-goat.jpg"
 PD_RIBS = f"{_PD}/ribs.jpg"
 PD_SPECIAL = f"{_PD}/special-cuts.jpg"
 PD_TBONE = f"{_PD}/t-bone.jpg"
+PD_TURKEY = f"{_PD}/turkey_whole-turkey.jpg"
+PD_GUINEA_FOWL = f"{_PD}/guinea-fowl.jpg"
+PD_LOCAL_CHICKEN = f"{_PD}/local-chicken.jpg"
 
 # Editorial / hero / non-grid imagery (under /assets).
 ASSET_MEAT_COLD_ROOM = f"{_AP}/meat-in-cold-room.jpg"
@@ -1726,7 +1729,7 @@ def patch_home_category_tiles(html: str, current_url: str | None) -> str:
     bf = ASSET_MEAT_SMILING
     gf = ASSET_GOAT
     cf = ASSET_CHICKEN
-    sf = ASSET_SPECIAL_CUTS
+    gff = PD_GUINEA_FOWL
     sec = f"""<!-- Section 3: Category Grid -->
 <section class="py-stack-lg px-margin-desktop max-w-container-max mx-auto" data-ek-category-tiles>
 <div class="flex justify-between items-end mb-stack-md flex-col sm:flex-row gap-4 sm:gap-0 sm:items-end">
@@ -1761,12 +1764,12 @@ def patch_home_category_tiles(html: str, current_url: str | None) -> str:
 <p class="text-sm opacity-80">Free-range &amp; Organic</p>
 </div>
 </a>
-<a href="{U["cat_special"]}" class="group relative h-80 rounded-2xl overflow-hidden cursor-pointer shadow-sm block no-underline text-inherit hover:no-underline">
-<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="" src="{sf}"/>
+<a href="{U["shop_home"]}" class="group relative h-80 rounded-2xl overflow-hidden cursor-pointer shadow-sm block no-underline text-inherit hover:no-underline">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="" src="{gff}"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
 <div class="absolute bottom-6 left-6 text-white">
-<h3 class="font-h3 text-h3 mb-1">Special Cuts</h3>
-<p class="text-sm opacity-80">Wagyu &amp; Aged Selections</p>
+<h3 class="font-h3 text-h3 mb-1">Guinea fowl</h3>
+<p class="text-sm opacity-80">Farm-raised game poultry</p>
 </div>
 </a>
 </div>
@@ -1820,6 +1823,30 @@ def patch_all_categories_hub_page(html: str) -> str:
 <div class="absolute bottom-6 left-6 text-white">
 <h2 class="font-h3 text-h3 mb-1">Special cuts</h2>
 <p class="text-sm opacity-80">Wagyu-style &amp; aged</p>
+</div>
+</a>
+<a href="{U["shop_home"]}" class="group relative h-72 sm:h-80 rounded-2xl overflow-hidden cursor-pointer shadow-sm block no-underline text-inherit">
+<img alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="{PD_TURKEY}"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<h2 class="font-h3 text-h3 mb-1">Turkey</h2>
+<p class="text-sm opacity-80">Whole birds &amp; portions</p>
+</div>
+</a>
+<a href="{U["shop_home"]}" class="group relative h-72 sm:h-80 rounded-2xl overflow-hidden cursor-pointer shadow-sm block no-underline text-inherit">
+<img alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="{PD_GUINEA_FOWL}"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<h2 class="font-h3 text-h3 mb-1">Guinea fowl</h2>
+<p class="text-sm opacity-80">Farm-raised game poultry</p>
+</div>
+</a>
+<a href="{U["cat_chicken"]}" class="group relative h-72 sm:h-80 rounded-2xl overflow-hidden cursor-pointer shadow-sm block no-underline text-inherit">
+<img alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="{PD_LOCAL_CHICKEN}"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<h2 class="font-h3 text-h3 mb-1">Local chicken</h2>
+<p class="text-sm opacity-80">Heritage &amp; village birds</p>
 </div>
 </a>
 </div>
